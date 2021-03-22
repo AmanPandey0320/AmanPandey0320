@@ -18,7 +18,7 @@
 <img alt="kotlin" style="margin:10px" width="30px" height="30px" align="left" title="Kotlin" src="https://img.icons8.com/color/48/000000/kotlin.png"/>
 <img alt="HTML" style="margin:10px" width="30px" height="30px" align="left" title="HTML"  src="https://img.icons8.com/color/48/000000/html-5.png"/>
 <img alt="CSS" style="margin:10px" width="30px" height="30px" align="left" title="CSS" src="https://img.icons8.com/color/48/000000/css3.png"/>
-<img alt="JS" style="margin:10px" width="30px" height="30px" align="left" title="JS" src="https://img.icons8.com/color/48/000000/javascript-logo-1.png"/>
+<img alt="JS" style="margin:10px" width="30px" height="30px" align="left" title="JS" src="https://img.icons8.com/color/48/000000/javascript-logo-1.png"/>\
 
 ## Technologies
 <img alt="android" style="margin:10px" width="30px" height="30px" align="left" title="android" src="https://img.icons8.com/fluent/48/000000/android-os.png"/>
