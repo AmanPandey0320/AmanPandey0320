@@ -10,7 +10,7 @@
 
 # My GitHub
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=AmanPandey0320&theme=radical&layout=compact)
+![Aman_GitHub_Stats](https://github-readme-stats.vercel.app/api?username=AmanPandey0320&theme=radical&show_icons=true)
 
 ## Languages
 <img alt="C++" style="margin:10px" width="30px" height="30px" align="left" title="C++" src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"/>
