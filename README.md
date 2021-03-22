@@ -10,14 +10,18 @@
 
 # My GitHub
 
-![Aman's github stats](https://github-readme-stats.vercel.app/api?username=AmanPandey0320&theme=radical&show_icons=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=AmanPandey0320&theme=radical&layout=compact)
 
-# Familiar tech stack
+## Languages
 <img alt="C++" style="margin:10px" width="30px" height="30px" align="left" title="C++" src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"/>
 <img alt="Java" style="margin:10px" width="30px" height="30px" align="left" title="Java" src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png"/>
+<img alt="kotlin" style="margin:10px" width="30px" height="30px" align="left" title="Kotlin" src="https://img.icons8.com/color/48/000000/kotlin.png"/>
 <img alt="HTML" style="margin:10px" width="30px" height="30px" align="left" title="HTML"  src="https://img.icons8.com/color/48/000000/html-5.png"/>
 <img alt="CSS" style="margin:10px" width="30px" height="30px" align="left" title="CSS" src="https://img.icons8.com/color/48/000000/css3.png"/>
 <img alt="JS" style="margin:10px" width="30px" height="30px" align="left" title="JS" src="https://img.icons8.com/color/48/000000/javascript-logo-1.png"/>
-<img alt="node" style="margin:10px" width="30px" height="30px" align="left" title="Node.Js" src="https://img.icons8.com/color/48/000000/nodejs.png"/>
-<img alt="firebase" style="margin:10px" width="30px" height="30px" align="left" title="Firebase" src="https://img.icons8.com/color/48/000000/google-firebase-console.png"/>
+
+## Technologies
 <img alt="android" style="margin:10px" width="30px" height="30px" align="left" title="android" src="https://img.icons8.com/fluent/48/000000/android-os.png"/>
+<img alt="firebase" style="margin:10px" width="30px" height="30px" align="left" title="Firebase" src="https://img.icons8.com/color/48/000000/google-firebase-console.png"/>
+<img alt="node" style="margin:10px" width="30px" height="30px" align="left" title="Node.Js" src="https://img.icons8.com/color/48/000000/nodejs.png"/>
+<img alt="react" style="margin:10px" width="30px" height="30px" align="left" title="React.Js" src="https://img.icons8.com/plasticine/100/000000/react.png"/>
