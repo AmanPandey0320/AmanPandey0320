@@ -26,3 +26,4 @@
 <img alt="firebase" style="margin:10px" width="30px" height="30px" align="left" title="Firebase" src="https://img.icons8.com/color/48/000000/google-firebase-console.png"/>
 <img alt="node" style="margin:10px" width="30px" height="30px" align="left" title="Node.Js" src="https://img.icons8.com/color/48/000000/nodejs.png"/>
 <img alt="react" style="margin:10px" width="30px" height="30px" align="left" title="React.Js" src="https://img.icons8.com/plasticine/100/000000/react.png"/>
+<img alt="mysql" src="https://img.icons8.com/color/48/000000/mysql-logo.png"/>
