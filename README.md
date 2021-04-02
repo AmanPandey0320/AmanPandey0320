@@ -17,6 +17,7 @@
 <img alt="C++" style="margin:10px" width="30px" height="30px" align="left" title="C++" src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"/>
 <img alt="Java" style="margin:10px" width="30px" height="30px" align="left" title="Java" src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png"/>
 <img alt="kotlin" style="margin:10px" width="30px" height="30px" align="left" title="Kotlin" src="https://img.icons8.com/color/48/000000/kotlin.png"/>
+<img alt="dart" style="margin:10px" width="30px" height="30px" align="left" title="Dart" src="https://img.icons8.com/color/48/000000/dart.png"/>
 <img alt="HTML" style="margin:10px" width="30px" height="30px" align="left" title="HTML"  src="https://img.icons8.com/color/48/000000/html-5.png"/>
 <img alt="CSS" style="margin:10px" width="30px" height="30px" align="left" title="CSS" src="https://img.icons8.com/color/48/000000/css3.png"/>
 <img alt="JS" style="margin:10px" width="30px" height="30px" align="left" title="JS" src="https://img.icons8.com/color/48/000000/javascript-logo-1.png"/>\
@@ -27,3 +28,4 @@
 <img alt="node" style="margin:10px" width="30px" height="30px" align="left" title="Node.Js" src="https://img.icons8.com/color/48/000000/nodejs.png"/>
 <img alt="react" style="margin:10px" width="30px" height="30px" align="left" title="React.Js" src="https://img.icons8.com/plasticine/100/000000/react.png"/>
 <img alt="mysql" style="margin:10px" width="30px" height="30px" align="left" title="mysql" src="https://img.icons8.com/color/48/000000/mysql-logo.png"/>
+<img alt="flutter" style="margin:10px" width="30px" height="30px" align="left" title="flutter" src="https://img.icons8.com/color/50/000000/flutter.png"/>
