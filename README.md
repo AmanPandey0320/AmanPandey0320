@@ -4,7 +4,7 @@
 - 🌱 I’m currently learning React JS.
 - 🤔 I’m looking for help with containers and docker
 - 💬 Ask me about : What was last movie I watched?
-- 📫 How to reach me: @ 2019ugcs003@nitjsr.ac.in
+- 📫 How to reach me: @ 2000amanpandey@gmail.com
 - 😄 Pronouns: Why, What, How......
 - ⚡ Fun fact: Sorry, I can't fix you computer.
 
