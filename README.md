@@ -23,9 +23,10 @@
 <img alt="JS" style="margin:10px" width="30px" height="30px" align="left" title="JS" src="https://img.icons8.com/color/48/000000/javascript-logo-1.png"/>\
 
 ## Technologies
-<img alt="android" style="margin:10px" width="30px" height="30px" align="left" title="android" src="https://img.icons8.com/fluent/48/000000/android-os.png"/>
+<img alt="android" style="margin:10px" width="30px" height="30px" align="left" title="Android" src="https://img.icons8.com/fluent/48/000000/android-os.png"/>
 <img alt="firebase" style="margin:10px" width="30px" height="30px" align="left" title="Firebase" src="https://img.icons8.com/color/48/000000/google-firebase-console.png"/>
 <img alt="node" style="margin:10px" width="30px" height="30px" align="left" title="Node.Js" src="https://img.icons8.com/color/48/000000/nodejs.png"/>
 <img alt="react" style="margin:10px" width="30px" height="30px" align="left" title="React.Js" src="https://img.icons8.com/plasticine/100/000000/react.png"/>
-<img alt="mysql" style="margin:10px" width="30px" height="30px" align="left" title="mysql" src="https://img.icons8.com/color/48/000000/mysql-logo.png"/>
-<img alt="flutter" style="margin:10px" width="30px" height="30px" align="left" title="flutter" src="https://img.icons8.com/color/50/000000/flutter.png"/>
+<img alt="mysql" style="margin:10px" width="30px" height="30px" align="left" title="Mysql" src="https://img.icons8.com/color/48/000000/mysql-logo.png"/>
+<img alt="flutter" style="margin:10px" width="30px" height="30px" align="left" title="Flutter" src="https://img.icons8.com/color/50/000000/flutter.png"/>
+<img alt="graphql" style="margin:10px" width="30px" height="30px" align="left" title="GraphQL" src="https://img.icons8.com/color/2x/graphql.png"/>
