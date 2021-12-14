@@ -11,12 +11,16 @@ import {
 import { Box } from "@mui/system";
 import useStyles from "./style";
 import { useFormik } from "formik";
-import { loginValidationScheme } from "./logic";
+import { loginValidationScheme, forgotPasswordScheme } from "./logic";
 import userImg from "../../../../assets/images/profile.png";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from "firebase/auth";
 import { auth } from "../../../../lib/utils/firebase";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
+import { useToasts } from "react-toast-notifications";
 
 /**
  *
@@ -26,26 +30,52 @@ import { useState } from "react";
 const AdminLogin = (props) => {
   const classes = useStyles();
   const history = useHistory();
+  const toast = useToasts();
   const [logging, setLogging] = useState(false);
+  const [signin, setSignin] = useState(true);
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
-    validationSchema: loginValidationScheme,
+    validationSchema: signin ? loginValidationScheme : forgotPasswordScheme,
     onSubmit: (val) => {
       setLogging(true);
-      const { email, password } = val;
-      signInWithEmailAndPassword(auth, email, password)
-        .then((res) => {
-          const { user } = res;
-          console.log("login res----->", user);
-          history.replace("/");
-        })
-        .catch((err) => {
-          setLogging(true);
-          console.log("login err----->", err);
-        });
+      if (signin) {
+        const { email, password } = val;
+        signInWithEmailAndPassword(auth, email, password)
+          .then((res) => {
+            const { user } = res;
+            console.log("login res----->", user);
+            history.replace("/");
+          })
+          .catch((err) => {
+            setLogging(false);
+            if (err.code === "auth/wrong-password") {
+              toast.addToast("Wrong password", {
+                appearance: "error",
+              });
+            }
+            console.log("login err----->", `:${err.code}`);
+          });
+      } else {
+        const { email } = val;
+        sendPasswordResetEmail(auth, email)
+          .then((res) => {
+            toast.addToast("Password reset mail sent", {
+              appearance: "info",
+            });
+            setSignin(true);
+            setLogging(false);
+          })
+          .catch((err) => {
+            toast.addToast("Some error occured", {
+              appearance: "error",
+            });
+            setLogging(false);
+            console.log(err);
+          });
+      }
     },
   });
   /**
@@ -101,16 +131,18 @@ const AdminLogin = (props) => {
                         />
                       </Grid>
                       <Grid item>
-                        <TextField
-                          fullWidth
-                          label="Password"
-                          name="password"
-                          type="password"
-                          onChange={formik.handleChange}
-                          value={formik.values.password}
-                          error={formik.errors.password?.length > 0}
-                          helperText={formik.errors.password}
-                        />
+                        {signin && (
+                          <TextField
+                            fullWidth
+                            label="Password"
+                            name="password"
+                            type="password"
+                            onChange={formik.handleChange}
+                            value={formik.values.password}
+                            error={formik.errors.password?.length > 0}
+                            helperText={formik.errors.password}
+                          />
+                        )}
                       </Grid>
                       <Grid item>
                         <Button
@@ -119,14 +151,20 @@ const AdminLogin = (props) => {
                           variant="contained"
                           fullWidth
                         >
-                          Login
+                          {signin ? "Login" : "Forgot password"}
                         </Button>
                       </Grid>
                       <Grid item>
                         <Grid container direction="row-reverse">
                           <Grid item>
-                            <Button variant="text" color="error" size="small">
-                              Forgot password
+                            <Button
+                              disabled={logging}
+                              onClick={(e) => setSignin(!signin)}
+                              variant="text"
+                              color="error"
+                              size="small"
+                            >
+                              {signin ? "Forgot password" : "Login"}
                             </Button>
                           </Grid>
                         </Grid>

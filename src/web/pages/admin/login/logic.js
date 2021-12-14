@@ -9,3 +9,9 @@ export const loginValidationScheme = Yup.object().shape({
     .max(20, "Password must contain 8-20 characters.")
     .required("This field is mandetory."),
 });
+
+export const forgotPasswordScheme = Yup.object().shape({
+  email: Yup.string()
+    .email("Invalid email")
+    .required("This field is mandetory."),
+});
