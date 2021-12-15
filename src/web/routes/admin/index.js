@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Dashboard from "../../pages/admin/dashboard";
 import Login from "../../pages/admin/login";
 import { ToastProvider } from "react-toast-notifications";
@@ -12,7 +17,10 @@ const Admin = () => {
       <Router>
         <Switch>
           <Route exact={true} path="/login" component={Login} />
-          <Route exact={true} path="/" component={Dashboard} />
+          <Route exact={true} path="/dashboard" component={Dashboard} />
+          <Route exact path="/">
+            <Redirect to="/dashboard?open=0" />
+          </Route>
         </Switch>
       </Router>
     </ToastProvider>

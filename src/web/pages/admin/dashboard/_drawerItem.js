@@ -18,11 +18,10 @@ import {
   AccountCircle,
   Logout,
 } from "@mui/icons-material";
-import { useDispatch } from "react-redux";
-import { utilAction } from "../../../../lib/store/util";
 import { auth } from "../../../../lib/utils/firebase";
 import { signOut } from "firebase/auth";
 import { useToasts } from "react-toast-notifications";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 /**
  *
@@ -76,14 +75,14 @@ export const drawerList = [
  */
 const BoxDrawer = () => {
   const toast = useToasts();
-  const dispatch = useDispatch();
+  const history = useHistory();
+
   /**
    *
    * @param {*} value
    * @returns
    */
   const handleClick = (value) => (e) => {
-    const key = "drawer";
     if (value + 1 === drawerList.length) {
       signOut(auth)
         .then((res) => {
@@ -97,7 +96,7 @@ const BoxDrawer = () => {
           });
         });
     } else {
-      dispatch(utilAction.setKeyValue({ key, value }));
+      history.replace(`/dashboard?open=${value}`);
     }
   };
   return (
