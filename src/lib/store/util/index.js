@@ -6,7 +6,8 @@ const utilSlice = createSlice({
   initialState: {
     data: {
       drawer: 0,
-      uid:null
+      uid:null,
+      uploading:false,
     },
   },
   reducers: {

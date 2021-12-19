@@ -15,7 +15,6 @@ import {
   AccountTree,
   Contacts,
   Settings,
-  AccountCircle,
   Logout,
 } from "@mui/icons-material";
 import { auth } from "../../../../lib/utils/firebase";
@@ -59,11 +58,6 @@ export const drawerList = [
   },
   {
     key: 6,
-    text: "Account setting",
-    icon: <AccountCircle />,
-  },
-  {
-    key: 7,
     text: "Logout",
     icon: <Logout />,
   },

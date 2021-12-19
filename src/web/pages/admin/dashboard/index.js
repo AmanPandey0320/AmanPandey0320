@@ -13,10 +13,10 @@ import { useHistory } from "react-router-dom";
 import { auth } from "../../../../lib/utils/firebase";
 import Loader from "../../../shared/loading";
 import DrawerList, { drawerList } from "./_drawerItem";
-import Account from "./_account";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch } from "react-redux";
 import { utilAction } from "../../../../lib/store/util";
+import Education from "./_education";
 
 /**
  *
@@ -103,7 +103,7 @@ const Dashboard = () => {
         }}
       >
         <Toolbar />
-        {query.get("open") === "6" && <Account />}
+        {query.get("open") === "0" && <Education />}
       </Box>
     </Box>
   );
