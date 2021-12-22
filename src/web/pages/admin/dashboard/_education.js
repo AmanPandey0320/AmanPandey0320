@@ -14,7 +14,8 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
 import useStyles from "./style";
 import { useFormik } from "formik";
-import { EducationValidationSchema } from "./logic";
+import { EducationValidationSchema } from "./schema";
+
 import { db } from "../../../../lib/utils/firebase";
 import {
   collection,

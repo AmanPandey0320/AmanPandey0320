@@ -17,6 +17,7 @@ import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch } from "react-redux";
 import { utilAction } from "../../../../lib/store/util";
 import Education from "./_education";
+import AboutMe from "./_aboutMe";
 
 /**
  *
@@ -104,6 +105,7 @@ const Dashboard = () => {
       >
         <Toolbar />
         {query.get("open") === "0" && <Education />}
+        {query.get("open") === "1" && <AboutMe />}
       </Box>
     </Box>
   );

@@ -6,12 +6,24 @@ const useStyles = makeStyles((theme) => ({
     width: "100vw",
   },
   account: {
+    "&-modal": {
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      width: 400,
+      backgroundColor: "#fff",
+      borderRadius: "8px",
+      padding:"16px",
+      boxShadow: "2px 2px 4px grey",
+    },
     "&-image": {
       opacity: 1,
       display: "block",
       width: 192,
       height: 192,
       borderRadius: 96,
+      border:"2px solid #2196f3",
       transition: ".3s ease",
       backfaceVisibility: "hidden",
       "&:hover": {
@@ -64,6 +76,10 @@ const useStyles = makeStyles((theme) => ({
           opacity: 1,
         },
       },
+      "&-skill-img": {
+        width: "32px",
+        height: "32px",
+      },
     },
   },
   education: {
@@ -83,6 +99,10 @@ const useStyles = makeStyles((theme) => ({
         transition: "all 0.5s",
       },
     },
+  },
+  errText: {
+    fontSize: 12,
+    color: "red",
   },
 }));
 
