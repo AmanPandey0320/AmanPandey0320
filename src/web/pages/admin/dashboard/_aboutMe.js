@@ -38,7 +38,6 @@ const AboutMe = () => {
   const imgRef = useRef();
   const iconRef = useRef([]);
   const { addToast } = useToasts();
-  const [, setImgUrl] = useState(0);
   const [open, setOpen] = useState(0);
   const { uploading } = useSelector((state) => state.util.data);
   const formik = useFormik({
@@ -80,6 +79,7 @@ const AboutMe = () => {
   /**EFFECTS */
   useEffect(() => {
     fetchAboutMe(formik);
+    // eslint-disable-next-line
   }, []);
 
   // console.log(formik.values.skill);

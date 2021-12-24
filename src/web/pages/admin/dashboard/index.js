@@ -5,6 +5,8 @@ import {
   Grid,
   Toolbar,
   Typography,
+  IconButton,
+  Tooltip,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import { onAuthStateChanged } from "firebase/auth";
@@ -18,6 +20,10 @@ import { useDispatch } from "react-redux";
 import { utilAction } from "../../../../lib/store/util";
 import Education from "./_education";
 import AboutMe from "./_aboutMe";
+import Experience from "./_experience";
+import { RiUser2Fill } from "react-icons/ri";
+
+const clientKey = process.env.REACT_APP_CLIENT_KEY;
 
 /**
  *
@@ -43,6 +49,12 @@ const Dashboard = () => {
       }
     });
   }, [history, dispatch]);
+
+  const handlePOrtfolioBtnClick = (e) => {
+    window.localStorage.setItem("role", clientKey);
+    history.push("/");
+    window.location.reload();
+  };
 
   /**VIEWS */
 
@@ -72,6 +84,13 @@ const Dashboard = () => {
               <Typography variant="h6">
                 {drawerList[+query.get("open")]?.text}
               </Typography>
+            </Grid>
+            <Grid item>
+              <Tooltip title="Portfolio">
+                <IconButton onClick={handlePOrtfolioBtnClick}>
+                  <RiUser2Fill color="white" />
+                </IconButton>
+              </Tooltip>
             </Grid>
           </Grid>
         </Toolbar>
@@ -106,6 +125,7 @@ const Dashboard = () => {
         <Toolbar />
         {query.get("open") === "0" && <Education />}
         {query.get("open") === "1" && <AboutMe />}
+        {query.get("open") === "2" && <Experience />}
       </Box>
     </Box>
   );

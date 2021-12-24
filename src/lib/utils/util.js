@@ -1,9 +1,7 @@
 export const getRole = () => {
-  let role = "client";
-  if (window.location.hostname.split(".")[0] === "www") {
-    role = window.location.hostname.split(".")[1];
-  } else {
-    role = window.location.hostname.split(".")[0];
+  let role = window.localStorage.getItem("role");
+  if (role === undefined || role === null) {
+    role = "portfolio";
   }
   return role;
 };
