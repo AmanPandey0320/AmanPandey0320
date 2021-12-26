@@ -3,7 +3,16 @@ import store from "../../../../lib/store";
 import { utilAction } from "../../../../lib/store/util";
 import { db, storage } from "../../../../lib/utils/firebase";
 import { v4 } from "uuid";
-import { doc, setDoc, getDoc } from "firebase/firestore";
+import {
+  doc,
+  setDoc,
+  getDoc,
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  orderBy,
+} from "firebase/firestore";
 
 const dispatch = store.dispatch;
 
@@ -15,6 +24,9 @@ export const uploadProfileImage = (formik) => (e) => {
   //   const state = store.getState();
   dispatch(utilAction.setKeyValue({ key: "uploading", value: true }));
   const file = e.target.files[0];
+  if (Boolean(file)) {
+    return;
+  }
   const extention = file.type.split("/")[1];
   const path = `util/images/mainImage.${extention}`;
   const storageRef = ref(storage, path);
@@ -42,6 +54,9 @@ export const uploadProfileImage = (formik) => (e) => {
  */
 export const uploadSkillIcon = (formik, idx) => (e) => {
   const file = e.target.files[0];
+  if (Boolean(file)) {
+    return;
+  }
   const extention = file.type.split("/")[1];
   const fileName = v4();
   const path = `util/icon/${fileName}-${Date.now()}.${extention}`;
@@ -100,5 +115,99 @@ export const fetchAboutMe = (formik, addToast) => {
       addToast(err.message ? err.message : "Some error occured", {
         appearance: "error",
       });
+    });
+};
+
+/**Experience */
+
+/**
+ *
+ * @param {*} formik
+ * @param {*} idx
+ * @returns
+ */
+export const uploadTechIcon = (formik, idx) => (e) => {
+  const file = e.target.files[0];
+  if (Boolean(file)) {
+    return;
+  }
+  const extention = file.type.split("/")[1];
+  const fileName = v4();
+  const path = `util/icon/${fileName}-${Date.now()}.${extention}`;
+  const storageRef = ref(storage, path);
+  uploadBytes(storageRef, file)
+    .then((snapshot) => {
+      getDownloadURL(storageRef)
+        .then((url) => {
+          formik.setFieldValue(`tech[${idx}].icon`, url);
+        })
+        .catch((err) => {
+          console.log("download url upload exp icon image----->", err);
+        });
+    })
+    .catch((err) => {
+      console.log("upload image exp err icon------>", err);
+    });
+};
+
+/**
+ * @param values
+ * @param addToast
+ * @returns
+ */
+export const saveExperience = ({
+  org,
+  from,
+  to,
+  role,
+  contri,
+  tech,
+  present,
+  ...rest
+}) => {
+  return new Promise((resolve, reject) => {
+    const ref = collection(db, "experience");
+    addDoc(ref, { org, from, to, role, contri, tech, present })
+      .then((snapshot) => {
+        resolve({
+          saved: true,
+          id: snapshot.id,
+        });
+        return;
+      })
+      .catch((err) => {
+        reject(err);
+        return;
+      });
+  });
+};
+
+/**
+ *
+ * @param {*} handler
+ */
+export const fetchAllExperiences = (handler) => {
+  const ref = collection(db, "experience");
+  const q = query(ref, orderBy("from", "desc"));
+  getDocs(q)
+    .then((snapshots) => {
+      let data = [];
+      snapshots.forEach((snapshot) => {
+        const expr = snapshot.data();
+        const from = new Date(expr.from.seconds * 1000);
+        expr.kfrom = `${from.getMonth() + 1}/${from.getFullYear()}`;
+        if (expr.to) {
+          const to = new Date(expr.to.seconds * 1000);
+          expr.kto = `${to.getMonth() + 1}/${to.getFullYear()}`;
+        }
+        if (expr.present === true) {
+          expr.kto = "Present";
+        }
+        data.push(expr);
+      });
+      console.log(data);
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };

@@ -13,13 +13,36 @@ export const EducationValidationSchema = Yup.object().shape({
 });
 
 /**
- *
+ *@description about me schema
  */
 export const AboutMeValidatonSchema = Yup.object().shape({
   image: Yup.string().required("No image choosen"),
   about: Yup.string().required("Required"),
   name: Yup.string().required("Required"),
   skill: Yup.array()
+    .of(
+      Yup.object().shape({
+        text: Yup.string().required("Skill name is required"),
+        icon: Yup.string().required("Icon is required"),
+      })
+    )
+    .min(1, "Atleast 1 skill is needed"),
+});
+
+/**
+ * @description experience validation schema
+ */
+export const ExperienceSchema = Yup.object().shape({
+  org: Yup.string().required("Required"),
+  from: Yup.date().required("Required"),
+  present: Yup.boolean().required().default(false),
+  to: Yup.date().when("present", {
+    is: false,
+    then: Yup.date().required("Required"),
+  }),
+  role: Yup.string().required("Required"),
+  contri: Yup.array().of(Yup.string().required("Required")),
+  tech: Yup.array()
     .of(
       Yup.object().shape({
         text: Yup.string().required("Skill name is required"),

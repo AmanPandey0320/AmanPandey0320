@@ -7,6 +7,8 @@ import {
   TextField,
   Toolbar,
   Typography,
+  IconButton,
+  Tooltip,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import useStyles from "./style";
@@ -21,6 +23,9 @@ import { auth } from "../../../../lib/utils/firebase";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { useToasts } from "react-toast-notifications";
+import { RiUser2Fill } from "react-icons/ri";
+
+const clientKey = process.env.REACT_APP_CLIENT_KEY;
 
 /**
  *
@@ -78,6 +83,13 @@ const AdminLogin = (props) => {
       }
     },
   });
+
+  const handlePOrtfolioBtnClick = (e) => {
+    window.localStorage.setItem("role", clientKey);
+    history.push("/");
+    window.location.reload();
+  };
+
   /**
    * view
    */
@@ -88,6 +100,13 @@ const AdminLogin = (props) => {
           <Grid container justifyContent="space-between" direction="row">
             <Grid item>
               <Typography variant="h6">Admin @ Portfolio</Typography>
+            </Grid>
+            <Grid item>
+              <Tooltip title="Portfolio">
+                <IconButton onClick={handlePOrtfolioBtnClick}>
+                  <RiUser2Fill color="white" />
+                </IconButton>
+              </Tooltip>
             </Grid>
           </Grid>
         </Toolbar>
