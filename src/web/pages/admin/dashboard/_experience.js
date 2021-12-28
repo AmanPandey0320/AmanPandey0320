@@ -11,6 +11,8 @@ import {
   Modal,
   Fade,
   Backdrop,
+  Skeleton,
+  Card,
 } from "@mui/material";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
@@ -22,7 +24,13 @@ import { Upload, Delete, ContentPaste } from "@mui/icons-material";
 import userImg from "../../../../assets/images/profile.png";
 import useStyles from "./style";
 import { useEffect, useRef, useState } from "react";
-import { fetchAllExperiences, saveExperience, uploadTechIcon } from "./logic";
+import {
+  deleteExperience,
+  editExperience,
+  fetchAllExperiences,
+  saveExperience,
+  uploadTechIcon,
+} from "./logic";
 import Portal from "../../../shared/portal";
 
 /**
@@ -34,9 +42,12 @@ const Experience = () => {
   const iconRef = useRef([]);
   const toast = useToasts();
   const [open, setOpen] = useState(0);
+  const [refresh, setRefresh] = useState(0);
   const [experience, setExperience] = useState([]);
+  const [saveBtn, setSaveBtn] = useState(false);
   const formik = useFormik({
     initialValues: {
+      id: undefined,
       org: "",
       from: "",
       present: false,
@@ -47,11 +58,13 @@ const Experience = () => {
     },
     validationSchema: ExperienceSchema,
     onSubmit: (value) => {
+      setSaveBtn(true);
       saveExperience(value)
         .then(({ saved, id }) => {
           if (saved) {
             toast.addToast("Saved", { appearance: "success" });
             formik.setValues({
+              id: undefined,
               org: "",
               from: "",
               present: false,
@@ -60,14 +73,17 @@ const Experience = () => {
               contri: [],
               tech: [],
             });
+            setRefresh((prev) => prev + 1);
           } else {
             toast.addToast("Unable to save", { appearance: "error" });
           }
+          setSaveBtn(false);
         })
         .catch((err) => {
           toast.addToast(err.message ? err.message : "Some error occured", {
             appearance: "error",
           });
+          setSaveBtn(false);
         });
     },
   });
@@ -75,9 +91,9 @@ const Experience = () => {
   /**EFFECTS */
   useEffect(() => {
     fetchAllExperiences(setExperience);
-  }, []);
+  }, [refresh]);
 
-  //   console.log(formik.values);
+  console.log(experience);
   /**Methods */
 
   /**
@@ -134,7 +150,12 @@ const Experience = () => {
   return (
     <>
       <Box>
-        <Grid container spacing={2} direction="row">
+        <Grid
+          container
+          spacing={2}
+          justifyContent="space-between"
+          direction="row"
+        >
           <Grid xs={7} item>
             <form onSubmit={formik.handleSubmit}>
               <Box>
@@ -356,12 +377,86 @@ const Experience = () => {
                 </Grid>
                 <br />
                 <Box sx={{ display: "flex", justifyContent: "center" }}>
-                  <Button color="success" type="submit" variant="contained">
+                  <Button
+                    disabled={saveBtn}
+                    color="success"
+                    type="submit"
+                    variant="contained"
+                  >
                     Save
                   </Button>
                 </Box>
               </Box>
             </form>
+          </Grid>
+          <Grid xs={4} item>
+            <Grid container direction="column" spacing={1}>
+              {experience.length > 0 ? (
+                <>
+                  {experience?.map((item, i) => {
+                    return (
+                      <Grid key={item.id} item>
+                        <Card className={`${classes.experience}-card`}>
+                          <Typography>{item.org}</Typography>
+                          <Box className={`${classes.experience}-box-jc-sp`}>
+                            <span className={`${classes.experience}-text-md`}>
+                              {item.role}
+                            </span>
+                            <span className={`${classes.experience}-text-sm`}>
+                              {item.kfrom}-{item.kto}
+                            </span>
+                          </Box>
+                          <Box className={`${classes.experience}-box-jc-r`}>
+                            <Button
+                              size="small"
+                              color="secondary"
+                              variant="outlined"
+                              onClick={editExperience(i, experience, formik)}
+                            >
+                              Edit
+                            </Button>
+                            <span>&nbsp;</span>
+                            <Button
+                              size="small"
+                              color="error"
+                              variant="outlined"
+                              onClick={deleteExperience(
+                                i,
+                                experience,
+                                setExperience,
+                                toast.addToast
+                              )}
+                            >
+                              Delete
+                            </Button>
+                          </Box>
+                        </Card>
+                      </Grid>
+                    );
+                  })}
+                </>
+              ) : (
+                <>
+                  <Skeleton
+                    width="128px"
+                    variant="rectangular"
+                    animation="wave"
+                  />
+                  <br />
+                  <Skeleton
+                    width="150px"
+                    variant="rectangular"
+                    animation="wave"
+                  />
+                  <br />
+                  <Skeleton
+                    width="250px"
+                    variant="rectangular"
+                    animation="wave"
+                  />
+                </>
+              )}
+            </Grid>
           </Grid>
         </Grid>
       </Box>

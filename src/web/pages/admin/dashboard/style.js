@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
       width: 400,
       backgroundColor: "#fff",
       borderRadius: "8px",
-      padding:"16px",
+      padding: "16px",
       boxShadow: "2px 2px 4px grey",
     },
     "&-image": {
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
       width: 192,
       height: 192,
       borderRadius: 96,
-      border:"2px solid #2196f3",
+      border: "2px solid #2196f3",
       transition: ".3s ease",
       backfaceVisibility: "hidden",
       "&:hover": {
@@ -103,6 +103,35 @@ const useStyles = makeStyles((theme) => ({
   errText: {
     fontSize: 12,
     color: "red",
+  },
+  experience: {
+    "&-card": {
+      padding: "8px 16px",
+      transition: "all 0.2s ease",
+      "&:hover": {
+        transform: "scale(1.02)",
+        cursor: "pointer",
+        transition: "all 0.2s ease",
+      },
+    },
+    "&-text-sm": {
+      fontSize: 12,
+      color: "grey",
+    },
+    "&-text-md": {
+      fontSize: 14,
+      color: "grey",
+    },
+    "&-box-jc-sp": {
+      display: "flex",
+      justifyContent: "space-between",
+      paddingInline: "4px",
+    },
+    "&-box-jc-r": {
+      display: "flex",
+      justifyContent: "right",
+      paddingInline: "4px",
+    },
   },
 }));
 
