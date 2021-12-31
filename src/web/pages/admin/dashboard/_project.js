@@ -31,6 +31,7 @@ import {
   editProject,
   fetchAllProjects,
   saveProject,
+  uploadProjectApp,
   uploadTechIcon,
 } from "./logic";
 import Portal from "../../../shared/portal";
@@ -47,6 +48,7 @@ const Project = (props) => {
    *
    */
   const iconRef = useRef([]);
+  const appRef = useRef();
   const isMounted = useRef(false);
   const [open, setOpen] = useState(0);
   const classes = useStyles();
@@ -226,6 +228,12 @@ const Project = (props) => {
                         formik.touched.repo ? formik.errors.repo : undefined
                       }
                     />
+                    <input
+                      type="file"
+                      onChange={uploadProjectApp(formik, toast.addToast)}
+                      ref={(e) => (appRef.current = e)}
+                      hidden
+                    />
                     <TextField
                       fullWidth
                       sx={{ marginTop: "12px" }}
@@ -234,6 +242,13 @@ const Project = (props) => {
                           <InputAdornment position="start">
                             <BiLink />
                             &nbsp;
+                          </InputAdornment>
+                        ),
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <IconButton onClick={e => appRef.current.click() } size="small">
+                              <Upload />
+                            </IconButton>
                           </InputAdornment>
                         ),
                       }}

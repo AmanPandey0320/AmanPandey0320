@@ -128,7 +128,7 @@ export const fetchAboutMe = (formik, addToast) => {
  */
 export const uploadTechIcon = (formik, idx) => (e) => {
   const file = e.target.files[0];
-  console.log(file);
+  // console.log(file);
   if (Boolean(file) === false) {
     return;
   }
@@ -141,7 +141,7 @@ export const uploadTechIcon = (formik, idx) => (e) => {
       getDownloadURL(storageRef)
         .then((url) => {
           formik.setFieldValue(`tech[${idx}].icon`, url);
-          console.log(url);
+          // console.log(url);
         })
         .catch((err) => {
           console.log("download url upload exp icon image----->", err);
@@ -397,7 +397,7 @@ export const editProject = (idx, data, formik) => (e) => {
  * @param {*} setData
  * @returns
  */
- export const deleteProject = (idx, data, setData, addToast) => (e) => {
+export const deleteProject = (idx, data, setData, addToast) => (e) => {
   const newData = data?.filter((e, i) => i !== idx);
   const { id } = data[idx];
   const ref = doc(db, "project", id);
@@ -415,5 +415,39 @@ export const editProject = (idx, data, formik) => (e) => {
         appearance: "error",
       });
       return;
+    });
+};
+
+/**
+ *
+ * @param {*} formik
+ * @returns
+ */
+export const uploadProjectApp = (formik, addToast) => (e) => {
+  const file = e.target.files[0];
+  console.log(file);
+  if (Boolean(file) === false) {
+    return;
+  }
+  const extention = file.type.split("/")[1];
+  const fileName = v4();
+  const path = `util/other-files/${fileName}-${Date.now()}.${extention}`;
+  const storageRef = ref(storage, path);
+  uploadBytes(storageRef, file)
+    .then((snapshot) => {
+      getDownloadURL(storageRef)
+        .then((url) => {
+          formik.setFieldValue("link", url);
+          console.log(url);
+        })
+        .catch((err) => {
+          console.log("download url upload exp app upload----->", err);
+        });
+    })
+    .catch((err) => {
+      console.log("upload image app upload err icon------>", err);
+      addToast(err.message ? err.message : "Some error occured", {
+        appearance: "error",
+      });
     });
 };
