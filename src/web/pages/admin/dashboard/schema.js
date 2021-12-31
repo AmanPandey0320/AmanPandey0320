@@ -51,3 +51,30 @@ export const ExperienceSchema = Yup.object().shape({
     )
     .min(1, "Atleast 1 skill is needed"),
 });
+
+/**
+ * @description project validation schema
+ */
+export const projectSchema = Yup.object().shape({
+  name: Yup.string().required("Required"),
+  desc: Yup.string()
+    .required("Required")
+    .min(10, "minimum 10 characters needed")
+    .max(100, "only 100 characters allowed"),
+  repo: Yup.string().required("Required"),
+  link: Yup.string(),
+  from: Yup.date().required("Required"),
+  present: Yup.boolean().required().default(false),
+  to: Yup.date().when("present", {
+    is: false,
+    then: Yup.date().required("Required"),
+  }),
+  tech: Yup.array()
+    .of(
+      Yup.object().shape({
+        text: Yup.string().required("Skill name is required"),
+        icon: Yup.string().required("Skill icon is required"),
+      })
+    )
+    .min(1, "Atleast 1 skill is needed"),
+});

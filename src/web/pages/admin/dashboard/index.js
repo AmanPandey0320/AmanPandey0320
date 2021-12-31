@@ -22,6 +22,7 @@ import Education from "./_education";
 import AboutMe from "./_aboutMe";
 import Experience from "./_experience";
 import { RiUser2Fill } from "react-icons/ri";
+import Project from "./_project";
 
 const clientKey = process.env.REACT_APP_CLIENT_KEY;
 
@@ -126,6 +127,7 @@ const Dashboard = () => {
         {query.get("open") === "0" && <Education />}
         {query.get("open") === "1" && <AboutMe />}
         {query.get("open") === "2" && <Experience />}
+        {query.get("open") === "3" && <Project />}
       </Box>
     </Box>
   );

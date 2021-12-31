@@ -54,7 +54,7 @@ export const uploadProfileImage = (formik) => (e) => {
  */
 export const uploadSkillIcon = (formik, idx) => (e) => {
   const file = e.target.files[0];
-  if (Boolean(file)) {
+  if (Boolean(file) === false) {
     return;
   }
   const extention = file.type.split("/")[1];
@@ -118,7 +118,7 @@ export const fetchAboutMe = (formik, addToast) => {
     });
 };
 
-/**Experience */
+/**project */
 
 /**
  *
@@ -128,7 +128,8 @@ export const fetchAboutMe = (formik, addToast) => {
  */
 export const uploadTechIcon = (formik, idx) => (e) => {
   const file = e.target.files[0];
-  if (Boolean(file)) {
+  console.log(file);
+  if (Boolean(file) === false) {
     return;
   }
   const extention = file.type.split("/")[1];
@@ -140,6 +141,7 @@ export const uploadTechIcon = (formik, idx) => (e) => {
       getDownloadURL(storageRef)
         .then((url) => {
           formik.setFieldValue(`tech[${idx}].icon`, url);
+          console.log(url);
         })
         .catch((err) => {
           console.log("download url upload exp icon image----->", err);
@@ -167,7 +169,7 @@ export const saveExperience = ({
   ...rest
 }) => {
   return new Promise((resolve, reject) => {
-    const newDoc = Boolean(id);
+    const newDoc = !Boolean(id);
     const docId = id ? id : `${v4()}-${Date.now()}`;
     const docRef = doc(db, "experience", docId);
     setDoc(docRef, { org, from, to, role, contri, tech, present })
@@ -277,4 +279,141 @@ export const editExperience = (idx, data, formik) => (e) => {
     contri,
     tech,
   });
+};
+
+/**PROJECTS */
+
+export const saveProject = ({
+  id,
+  name,
+  desc,
+  repo,
+  link,
+  from,
+  to,
+  present,
+  tech,
+  ...rest
+}) => {
+  return new Promise((resolve, reject) => {
+    const newDoc = !Boolean(id);
+    const docId = id ? id : `${v4()}-${Date.now()}`;
+    const docRef = doc(db, "project", docId);
+    setDoc(docRef, { name, desc, repo, link, from, to, present, tech })
+      .then((snapshot) => {
+        const data = {
+          name,
+          desc,
+          repo,
+          link,
+          from,
+          to,
+          present,
+          tech,
+          id: docId,
+        };
+        resolve({
+          newDoc,
+          data,
+          saved: true,
+          id: docId,
+        });
+        return;
+      })
+      .catch((err) => {
+        reject(err);
+        return;
+      });
+  });
+};
+/**
+ *
+ * @param {*} handler
+ */
+export const fetchAllProjects = (handler) => {
+  const ref = collection(db, "project");
+  const q = query(ref, orderBy("to", "desc"));
+  getDocs(q)
+    .then((snapshots) => {
+      let data = [];
+      snapshots.forEach((snapshot) => {
+        const expr = snapshot.data();
+        expr.id = snapshot.id;
+        const from = new Date(expr.from.seconds * 1000);
+        expr.kfrom = `${from.getMonth() + 1}/${from.getFullYear()}`;
+        if (expr.to) {
+          const to = new Date(expr.to.seconds * 1000);
+          expr.kto = `${to.getMonth() + 1}/${to.getFullYear()}`;
+        }
+        if (expr.present === true) {
+          expr.kto = "Present";
+        }
+        data.push(expr);
+      });
+      handler(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+/**
+ *
+ * @param {*} idx
+ * @param {*} data
+ * @param {*} formik
+ * @returns
+ */
+export const editProject = (idx, data, formik) => (e) => {
+  if (Boolean(data) === false) {
+    return;
+  }
+  const doc = data[idx];
+  if (Boolean(doc) === false) {
+    return;
+  }
+  let { id, name, desc, repo, link, from, to, present, tech } = doc;
+  from = new Date(from.seconds * 1000);
+  if (Boolean(to)) {
+    to = new Date(to.seconds * 1000);
+  }
+  formik.setValues({
+    id,
+    name,
+    desc,
+    repo,
+    link,
+    from,
+    to,
+    present,
+    tech,
+  });
+};
+
+/**
+ *
+ * @param {*} idx
+ * @param {*} data
+ * @param {*} setData
+ * @returns
+ */
+ export const deleteProject = (idx, data, setData, addToast) => (e) => {
+  const newData = data?.filter((e, i) => i !== idx);
+  const { id } = data[idx];
+  const ref = doc(db, "project", id);
+  deleteDoc(ref)
+    .then((res) => {
+      setData(newData);
+      addToast("Deleted successfully", {
+        appearance: "info",
+      });
+      return;
+    })
+    .catch((err) => {
+      console.log("delete project err----->", err);
+      addToast(err.message ? err.message : "Some error occured", {
+        appearance: "error",
+      });
+      return;
+    });
 };

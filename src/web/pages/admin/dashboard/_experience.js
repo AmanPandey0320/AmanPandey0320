@@ -294,7 +294,9 @@ const Experience = () => {
                       {formik.values.tech?.map((ts, i) => (
                         <Grid key={i} item>
                           <input
-                            ref={(e) => (iconRef.current[i] = e)}
+                            ref={(e) => {
+                              iconRef.current[i] = e;
+                            }}
                             type="file"
                             name="file"
                             accept="image/png image/jpeg"
