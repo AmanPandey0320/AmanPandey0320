@@ -8,22 +8,22 @@ function NavWrapper() {
     <NavBar className={scrollDirection}>
       <Toolbar>
         <Item>
-          <a>About</a>
+          <span>About</span>
         </Item>
         <Item>
-          <a>Education</a>
+          <span>Education</span>
         </Item>
         <Item>
-          <a>Skills</a>
+          <span>Skills</span>
         </Item>
         <Item>
-          <a>Experience</a>
+          <span>Experience</span>
         </Item>
         <Item>
-          <a>Project</a>
+          <span>Project</span>
         </Item>
         <Item>
-          <a>Resume</a>
+          <span>Resume</span>
         </Item>
       </Toolbar>
     </NavBar>

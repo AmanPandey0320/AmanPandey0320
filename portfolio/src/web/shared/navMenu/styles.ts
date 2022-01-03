@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import constants from "../../../assets/constant";
 
 export const NavMenuWrapper = styled.div`
@@ -7,8 +7,6 @@ export const NavMenuWrapper = styled.div`
   z-index: 9;
   @media only screen and (max-width: 600px) {
     display: block;
-    height: 100vh;
-    width: 100vw;
   }
 
   /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -111,12 +109,13 @@ export const MenuNav = styled.nav`
   &.open {
     z-index: 9;
     opacity: 1;
-    transform: translate(0px, 0px);
+    transform: translate(0px, 0px) scale(1);
     transition: opacity 0.5s ease-out, transform 0.5s;
   }
   &.close {
     opacity: 0;
-    transform: translate(-600px, 0px);
+    display:none;
+    transform: translate(-600px, 0px) scale(0);
     transition: opacity 0.5s ease-out, transform 0.5s;
   }
 `;

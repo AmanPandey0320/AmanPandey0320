@@ -1,8 +1,9 @@
 import "./App.css";
 import Home from "./pages/home";
+import HtmlTag from "./shared/htmlTags";
 import NavBar from "./shared/navbar";
 import NavMenu from "./shared/navMenu";
-import { GlobalCssBase } from "./shared/wrapper";
+import { GlobalCssBase, PageWrapper } from "./shared/wrapper";
 
 function App() {
   return (
@@ -10,7 +11,13 @@ function App() {
       <GlobalCssBase />
       <NavBar />
       <NavMenu />
-      <Home />
+      <PageWrapper>
+        <HtmlTag close={true} name="html">
+          <HtmlTag close={true} name="body">
+            <Home />
+          </HtmlTag>
+        </HtmlTag>
+      </PageWrapper>
     </div>
   );
 }

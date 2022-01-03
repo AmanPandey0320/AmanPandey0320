@@ -82,7 +82,7 @@ export const Item = styled.li`
     transform: scaleX(1);
     transform-origin: bottom left;
   }
-  & > a {
+  & > span {
     font-size: 16px;
     color: ${constants.color.foreground};
     text-transform: uppercase;

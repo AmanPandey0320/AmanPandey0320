@@ -7,6 +7,7 @@ import constants from "../../../assets/constant";
 export const GlobalCssBase = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vujahday+Script&display=swap');
 * {
 	padding: 0;
 	margin: 0;
@@ -62,4 +63,33 @@ export const PageWrapper = styled.div`
   max-width: calc(100vw - 8px);
   padding-inline: 10px;
   overflow-x: hidden;
+
+  @media only screen and (max-width: 600px) {
+    padding-top: 50px;
+    padding-inline:10px;
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    padding-top: 96px;
+    padding-inline:12px;
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    padding-top: 128px;
+    padding-inline:14px;
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    padding-top: 128px;
+    padding-inline:16px;
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    padding-top: 96px;
+    padding-inline:16px;
+  }
 `;
