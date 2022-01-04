@@ -17,6 +17,11 @@ export const P = styled.p<StyledTextProps>`
   font-weight: ${(props) => (props?.weight ? props.weight : 400)};
   font-family: ${(props) => (props?.font ? props.font : "sans-serif")};
   text-align: ${(props) => (props?.align ? props?.align : "left")};
+  &.shrink {
+    @media only screen and (max-width: 600px) {
+      max-width: 300px;
+    }
+  }
 `;
 
 export const H1 = styled.h1<StyledTextProps>`

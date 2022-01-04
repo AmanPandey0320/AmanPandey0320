@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from "styled-components";
-import constants from "../../../assets/constant";
 
 /**
  * @description Global CSS
@@ -19,7 +18,7 @@ export const GlobalCssBase = createGlobalStyle`
 }
 html,
 body {
-  background-color: ${constants.color.background};
+  background-color: #fff;
 	font-size: 16px;
 	font-family: 'Roboto', 'Montserrat', -apple-system, BlinkMacSystemFont,
 		'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
@@ -30,7 +29,7 @@ body {
 	scrollbar-color: #ff4d00 #f1f1f1;
 	scrollbar-width:thin;
   overflow-x:hidden;
-  
+}
   /* width */
 ::-webkit-scrollbar {
   width:8px;
@@ -52,44 +51,86 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
-}`;
+`;
 
 /**
  * @description page wrapper
  */
 export const PageWrapper = styled.div`
   color: white;
-  width: calc(100vw - 8px);
-  max-width: calc(100vw - 8px);
-  padding-inline: 10px;
+  width: calc(100vw);
+  max-width: calc(100vw);
   overflow-x: hidden;
-
+  z-index: 3;
   @media only screen and (max-width: 600px) {
     padding-top: 50px;
-    padding-inline:10px;
+    padding-inline: 10px;
   }
 
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 600px) {
     padding-top: 96px;
-    padding-inline:12px;
+    padding-inline: 12px;
   }
 
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px) {
-    padding-top: 128px;
-    padding-inline:14px;
+    padding-top: 108px;
+    padding-inline: 14px;
   }
 
   /* Large devices (laptops/desktops, 992px and up) */
   @media only screen and (min-width: 992px) {
-    padding-top: 128px;
-    padding-inline:16px;
+    padding-top: 108px;
+    padding-inline: 16px;
   }
 
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) {
-    padding-top: 96px;
-    padding-inline:16px;
+    padding-top: 64px;
+    padding-inline: 16px;
   }
+
+  &.h {
+    min-height: 100vh;
+  }
+
+  &.b {
+    @media only screen and (max-width: 600px) {
+      padding-top: 24px;
+      padding-inline: 10px;
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+      padding-top: 48px;
+      padding-inline: 12px;
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+      padding-top: 54px;
+      padding-inline: 14px;
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+      padding-top: 54px;
+      padding-inline: 16px;
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+      padding-top: 32px;
+      padding-inline: 16px;
+    }
+  }
+`;
+
+export const MainWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 100vh;
+  overflow-y: scroll;
 `;

@@ -35,8 +35,8 @@ export const NavMenuWrapper = styled.div`
  */
 export const HamBurgerWrapper = styled.div`
   position: fixed;
-  top: 16px;
-  right: 16px;
+  top: 24px;
+  right: 24px;
   z-index: 19;
   &:hover {
     cursor: pointer;
@@ -52,8 +52,7 @@ export const HamBurgerWrapper = styled.div`
       position: relative;
       z-index: 9;
       // transform-origin: 4px 0px;
-      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+      transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
       &:nth-child(1) {
         transform: rotate(45deg) translate(13px, 0px);
       }
@@ -100,7 +99,7 @@ export const MenuNav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.85);
   & > div {
     color: white;
   }
@@ -114,7 +113,7 @@ export const MenuNav = styled.nav`
   }
   &.close {
     opacity: 0;
-    display:none;
+    display: none;
     transform: translate(-600px, 0px) scale(0);
     transition: opacity 0.5s ease-out, transform 0.5s;
   }

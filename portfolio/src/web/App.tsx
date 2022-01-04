@@ -1,9 +1,10 @@
 import "./App.css";
+import Education from "./pages/Education";
 import Home from "./pages/home";
-import HtmlTag from "./shared/htmlTags";
+import Canvas from "./shared/canvas";
 import NavBar from "./shared/navbar";
 import NavMenu from "./shared/navMenu";
-import { GlobalCssBase, PageWrapper } from "./shared/wrapper";
+import { GlobalCssBase, MainWrapper } from "./shared/wrapper";
 
 function App() {
   return (
@@ -11,13 +12,11 @@ function App() {
       <GlobalCssBase />
       <NavBar />
       <NavMenu />
-      <PageWrapper>
-        <HtmlTag close={true} name="html">
-          <HtmlTag close={true} name="body">
-            <Home />
-          </HtmlTag>
-        </HtmlTag>
-      </PageWrapper>
+      <Canvas />
+      <MainWrapper>
+        <Home />
+        <Education />
+      </MainWrapper>
     </div>
   );
 }

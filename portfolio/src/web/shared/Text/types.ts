@@ -14,4 +14,5 @@ export interface TextProps {
   font?: string;
   children?: any;
   component?: string;
+  className?: string;
 }
