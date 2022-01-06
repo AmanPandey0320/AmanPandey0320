@@ -133,7 +133,7 @@ export const MenuItem = styled.li`
   font-size: 17px;
   color: ${constants.color.foreground};
   font-family: "Patrick Hand", cursive;
-  :hover{
+  &:hover{
     color: ${constants.color.text};
   }
   }

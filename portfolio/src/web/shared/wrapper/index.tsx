@@ -29,27 +29,27 @@ body {
 	scrollbar-color: #ff4d00 #f1f1f1;
 	scrollbar-width:thin;
   overflow-x:hidden;
-}
   /* width */
-::-webkit-scrollbar {
-  width:8px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-  border-radius: 0px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #ff4d00; 
-   border-radius: 0px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  ::-webkit-scrollbar {
+    width:8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 0px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ff4d00; 
+     border-radius: 0px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 }
 `;
 
@@ -132,5 +132,6 @@ export const MainWrapper = styled.div`
   top: 0;
   left: 0;
   max-height: 100vh;
+  max-width: calc(100vw-4px);
   overflow-y: scroll;
 `;

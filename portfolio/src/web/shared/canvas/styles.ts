@@ -33,13 +33,13 @@ export const Square = styled.div`
     width: 200px;
     top: 4vh;
     left: 4vw;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${constants.color.ripple};
     animation: ${spin} 10s ease-in forwards infinite;
   }
   &:nth-child(2) {
     height: 100px;
     width: 100px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${constants.color.ripple};
     bottom: 8vh;
     left: 8vw;
     animation: ${spin} 13s ease-in forwards infinite;
@@ -47,7 +47,7 @@ export const Square = styled.div`
   &:nth-child(3) {
     height: 200px;
     width: 200px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${constants.color.ripple};
     top: 40vh;
     left: 25vw;
     animation: ${spin} 13s ease-in forwards infinite;
@@ -55,7 +55,7 @@ export const Square = styled.div`
   &:nth-child(4) {
     height: 50px;
     width: 50px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${constants.color.ripple};
     top: 32vh;
     left: 32vw;
     animation: ${spin} 7s ease-in forwards infinite;
@@ -63,7 +63,7 @@ export const Square = styled.div`
   &:nth-child(5) {
     height: 100px;
     width: 100px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${constants.color.ripple};
     top: 40vh;
     left: 64vw;
     animation: ${spin} 7s ease-in forwards infinite;
@@ -71,7 +71,7 @@ export const Square = styled.div`
   &:nth-child(6) {
     height: 200px;
     width: 200px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${constants.color.ripple};
     top: 50vh;
     left: 50vw;
     animation: ${spin} 15s ease-in forwards infinite;
@@ -79,7 +79,7 @@ export const Square = styled.div`
   &:nth-child(7) {
     height: 300px;
     width: 300px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${constants.color.ripple};
     top: 20vh;
     right: 10vw;
     animation: ${spin} 17s ease-in forwards infinite;
@@ -87,7 +87,7 @@ export const Square = styled.div`
   &:nth-child(8) {
     height: 200px;
     width: 200px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${constants.color.ripple};
     top: 60vh;
     right: 5vw;
     animation: ${spin} 12s ease-in forwards infinite;
@@ -95,7 +95,7 @@ export const Square = styled.div`
   &:nth-child(9) {
     height: 200px;
     width: 200px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${constants.color.ripple};
     top: 8vh;
     right: 50vw;
     animation: ${spin} 9s ease-in forwards infinite;
@@ -103,7 +103,7 @@ export const Square = styled.div`
   &:nth-child(10) {
     height: 150px;
     width: 150px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${constants.color.ripple};
     top: 50vh;
     left: 5vw;
     animation: ${spin} 11s ease-in forwards infinite;
@@ -111,7 +111,7 @@ export const Square = styled.div`
   &:nth-child(11) {
     height: 200px;
     width: 200px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${constants.color.ripple};
     bottom: 5vh;
     left: 25vw;
     animation: ${spin} 11s ease-in forwards infinite;
@@ -119,9 +119,17 @@ export const Square = styled.div`
   &:nth-child(12) {
     height: 130px;
     width: 130px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${constants.color.ripple};
     top: 1vh;
     right: 25vw;
     animation: ${spin} 7s ease-in forwards infinite;
+  }
+  &:nth-child(13) {
+    height: 100px;
+    width: 100px;
+    background-color: ${constants.color.ripple};
+    top: 10vh;
+    right: 6vw;
+    animation: ${spin} 8s ease-in forwards infinite;
   }
 `;

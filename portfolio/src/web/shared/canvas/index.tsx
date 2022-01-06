@@ -15,6 +15,7 @@ const Canvas = () => {
       <Square></Square>
       <Square></Square>
       <Square></Square>
+      <Square></Square>
     </CanvasWrapper>
   );
 };

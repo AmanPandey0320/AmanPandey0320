@@ -1,5 +1,5 @@
 import "./App.css";
-import Education from "./pages/Education";
+import Education from "./pages/education";
 import Home from "./pages/home";
 import Canvas from "./shared/canvas";
 import NavBar from "./shared/navbar";

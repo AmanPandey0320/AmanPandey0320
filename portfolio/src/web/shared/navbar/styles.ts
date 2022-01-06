@@ -8,6 +8,7 @@ export const NavBar = styled("div")`
   color: #ff4d00;
   top: 0;
   width: 100%;
+  z-index:9999;
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
     display: none;
