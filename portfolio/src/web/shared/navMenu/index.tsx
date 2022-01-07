@@ -27,7 +27,6 @@ const NavMenu = () => {
           <MenuToolBar>
             <MenuItem className={open ? "open" : "close"}>About</MenuItem>
             <MenuItem className={open ? "open" : "close"}>Education</MenuItem>
-            <MenuItem className={open ? "open" : "close"}>Skill</MenuItem>
             <MenuItem className={open ? "open" : "close"}>Experience</MenuItem>
             <MenuItem className={open ? "open" : "close"}>Project</MenuItem>
             <MenuItem className={open ? "open" : "close"}>Resume</MenuItem>

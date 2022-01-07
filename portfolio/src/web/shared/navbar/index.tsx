@@ -14,9 +14,6 @@ function NavWrapper() {
           <span>Education</span>
         </Item>
         <Item>
-          <span>Skills</span>
-        </Item>
-        <Item>
           <span>Experience</span>
         </Item>
         <Item>

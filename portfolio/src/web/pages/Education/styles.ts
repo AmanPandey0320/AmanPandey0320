@@ -1,16 +1,29 @@
 import styled from "styled-components";
 
 export const EduItem = styled.div`
-  max-width: 300px;
+  max-width: 320px;
   padding: 8px;
   border: 2px solid #bababa;
-  border-radius: 4px;
+  border-radius: 8px;
   transition: all 0.25s;
   &:hover {
     transform: scale(1.02) translate(0px, -4px);
-    box-shadow: 0px 0px 8px white;
+    box-shadow: 0px 0px 12px white;
     transition: all 0.25s;
     cursor: pointer;
+  }
+`;
+
+export const AnimationWrapper = styled.div`
+  &.visible {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.5s;
+  }
+  &.in-visible {
+    transform: scale(0.5);
+    opacity: 0;
+    transition: all 0.5s;
   }
 `;
 
