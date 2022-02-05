@@ -1,22 +1,21 @@
-import { useAnimation } from "framer-motion";
-import { createRef, useEffect } from "react";
+// import { useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import data from "../../../config/data";
-import useOnScreen from "../../../lib/useOnScreen";
 import Grid from "../../shared/grid";
 import HtmlTag from "../../shared/htmlTags";
 import Text from "../../shared/Text";
 import WobblyText from "../../shared/wobbleText";
 import { PageWrapper } from "../../shared/wrapper";
-import { AnimatedContainer, AnimationWrapper, EduItem, EduWrapper } from "./styles";
+import {
+  AnimatedContainer,
+  AnimationWrapper,
+  EduItem,
+  EduWrapper,
+} from "./styles";
 
 const Education = () => {
-  const ref = createRef<HTMLDivElement>();
-  const inView = useOnScreen(ref);
-  const animate = useAnimation();
-  
-  useEffect(() => {
-    
-  },[inView])
+
+  const { ref, inView } = useInView();
 
   return (
     <div id="education">
@@ -68,9 +67,7 @@ const Education = () => {
                 </Grid.Item>
               ))}
             </Grid.Row>
-            <AnimatedContainer>
-
-            </AnimatedContainer>
+            <AnimatedContainer></AnimatedContainer>
           </EduWrapper>
         </HtmlTag>
       </PageWrapper>
