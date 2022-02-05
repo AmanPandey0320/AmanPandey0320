@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const EduItem = styled.div`
@@ -57,4 +58,12 @@ export const EduWrapper = styled.div`
     margin-top: 64px;
     margin-bottom: 64px;
   }
+`;
+
+/**
+ * @description animated row flex
+ */
+export const AnimatedContainer = styled(motion.div)`
+  flex-flow: row wrap;
+  justify-content: space-between;
 `;

@@ -12,6 +12,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/styled-components": "^5.1.19",
     "ajv": "^8.8.2",
+    "framer-motion": "^4.1.17",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-lottie": "^1.2.3",

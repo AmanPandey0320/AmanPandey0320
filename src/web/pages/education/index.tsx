@@ -1,4 +1,5 @@
-import { createRef } from "react";
+import { useAnimation } from "framer-motion";
+import { createRef, useEffect } from "react";
 import data from "../../../config/data";
 import useOnScreen from "../../../lib/useOnScreen";
 import Grid from "../../shared/grid";
@@ -6,11 +7,16 @@ import HtmlTag from "../../shared/htmlTags";
 import Text from "../../shared/Text";
 import WobblyText from "../../shared/wobbleText";
 import { PageWrapper } from "../../shared/wrapper";
-import { AnimationWrapper, EduItem, EduWrapper } from "./styles";
+import { AnimatedContainer, AnimationWrapper, EduItem, EduWrapper } from "./styles";
 
 const Education = () => {
   const ref = createRef<HTMLDivElement>();
   const inView = useOnScreen(ref);
+  const animate = useAnimation();
+  
+  useEffect(() => {
+    
+  },[inView])
 
   return (
     <div id="education">
@@ -62,6 +68,9 @@ const Education = () => {
                 </Grid.Item>
               ))}
             </Grid.Row>
+            <AnimatedContainer>
+
+            </AnimatedContainer>
           </EduWrapper>
         </HtmlTag>
       </PageWrapper>
