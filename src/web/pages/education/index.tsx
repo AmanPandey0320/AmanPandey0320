@@ -2,19 +2,15 @@
 import { useInView } from "react-intersection-observer";
 import ReactTooltip from "react-tooltip";
 import data from "../../../config/data";
+import { ScaleAllAnimation } from "../../shared/animation/scale";
+import { SpinAnimation } from "../../shared/animation/spin";
 import Grid from "../../shared/grid";
 import HtmlTag from "../../shared/htmlTags";
 import { Tag } from "../../shared/htmlTags/styles";
 import Text from "../../shared/Text";
 import WobblyText from "../../shared/wobbleText";
 import { PageWrapper } from "../../shared/wrapper";
-import {
-  AnimatedContainer,
-  AnimationWrapper,
-  EduItem,
-  EduWrapper,
-  SkillAnimationWrapper,
-} from "./styles";
+import { EduItem, EduWrapper } from "./styles";
 
 const Education = () => {
   const { ref, inView } = useInView();
@@ -32,7 +28,10 @@ const Education = () => {
             <Grid.Row justify="space-evenly">
               {data.education.map((edu) => (
                 <Grid.Item key={edu.key}>
-                  <AnimationWrapper
+                  <ScaleAllAnimation
+                    from={0}
+                    to={1}
+                    easeIn={true}
                     className={inView ? "visible" : "in-visible"}
                   >
                     <EduItem>
@@ -69,11 +68,10 @@ const Education = () => {
                         </Grid.Item>
                       </Grid.Row>
                     </EduItem>
-                  </AnimationWrapper>
+                  </ScaleAllAnimation>
                 </Grid.Item>
               ))}
             </Grid.Row>
-            <AnimatedContainer></AnimatedContainer>
           </EduWrapper>
           <HtmlTag name="p" close={true}>
             <div ref={refSkill}>
@@ -85,7 +83,10 @@ const Education = () => {
                     data-iscapture="true"
                     key={skill.key}
                   >
-                    <SkillAnimationWrapper
+                    <SpinAnimation
+                      easeIn={true}
+                      from={360}
+                      to={0}
                       className={inViewSkill ? "visible" : "in-visible"}
                     >
                       <img
@@ -94,7 +95,7 @@ const Education = () => {
                         width="48px"
                         alt={skill.name}
                       />
-                    </SkillAnimationWrapper>
+                    </SpinAnimation>
                   </Grid.Item>
                 ))}
               </Grid.Row>

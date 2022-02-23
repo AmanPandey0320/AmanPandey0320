@@ -1,5 +1,6 @@
 import "./App.css";
 import Education from "./pages/education";
+import Experience from "./pages/experience";
 import Home from "./pages/home";
 import Canvas from "./shared/canvas";
 import NavBar from "./shared/navbar";
@@ -16,6 +17,7 @@ function App() {
       <MainWrapper>
         <Home />
         <Education />
+        <Experience />
       </MainWrapper>
     </div>
   );

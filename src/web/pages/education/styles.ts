@@ -14,19 +14,6 @@ export const EduItem = styled.div`
   }
 `;
 
-export const AnimationWrapper = styled.div`
-  &.visible {
-    transform: scale(1);
-    opacity: 1;
-    transition: all 0.5s;
-  }
-  &.in-visible {
-    transform: scale(0.5);
-    opacity: 0;
-    transition: all 0.5s;
-  }
-`;
-
 export const EduWrapper = styled.div`
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
@@ -65,19 +52,4 @@ export const EduWrapper = styled.div`
 export const AnimatedContainer = styled.div`
   flex-flow: row wrap;
   justify-content: space-between;
-`;
-
-export const SkillAnimationWrapper = styled.div`
-  &.visible {
-    transform: scale(0deg);
-    opacity: 1;
-    transition: all 1s;
-    transition-delay: 0.25s;
-  }
-  &.in-visible {
-    transform: rotate(360deg);
-    opacity: 0;
-    transition: all 1s;
-    transition-delay: 0.25s;
-  }
 `;

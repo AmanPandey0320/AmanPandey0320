@@ -15,7 +15,7 @@ function NavWrapper() {
           <Alink href="#education">Education</Alink>
         </Item>
         <Item>
-          <Alink>Experience</Alink>
+          <Alink href="#experience">Experience</Alink>
         </Item>
         <Item>
           <Alink>Project</Alink>
