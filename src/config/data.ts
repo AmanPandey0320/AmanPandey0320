@@ -50,6 +50,96 @@ const education = [
     },
   },
 ];
-const data = { profile, education };
+
+const skills = [
+  {
+    key: "SKILL001",
+    name: "C",
+    image: "https://img.icons8.com/color/48/000000/c.png",
+  },
+  {
+    key: "SKILL002",
+    name: "C++",
+    image: "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png",
+  },
+  {
+    key: "SKILL003",
+    name: "HTML",
+    image: "https://img.icons8.com/color/48/000000/html-5--v1.png",
+  },
+  {
+    key: "SKILL004",
+    name: "CSS",
+    image: "https://img.icons8.com/color/48/000000/css3.png",
+  },
+  {
+    key: "SKILL005",
+    name: "JavaScript",
+    image: "https://img.icons8.com/color/48/000000/javascript--v1.png",
+  },
+  {
+    key: "SKILL006",
+    name: "ReactJS",
+    image: "https://img.icons8.com/plasticine/100/000000/react.png",
+  },
+  {
+    key: "SKILL007",
+    name: "Node.JS",
+    image: "https://img.icons8.com/fluency/48/000000/node-js.png",
+  },
+  {
+    key: "SKILL009",
+    name: "Typesctipt",
+    image: "https://img.icons8.com/color/48/000000/typescript.png",
+  },
+  {
+    key: "SKILL010",
+    name: "Data Structure and Algorithm",
+    image:
+      "https://img.icons8.com/external-xnimrodx-lineal-gradient-xnimrodx/64/000000/external-flowchart-infographic-and-chart-xnimrodx-lineal-gradient-xnimrodx.png",
+  },
+  {
+    key: "SKILL013",
+    name: "Git",
+    image: "https://img.icons8.com/color/48/000000/git.png",
+  },
+  {
+    key: "SKILL011",
+    name: "Github",
+    image: "https://img.icons8.com/nolan/64/github.png",
+  },
+  {
+    key: "SKILL014",
+    name: "DBMS",
+    image: "https://img.icons8.com/fluency/64/000000/database.png",
+  },
+  {
+    key: "SKILL015",
+    name: "MySQL",
+    image: "https://img.icons8.com/fluency/48/000000/mysql-logo.png",
+  },
+  {
+    key: "SKILL016",
+    name: "MongoDB",
+    image: "https://img.icons8.com/color/48/000000/mongodb.png",
+  },
+  {
+    key: "SKILL017",
+    name: "Firebase",
+    image: "https://img.icons8.com/color/48/000000/firebase.png",
+  },
+  {
+    key: "SKILL018",
+    name: "Material-UI",
+    image: "https://img.icons8.com/color/48/000000/material-ui.png",
+  },
+  {
+    key: "SKILL019",
+    name: "ReduxJS",
+    image: "https://img.icons8.com/color/48/000000/redux.png",
+  },
+];
+
+const data = { profile, education, skills };
 
 export default data;

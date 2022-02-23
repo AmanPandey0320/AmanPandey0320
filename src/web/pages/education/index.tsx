@@ -1,8 +1,10 @@
 // import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ReactTooltip from "react-tooltip";
 import data from "../../../config/data";
 import Grid from "../../shared/grid";
 import HtmlTag from "../../shared/htmlTags";
+import { Tag } from "../../shared/htmlTags/styles";
 import Text from "../../shared/Text";
 import WobblyText from "../../shared/wobbleText";
 import { PageWrapper } from "../../shared/wrapper";
@@ -11,17 +13,21 @@ import {
   AnimationWrapper,
   EduItem,
   EduWrapper,
+  SkillAnimationWrapper,
 } from "./styles";
 
 const Education = () => {
-
   const { ref, inView } = useInView();
+  const { ref: refSkill, inView: inViewSkill } = useInView();
 
   return (
     <div id="education">
       <PageWrapper className="h">
         <HtmlTag name="section" close={true}>
-          <WobblyText small={true} text="Education" />
+          <HtmlTag name="h1">
+            <WobblyText small={true} text="Education" />
+            <Tag width={400} textAlign="right">{`</h1>`}</Tag>
+          </HtmlTag>
           <EduWrapper ref={ref}>
             <Grid.Row justify="space-evenly">
               {data.education.map((edu) => (
@@ -69,6 +75,37 @@ const Education = () => {
             </Grid.Row>
             <AnimatedContainer></AnimatedContainer>
           </EduWrapper>
+          <HtmlTag name="p" close={true}>
+            <div ref={refSkill}>
+              <Grid.Row>
+                {data.skills.map((skill) => (
+                  <Grid.Item
+                    data-tip={skill.name}
+                    data-for="skill"
+                    data-iscapture="true"
+                    key={skill.key}
+                  >
+                    <SkillAnimationWrapper
+                      className={inViewSkill ? "visible" : "in-visible"}
+                    >
+                      <img
+                        src={skill.image}
+                        height="48px"
+                        width="48px"
+                        alt={skill.name}
+                      />
+                    </SkillAnimationWrapper>
+                  </Grid.Item>
+                ))}
+              </Grid.Row>
+            </div>
+            <ReactTooltip
+              place="bottom"
+              type="light"
+              effect="float"
+              id="skill"
+            />
+          </HtmlTag>
         </HtmlTag>
       </PageWrapper>
     </div>

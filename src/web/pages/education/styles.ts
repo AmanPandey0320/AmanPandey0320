@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const EduItem = styled.div`
@@ -63,7 +62,22 @@ export const EduWrapper = styled.div`
 /**
  * @description animated row flex
  */
-export const AnimatedContainer = styled(motion.div)`
+export const AnimatedContainer = styled.div`
   flex-flow: row wrap;
   justify-content: space-between;
+`;
+
+export const SkillAnimationWrapper = styled.div`
+  &.visible {
+    transform: scale(0deg);
+    opacity: 1;
+    transition: all 1s;
+    transition-delay: 0.25s;
+  }
+  &.in-visible {
+    transform: rotate(360deg);
+    opacity: 0;
+    transition: all 1s;
+    transition-delay: 0.25s;
+  }
 `;

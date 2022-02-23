@@ -1,3 +1,4 @@
+import { Alink } from "../link";
 import { useScroll } from "./logic";
 import { Item, NavBar, Toolbar } from "./styles";
 
@@ -8,19 +9,19 @@ function NavWrapper() {
     <NavBar className={scrollDirection}>
       <Toolbar>
         <Item>
-          <span>About</span>
+          <Alink href="#about-me">About</Alink>
         </Item>
         <Item>
-          <span>Education</span>
+          <Alink href="#education">Education</Alink>
         </Item>
         <Item>
-          <span>Experience</span>
+          <Alink>Experience</Alink>
         </Item>
         <Item>
-          <span>Project</span>
+          <Alink>Project</Alink>
         </Item>
         <Item>
-          <span>Resume</span>
+          <Alink>Resume</Alink>
         </Item>
       </Toolbar>
     </NavBar>
