@@ -140,6 +140,33 @@ const skills = [
   },
 ];
 
-const data = { profile, education, skills };
+const experience = [
+  {
+    key: "EXPR01",
+    title: "NIT Jamshedpur",
+    role: "Full Stack Developer",
+    from: "03/2021",
+    to: "present",
+    desc: "I worked with the team to build new website and maintaint the old website.",
+    techStack: ["SKILL004", "SKILL006", "SKILL007", "SKILL015"],
+    link: "https://beta.nitjsr.ac.in/",
+  },
+  {
+    key: "EXPR02",
+    title: "FlexiEle",
+    role: "Intern",
+    from: "07/2021",
+    to: "10/2021",
+    desc: "I worked with the team to make a multi-tenant web application on ReactJS and NodeJS.",
+    techStack: ["SKILL004", "SKILL006", "SKILL019", "SKILL018"],
+  },
+];
+
+const skillsObj:any = skills.reduce(
+  (pre, curr) => ({ ...pre, [curr.key]: curr }),
+  {}
+);
+
+const data = { profile, education, skills, skillsObj,experience };
 
 export default data;

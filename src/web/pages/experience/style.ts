@@ -1,30 +1,33 @@
 import styled from "styled-components";
 
-export const EduItem = styled.div`
-  max-width: 320px;
-  padding: 8px;
-  border: 2px solid #bababa;
-  border-radius: 8px;
+export const ExpItem = styled.div`
+  width: 300px;
+  border-left: 2px solid rgba(138, 25, 255, 1);
+  border-bottom: 2px solid rgba(138, 25, 255, 1);
+  border-radius: 2px;
   transition: all 0.25s;
+  margin-inline: 4px;
   &:hover {
     transform: scale(1.02) translate(0px, -4px);
-    box-shadow: 0px 0px 12px white;
+    box-shadow: -2px 2px 8px rgba(138, 25, 255, 1);
     transition: all 0.25s;
     cursor: pointer;
   }
 `;
 
-export const AnimationWrapper = styled.div`
-  &.visible {
-    transform: scale(1);
-    opacity: 1;
-    transition: all 0.5s;
-  }
-  &.in-visible {
-    transform: scale(0.5);
-    opacity: 0;
-    transition: all 0.5s;
-  }
+export const ExpHeading = styled.div`
+  padding: 8px;
+  width: 300px;
+  background-color: rgba(138, 25, 255, 0.1);
+  color: rgba(138, 25, 255, 1);
+  border-bottom: 2px solid rgba(138, 25, 255, 1);
+`;
+
+export const ExpBody = styled.div`
+  padding: 8px;
+  width: 300px;
+  height: 128px;
+  text-align: justify;
 `;
 
 export const ExpWrapper = styled.div`
