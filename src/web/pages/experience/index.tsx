@@ -41,7 +41,9 @@ const Experience = () => {
                         <div>
                           <ExpHeading>
                             <Grid.Row justify="space-between">
-                              <Grid.Item>{e.title}</Grid.Item>
+                              <Grid.Item>
+                                {e.role}, {e.title}
+                              </Grid.Item>
                               {e.link && (
                                 <Grid.Item>
                                   <Alink target="_blank" href={e.link}>
@@ -58,6 +60,9 @@ const Experience = () => {
                                 </Grid.Item>
                               )}
                             </Grid.Row>
+                            <Text component="span" size="12px" color="rgba(138, 25, 255, 0.75)">
+                              &nbsp;&nbsp;&nbsp;{e.from}-{e.to}
+                            </Text>
                           </ExpHeading>
                           <ExpBody>{e.desc}</ExpBody>
                         </div>

@@ -76,28 +76,30 @@ const Education = () => {
           <HtmlTag name="p" close={true}>
             <div ref={refSkill}>
               <Grid.Row>
-                {data.skills.map((skill) => (
-                  <Grid.Item
-                    data-tip={skill.name}
-                    data-for="skill"
-                    data-iscapture="true"
-                    key={skill.key}
-                  >
-                    <SpinAnimation
-                      easeIn={true}
-                      from={360}
-                      to={0}
-                      className={inViewSkill ? "visible" : "in-visible"}
+                {data.skills
+                  .filter((sk) => sk.show)
+                  .map((skill) => (
+                    <Grid.Item
+                      data-tip={skill.name}
+                      data-for="skill"
+                      data-iscapture="true"
+                      key={skill.key}
                     >
-                      <img
-                        src={skill.image}
-                        height="48px"
-                        width="48px"
-                        alt={skill.name}
-                      />
-                    </SpinAnimation>
-                  </Grid.Item>
-                ))}
+                      <SpinAnimation
+                        easeIn={true}
+                        from={360}
+                        to={0}
+                        className={inViewSkill ? "visible" : "in-visible"}
+                      >
+                        <img
+                          src={skill.image}
+                          height="48px"
+                          width="48px"
+                          alt={skill.name}
+                        />
+                      </SpinAnimation>
+                    </Grid.Item>
+                  ))}
               </Grid.Row>
             </div>
             <ReactTooltip
