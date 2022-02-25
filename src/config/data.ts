@@ -147,7 +147,7 @@ const experience = [
     role: "Full Stack Developer",
     from: "03/2021",
     to: "present",
-    desc: "I worked with the team to build new website and maintaint the old website.",
+    desc: "I worked with the team to build new website and maintaint the old website. I created APIs and designed respossive layouts.",
     techStack: ["SKILL004", "SKILL006", "SKILL007", "SKILL015"],
     link: "https://beta.nitjsr.ac.in/",
   },
@@ -157,16 +157,16 @@ const experience = [
     role: "Intern",
     from: "07/2021",
     to: "10/2021",
-    desc: "I worked with the team to make a multi-tenant web application on ReactJS and NodeJS.",
+    desc: "I worked with the team to make a multi-tenant web application. I mainly worked with ReactJS and ReduxJS to make the web app.",
     techStack: ["SKILL004", "SKILL006", "SKILL019", "SKILL018"],
   },
 ];
 
-const skillsObj:any = skills.reduce(
+const skillsObj: any = skills.reduce(
   (pre, curr) => ({ ...pre, [curr.key]: curr }),
   {}
 );
 
-const data = { profile, education, skills, skillsObj,experience };
+const data = { profile, education, skills, skillsObj, experience };
 
 export default data;

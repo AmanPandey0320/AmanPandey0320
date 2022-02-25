@@ -9,7 +9,7 @@ export const ExpItem = styled.div`
   margin-inline: 4px;
   &:hover {
     transform: scale(1.02) translate(0px, -4px);
-    box-shadow: -2px 2px 8px rgba(138, 25, 255, 1);
+    box-shadow: -3px 3px 8px rgba(138, 25, 255, 1);
     transition: all 0.25s;
     cursor: pointer;
   }
