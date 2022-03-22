@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 /**
  * @description Global CSS
  */
+
 export const GlobalCssBase = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
