@@ -27,7 +27,7 @@ const Experience = () => {
             <Tag width={400} textAlign="right">{`</h1>`}</Tag>
           </HtmlTag>
           <ExpWrapper ref={ref}>
-            <Grid.Row>
+            <Grid.Row justify="space-evenly" >
               {data.experience.map((e) => (
                 <Grid.Item key={e.key}>
                   <ScaleAllAnimation
@@ -42,7 +42,36 @@ const Experience = () => {
                           <ExpHeading>
                             <Grid.Row justify="space-between">
                               <Grid.Item>
-                                {e.role}, {e.title}
+                                <div>
+                                  <Grid.Row>
+                                    <Grid.Item>
+                                      <img
+                                        src={e.image}
+                                        alt="logo"
+                                        width="48px"
+                                        height="48px"
+                                      />
+                                    </Grid.Item>
+                                    <Grid.Item>
+                                      <p>
+                                        <strong>{e.title}</strong>
+                                      </p>
+                                      <p>
+                                        <small>{e.role}</small>
+                                      </p>
+                                      <p>
+                                        <Text
+                                          component="small"
+                                          size="12px"
+                                          color="rgba(138, 25, 255, 0.75)"
+                                        >
+                                          {e.from}-{e.to}
+                                        </Text>
+                                      </p>
+                                    </Grid.Item>
+                                  </Grid.Row>
+                                </div>
+                                {/* {e.role},  */}
                               </Grid.Item>
                               {e.link && (
                                 <Grid.Item>
@@ -60,9 +89,6 @@ const Experience = () => {
                                 </Grid.Item>
                               )}
                             </Grid.Row>
-                            <Text component="span" size="12px" color="rgba(138, 25, 255, 0.75)">
-                              &nbsp;&nbsp;&nbsp;{e.from}-{e.to}
-                            </Text>
                           </ExpHeading>
                           <ExpBody>{e.desc}</ExpBody>
                         </div>

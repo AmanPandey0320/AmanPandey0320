@@ -1,3 +1,5 @@
+import constants from "../assets/constant";
+
 /**
  *
  */
@@ -21,8 +23,8 @@ const education = [
     to: "present",
     result: {
       cb: true,
-      res: "CGPA: 8.35",
-      till: 5,
+      res: "CGPA: 8.41",
+      till: 6,
       sup: "th",
       type: "semester",
     },
@@ -162,22 +164,40 @@ const skills = [
     name: "Flutter",
     image: "https://img.icons8.com/color/48/000000/flutter.png",
   },
+  {
+    show: true,
+    key: "SKILL024",
+    name: "Linux",
+    image: "https://img.icons8.com/color/48/000000/linux--v1.png",
+  },
 ];
 
 const experience = [
   {
+    key: "EXPR03",
+    title: "GE Healthcare India",
+    image: "https://img.icons8.com/color/96/000000/general-electrics.png",
+    role: "EID Intern",
+    from: "05/2022",
+    to: "present",
+    desc: "Worked in team to automate process of detection of proxies used over a network for a software running over linux environment",
+    techStack: ["SKILL024"],
+  },
+  {
     key: "EXPR01",
-    title: "NIT Jamshedpur",
+    title: "Web Team, NIT JSR",
+    image: constants.images.NITJSR,
     role: "Member",
     from: "03/2021",
     to: "present",
     desc: "I worked as a full-stack developer with the team to build new website and maintaint the old website. I created APIs and designed respossive layouts.",
     techStack: ["SKILL004", "SKILL006", "SKILL007", "SKILL015"],
-    link: "https://beta.nitjsr.ac.in/",
+    link: "https://nitjsr.ac.in/",
   },
   {
     key: "EXPR02",
     title: "FlexiEle",
+    image: constants.images.FE,
     role: "Intern",
     from: "07/2021",
     to: "10/2021",

@@ -1,5 +1,9 @@
-const Project = () => {
-  return <div>project</div>;
-};
+const ProjectSection = (props:any) => {
+    return (
+        <div id="projects">
+            
+        </div>
+    );
+}
 
-export default Project;
+export default ProjectSection;
