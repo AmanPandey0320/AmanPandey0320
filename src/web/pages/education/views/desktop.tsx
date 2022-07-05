@@ -120,7 +120,7 @@ function DeskTopView(props: any) {
                   >
                     JEE Mains
                   </Typography>
-                  <Typography fontSize={"14px"}>secured AIR 7764</Typography>
+                  <Typography fontSize={"14px"}>secured AIR 7664</Typography>
                 </TimelineContent>
               </TimelineItem>
               <TimelineItem>
