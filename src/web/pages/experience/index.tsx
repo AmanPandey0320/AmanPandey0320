@@ -20,13 +20,13 @@ const Experience = () => {
 
   return (
     <div id="experience">
-      <PageWrapper className="h">
+      <PageWrapper ref={ref} className="h">
         <HtmlTag name="section" close={true}>
           <HtmlTag name="h1">
             <WobblyText small={true} text="Experience" />
             <Tag width={400} textAlign="right">{`</h1>`}</Tag>
           </HtmlTag>
-          <ExpWrapper ref={ref}>
+          <ExpWrapper>
             <Grid.Row justify="space-evenly" >
               {data.experience.map((e) => (
                 <Grid.Item key={e.key}>
@@ -40,7 +40,7 @@ const Experience = () => {
                       <Grid.Col alignItems="space-between">
                         <div>
                           <ExpHeading>
-                            <Grid.Row justify="space-between">
+                            <Grid.Row alignItems="center" justify="space-between">
                               <Grid.Item>
                                 <div>
                                   <Grid.Row>

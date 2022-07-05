@@ -35,14 +35,14 @@ export const EduWrapper = styled.div`
 
   /* Large devices (laptops/desktops, 992px and up) */
   @media only screen and (min-width: 992px) {
-    margin-top: 64px;
-    margin-bottom: 64px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) {
-    margin-top: 64px;
-    margin-bottom: 64px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 `;
 

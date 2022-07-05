@@ -4,7 +4,7 @@ export const ExpItem = styled.div`
   width: 300px;
   border-left: 2px solid rgba(138, 25, 255, 1);
   border-bottom: 2px solid rgba(138, 25, 255, 1);
-  border-radius: 2px;
+  border-radius: 8px;
   transition: all 0.25s;
   margin-inline: 4px;
   &:hover {
