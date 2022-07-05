@@ -7,7 +7,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import { EduWrapper } from "../styles";
-import { GrBackTen } from "react-icons/gr";
+// import { GrBackTen } from "react-icons/gr";
 import { MdExposurePlus2, MdFlag } from "react-icons/md";
 import { FaUniversity } from "react-icons/fa";
 import constants from "../../../../assets/constant";
