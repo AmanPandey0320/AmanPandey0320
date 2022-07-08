@@ -14,7 +14,7 @@ import { PageWrapper } from "../../shared/wrapper";
  */
 const Home = (props: any) => {
   return (
-    <div id="about-me">
+    <div id="home">
       <PageWrapper className="h">
         <HtmlTag name="html">
           <HtmlTag name="body">

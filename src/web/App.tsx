@@ -1,4 +1,5 @@
 import "./App.css";
+import AboutMe from "./pages/aboutMe";
 import Education from "./pages/education";
 import Experience from "./pages/experience";
 import Home from "./pages/home";
@@ -16,6 +17,7 @@ function App() {
       <Canvas />
       <MainWrapper>
         <Home />
+        <AboutMe/>
         <Education />
         <Experience />
       </MainWrapper>
