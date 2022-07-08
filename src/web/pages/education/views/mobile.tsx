@@ -35,7 +35,7 @@ function DeskTopView(props: any) {
             <Typography
               variant="h6"
               fontSize={"18px"}
-              color={constants.color.textSec}
+              color={constants.color.text}
               component="span"
             >
               National Institute of Technology, Jamshedpur

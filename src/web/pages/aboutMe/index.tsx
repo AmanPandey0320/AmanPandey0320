@@ -48,49 +48,49 @@ function AboutMe(props: any) {
                     <Grid container direction={"row"}>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>C++</Typography>
                         </div>
                       </Grid>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>TypeScript</Typography>
                         </div>
                       </Grid>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>SQL</Typography>
                         </div>
                       </Grid>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>React.JS</Typography>
                         </div>
                       </Grid>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>Node.JS</Typography>
                         </div>
                       </Grid>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>MongoDB</Typography>
                         </div>
                       </Grid>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>DSA</Typography>
                         </div>
                       </Grid>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>GIT</Typography>
                         </div>
                       </Grid>
@@ -105,31 +105,31 @@ function AboutMe(props: any) {
                     <Grid container direction={"row"}>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>Linux</Typography>
                         </div>
                       </Grid>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>NGINX</Typography>
                         </div>
                       </Grid>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>AWS</Typography>
                         </div>
                       </Grid>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>Postgres</Typography>
                         </div>
                       </Grid>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                          <GoPrimitiveDot />
+                          <GoPrimitiveDot color={constants.color.text} />
                           &nbsp;<Typography>Docker</Typography>
                         </div>
                       </Grid>
