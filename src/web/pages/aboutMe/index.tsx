@@ -17,7 +17,6 @@ function AboutMe(props: any) {
             <Tag width={400} textAlign="right">{`</h1>`}</Tag>
           </HtmlTag>
           <br/>
-          <br/>
           <Container>
             <Grid container alignItems={"center"} direction={"row"}>
               <Grid item xs={12} sm={4}>
@@ -44,7 +43,6 @@ function AboutMe(props: any) {
                     skills I have developed:
                   </Typography>
                   <Container>
-                    <br />
                     <Grid container direction={"row"}>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
@@ -101,7 +99,6 @@ function AboutMe(props: any) {
                     Other than that, I am also familiar with the following:
                   </Typography>
                   <Container>
-                    <br />
                     <Grid container direction={"row"}>
                       <Grid item xs={4}>
                         <div style={{ display: "flex", alignItems: "center" }}>
