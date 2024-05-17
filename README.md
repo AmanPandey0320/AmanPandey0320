@@ -2,10 +2,10 @@
 
 - 🔭 I’m currently working on enhancing my skills.
 - 🌱 I’m currently learning Kubernetes.
-- 🤔 I’m looking for help with containers and docker.
-- 💬 Ask me about : What was last movie I watched?
+- 🤔 I’m looking for help with system design.
+- 💬 Ask me about : What was last movie I watched or last dish I cooked?
 - 😄 Pronouns: Why, What, How......
-- ⚡ Fun fact: Sorry, I can't fix you computer.
+- ⚡ Fun fact: I can tune your Guitar.
 
 # My GitHub
 
