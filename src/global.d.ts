@@ -12,3 +12,7 @@ declare module "*.svg" {
 declare module "*.jpeg" {
   export default "" as string;
 }
+
+declare module "*.gif" {
+  export default "" as string;
+}

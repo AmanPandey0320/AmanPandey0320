@@ -21,7 +21,7 @@ export const WobbleWrapper = styled.div`
 `;
 
 export const WobbleText = styled.div<WobbleTextProps>`
-  color: #fff;
+  color: #cac0b3;
   background-color: transparent;
   border: none;
   font-size: 70px;

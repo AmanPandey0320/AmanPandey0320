@@ -11,10 +11,25 @@ import { EduWrapper } from "../styles";
 import { MdExposurePlus2, MdFlag } from "react-icons/md";
 import { FaUniversity } from "react-icons/fa";
 import constants from "../../../../assets/constant";
+import  { IconContext } from "react-icons";
+import { useState } from "react";
 
 function DeskTopView(props: any) {
+  const [iconClass,setIconClass] = useState("iconClass");
+
+  /**
+   * @description: change icon color on hover
+   * @param {event} mouse-enter-event
+   * @return {void}
+   */
+  const handleMouseEnter = (e: any) => {
+    setIconClass("iconClassHover");
+  }
+
+  //consponent
   return (
     <EduWrapper>
+      <IconContext.Provider value={{className:iconClass}}>
       <Box sx={{ paddingInline: "64px" }}>
         <Grid container direction={"row"}>
           <Grid item sm={5} xs={6}>
@@ -57,7 +72,7 @@ function DeskTopView(props: any) {
                 <TimelineSeparator>
                   <TimelineConnector />
                   <TimelineDot color="primary">
-                    <FaUniversity />
+                    <FaUniversity/>
                   </TimelineDot>
                   <TimelineConnector />
                 </TimelineSeparator>
@@ -193,6 +208,7 @@ function DeskTopView(props: any) {
           </Grid>
         </Grid>
       </Box>
+      </IconContext.Provider>
     </EduWrapper>
   );
 }

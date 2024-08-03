@@ -277,6 +277,6 @@ const skillsObj: any = skills.reduce(
   {}
 );
 
-const data = { profile, education, skills, skillsObj, experience, projects };
+const data = { profile, education, skills, skillsObj, experience, projects,constants };
 
 export default data;

@@ -43,17 +43,17 @@ export const Animated = styled.button`
     inset 0.3em 0.3em 0 0 ${constants.color.text};
   :hover {
     cursor: pointer;
-    box-shadow: 0 0 0 0 ${constants.color.textSec},
-      inset 6em 3.5em 0 0 ${constants.color.textSec};
-    border-color: ${constants.color.textSec};
+    box-shadow: 0 0 0 0 ${constants.color.hilight},
+      inset 6em 3.5em 0 0 ${constants.color.hilight};
+    border-color: ${constants.color.hilight};
     color: #fff;
     transition: 0.25s;
   }
   :focus {
     cursor: pointer;
-    box-shadow: 0 0 0 0 ${constants.color.textSec},
-      inset 6em 3.5em 0 0 ${constants.color.textSec};
-    border-color: ${constants.color.textSec};
+    box-shadow: 0 0 0 0 ${constants.color.hilight},
+      inset 6em 3.5em 0 0 ${constants.color.hilight};
+    border-color: ${constants.color.hilight};
     color: #fff;
     transition: 0.25s;
   }

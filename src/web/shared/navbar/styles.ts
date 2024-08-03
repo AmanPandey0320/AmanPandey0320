@@ -45,12 +45,11 @@ export const NavBar = styled("div")`
  *
  */
 export const Toolbar = styled.ul`
-  margin: 0 auto 0;
   padding: 0;
   list-style: none;
   display: table;
   width: 600px;
-  text-align: center;
+  float: right;
 `;
 
 /**
@@ -59,29 +58,9 @@ export const Toolbar = styled.ul`
 export const Item = styled.li`
   margin-inline: 2px;
   display: table-cell;
-  position: relative;
   padding: 8px 0;
   &:hover {
     cursor: pointer;
-  }
-  &:after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 0;
-    bottom: 0;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    position: absolute;
-    background: ${constants.color.foreground};
-    transition: transform 0.25s ease-out;
-    width: 100%;
-  }
-  &:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
   }
   & > a {
     font-size: 16px;
@@ -94,7 +73,7 @@ export const Item = styled.li`
     padding: 15px 20px;
     position: relative;
     :hover{
-      color: ${constants.color.text};
+      color: ${constants.color.hilight};
     }
     /* Extra small devices (phones, 600px and down) */
     @media only screen and (max-width: 600px) {

@@ -49,7 +49,7 @@ const Home = (props: any) => {
                 </Item>
                 <Item>
                   <HtmlTag variant="inline" autoClose={true} name="img">
-                    <Image src={data.profile.avatar.s} alt="hello" />
+                    <Image src={data.constants.images.AVATAR} alt="hello" />
                   </HtmlTag>
                 </Item>
               </Wrapper>
