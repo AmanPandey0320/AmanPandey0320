@@ -1,11 +1,11 @@
 # <img src="https://user-images.githubusercontent.com/1303154/88677602-1635ba80-d120-11ea-84d8-d263ba5fc3c0.gif" width="28px" alt="hi"> Hi there
 
 - 🔭 I’m currently working on enhancing my skills.
-- 🌱 I’m currently learning AWS.
-- 🤔 I’m looking for help with containers and docker.
-- 💬 Ask me about : What was last movie I watched?
+- 🌱 I’m currently learning Kubernetes.
+- 🤔 I’m looking for help with system design.
+- 💬 Ask me about : What was last movie I watched or last dish I cooked?
 - 😄 Pronouns: Why, What, How......
-- ⚡ Fun fact: Sorry, I can't fix you computer.
+- ⚡ Fun fact: I can tune your Guitar.
 
 # My GitHub
 
