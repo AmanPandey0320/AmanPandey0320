@@ -43,7 +43,7 @@ const Home = (props: any) => {
                       variant="inline"
                       hide={true}
                     >
-                      <Button variant="animated">GÈT ÌN TÕÙÇH</Button>
+                      <Button variant="animated">GET IN TOUCH</Button>
                     </HtmlTag>
                   </HtmlTag>
                 </Item>
