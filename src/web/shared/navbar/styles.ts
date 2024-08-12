@@ -2,7 +2,7 @@ import styled from "styled-components";
 import constants from "../../../assets/constant";
 
 export const NavBar = styled("div")`
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: ${constants.color.background};
   overflow: hidden;
   position: fixed;
   color: #ff4d00;

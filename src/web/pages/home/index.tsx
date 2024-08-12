@@ -6,6 +6,7 @@ import WobblyText from "../../shared/wobbleText";
 import { Wrapper, Item, Image } from "./styles";
 import data from "../../../config/data";
 import { PageWrapper } from "../../shared/wrapper";
+import constants from "../../../assets/constant";
 
 /**
  *
@@ -16,9 +17,7 @@ const Home = (props: any) => {
   return (
     <div id="home">
       <PageWrapper className="h">
-        <HtmlTag name="html">
-          <HtmlTag name="body">
-            <HtmlTag name="section" close={true}>
+      <HtmlTag name="section" close={true}>
               <Wrapper>
                 <Item>
                   <HtmlTag name="h1">
@@ -28,9 +27,9 @@ const Home = (props: any) => {
                     <HtmlTag close={true} name="p">
                       <Text
                         className="shrink"
-                        font="Titillium Web"
+                        font="Roboto"
                         size="16px"
-                        color="#8f8f8f"
+                        color={constants.color.foreground}
                       >
                         Learning to solve problems and build awesome
                         applications
@@ -43,7 +42,7 @@ const Home = (props: any) => {
                       variant="inline"
                       hide={true}
                     >
-                      <Button variant="animated">GET IN TOUCH</Button>
+                      <Button variant="contained">GET IN TOUCH</Button>
                     </HtmlTag>
                   </HtmlTag>
                 </Item>
@@ -54,8 +53,6 @@ const Home = (props: any) => {
                 </Item>
               </Wrapper>
             </HtmlTag>
-          </HtmlTag>
-        </HtmlTag>
       </PageWrapper>
     </div>
   );
