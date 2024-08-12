@@ -21,8 +21,8 @@ const Home = (props: any) => {
               <Wrapper>
                 <Item>
                   <HtmlTag name="h1">
-                    <WobblyText text="Hi!," />
-                    <WobblyText text="I'm   Aman." />
+                    <WobblyText text="WELCOME" />
+                    <WobblyText text="TO THE HUB" />
                     <Tag width={400} textAlign="right">{`</h1>`}</Tag>
                     <HtmlTag close={true} name="p">
                       <Text
@@ -31,8 +31,7 @@ const Home = (props: any) => {
                         size="16px"
                         color={constants.color.foreground}
                       >
-                        Learning to solve problems and build awesome
-                        applications
+                        of a learner building solutions and solving puzzles bit by bit
                       </Text>
                     </HtmlTag>
                     <HtmlTag

@@ -13,8 +13,8 @@ function App() {
   return (
     <div>
       <GlobalCssBase />
-      <NavBar />
-      <NavMenu />
+      {/* <NavBar /> */}
+      {/* <NavMenu /> */}
       <Canvas />
       <MainWrapper>
       <HtmlTag name="html">

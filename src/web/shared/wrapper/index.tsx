@@ -62,31 +62,26 @@ export const PageWrapper = styled.div`
   overflow-x: hidden;
   z-index: 3;
   @media only screen and (max-width: 600px) {
-    padding-top: 50px;
     padding-inline: 10px;
   }
 
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 600px) {
-    padding-top: 96px;
     padding-inline: 12px;
   }
 
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px) {
-    padding-top: 108px;
     padding-inline: 14px;
   }
 
   /* Large devices (laptops/desktops, 992px and up) */
   @media only screen and (min-width: 992px) {
-    padding-top: 108px;
     padding-inline: 16px;
   }
 
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) {
-    padding-top: 64px;
     padding-inline: 16px;
   }
 
@@ -133,4 +128,6 @@ export const MainWrapper = styled.div`
   max-height: 100vh;
   max-width: calc(100vw-4px);
   overflow-y: scroll;
+  padding-top: 32px;
+  padding-inline: 8px;
 `;
