@@ -68,7 +68,7 @@ export const Item = styled.li`
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.15em;
-    font-family: "Patrick Hand", cursive;
+    font-family: "Roboto", sans-serif, sans-serif, -apple-system, BlinkMacSystemFont,"Segoe UI","Oxygen", "Ubuntu", "Cantarell", "Fira Sans","Droid Sans", "Helvetica Neue", sans-serif;
     display: inline-block;
     padding: 15px 20px;
     position: relative;

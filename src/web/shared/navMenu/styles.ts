@@ -132,7 +132,9 @@ export const MenuItem = styled.li`
   text-align: center;
   font-size: 17px;
   color: ${constants.color.foreground};
-  font-family: "Patrick Hand", cursive;
+  font-family: "Roboto", sans-serif, sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI","Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   &:hover{
     color: ${constants.color.text};
   }

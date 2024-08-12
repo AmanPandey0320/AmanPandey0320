@@ -28,7 +28,7 @@ export const WobbleText = styled.div<WobbleTextProps>`
   max-width: 72px;
   padding: 2px;
   opacity: 1;
-  font-family: "Fredoka One", cursive;
+  font-family: "Roboto", sans-serif, sans-serif, -apple-system, BlinkMacSystemFont,"Segoe UI","Oxygen", "Ubuntu", "Cantarell", "Fira Sans","Droid Sans", "Helvetica Neue", sans-serif;
   :hover {
     cursor: pointer;
     color: ${constants.color.textSec};

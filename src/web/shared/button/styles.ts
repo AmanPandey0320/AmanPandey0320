@@ -37,7 +37,9 @@ export const Animated = styled.button`
   color: ${constants.color.text};
   font-size: 16px;
   font-weight: 500;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Roboto", sans-serif, sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI","Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   transition: 0.25s;
   box-shadow: 0.3em 0.3em 0 0 ${constants.color.text},
     inset 0.3em 0.3em 0 0 ${constants.color.text};

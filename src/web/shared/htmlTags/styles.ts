@@ -41,7 +41,9 @@ export const TagWrapper = styled.div`
   }
 `;
 export const Tag = styled.p<TagProps>`
-  font-family: "Vujahday Script", cursive;
+  font-family: "Roboto", sans-serif, sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI","Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   color: ${constants.color.textBg};
   @media only screen and (max-width: 600px) {
     font-size: 18px;
@@ -86,7 +88,9 @@ export const Tag = styled.p<TagProps>`
 `;
 
 export const TagSpan = styled.span<TagProps>`
-  font-family: "Vujahday Script", cursive;
+  font-family: "Roboto", sans-serif, sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI","Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   color: ${constants.color.textBg};
   @media only screen and (max-width: 600px) {
     font-size: 18px;

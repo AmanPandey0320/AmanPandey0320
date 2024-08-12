@@ -6,7 +6,7 @@ export const Span = styled.span<StyledTextProps>`
   color: ${(props) => (props?.color ? props.color : "#ffffff")};
   font-size: ${(props) => (props?.size ? props.size : "14px")};
   font-weight: ${(props) => (props?.weight ? props.weight : 400)};
-  font-family: ${(props) => (props?.font ? props.font : "sans-serif")};
+  font-family: "Roboto", sans-serif, sans-serif, -apple-system, BlinkMacSystemFont,"Segoe UI","Oxygen", "Ubuntu", "Cantarell", "Fira Sans","Droid Sans", "Helvetica Neue", sans-serif;
   text-align: ${(props) => (props?.align ? props?.align : "left")};
 `;
 
@@ -15,7 +15,7 @@ export const P = styled.p<StyledTextProps>`
   color: ${(props) => (props?.color ? props.color : "#ffffff")};
   font-size: ${(props) => (props?.size ? props.size : "14px")};
   font-weight: ${(props) => (props?.weight ? props.weight : 400)};
-  font-family: ${(props) => (props?.font ? props.font : "sans-serif")};
+  font-family: "Roboto", sans-serif, sans-serif, -apple-system, BlinkMacSystemFont,"Segoe UI","Oxygen", "Ubuntu", "Cantarell", "Fira Sans","Droid Sans", "Helvetica Neue", sans-serif;
   text-align: ${(props) => (props?.align ? props?.align : "left")};
   &.shrink {
     @media only screen and (max-width: 600px) {
@@ -29,6 +29,6 @@ export const H1 = styled.h1<StyledTextProps>`
   color: ${(props) => (props?.color ? props.color : "#ffffff")};
   font-size: ${(props) => (props?.size ? props.size : "14px")};
   font-weight: ${(props) => (props?.weight ? props.weight : 400)};
-  font-family: ${(props) => (props?.font ? props.font : "sans-serif")};
+  font-family: "Roboto", sans-serif, sans-serif, -apple-system, BlinkMacSystemFont,"Segoe UI","Oxygen", "Ubuntu", "Cantarell", "Fira Sans","Droid Sans", "Helvetica Neue", sans-serif;
   text-align: ${(props) => (props?.align ? props?.align : "left")};
 `;
