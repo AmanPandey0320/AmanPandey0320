@@ -31,3 +31,6 @@
 <img alt="mysql" style="margin:10px" width="30px" height="30px" align="left" title="Mysql" src="https://img.icons8.com/color/48/000000/mysql-logo.png"/>
 <img alt="flutter" style="margin:10px" width="30px" height="30px" align="left" title="Flutter" src="https://img.icons8.com/color/50/000000/flutter.png"/>
 <img alt="graphql" style="margin:10px" width="30px" height="30px" align="left" title="GraphQL" src="https://img.icons8.com/color/2x/graphql.png"/>
+<img alt="docker" style="margin:10px" width="30px" height="30px" align="left" title="Docker" src="https://img.icons8.com/fluency/48/docker.png" alt="docker"/>
+<img style="margin:10px" width="30px" height="30px" align="left" title="K8s" src="https://img.icons8.com/color/48/kubernetes.png" alt="kubernetes"/>
+<img style="margin:10px" width="30px" height="30px" align="left" alt="helm" title="Helm" src="https://helm.sh/img/helm.svg" />
