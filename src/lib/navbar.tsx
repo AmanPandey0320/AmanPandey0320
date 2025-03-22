@@ -1,6 +1,6 @@
 "use client"
 
-import { NavBarItems } from "@/data/navData";
+import { NavBarItems } from "@/assets/data/navData";
 import { Menu } from "@mui/icons-material";
 import { Box, Drawer, Grid2, IconButton, List, ListItem, ListItemButton, Typography, useMediaQuery, useTheme } from "@mui/material";
 import dynamic from "next/dynamic";
@@ -27,7 +27,7 @@ const DesktopNavView = () => {
                                     sx={{
                                         color: '#1f2a38',
                                         '&:hover': {
-                                            color: 'info.main',
+                                            color: '#2664eb',
                                             cursor: 'pointer'
                                         }
                                     }}
@@ -77,7 +77,7 @@ const MobileNavView = () => {
                                                 sx={{
                                                     color: '#1f2a38',
                                                     '&:hover': {
-                                                        color: 'info.main',
+                                                        color: '#2664eb',
                                                         cursor: 'pointer'
                                                     }
                                                 }}
@@ -108,7 +108,7 @@ export default function NavBar() {
                     sx={{
                         "justifyContent": "space-between",
                         "alignItems": "center",
-                        "color": 'info.main'
+                        "color": '#2664eb'
                     }}
                     direction={"row"}
                     container
