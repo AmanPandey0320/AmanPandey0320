@@ -27,7 +27,7 @@ const DesktopNavView = () => {
                                     sx={{
                                         color: '#1f2a38',
                                         '&:hover': {
-                                            color: '#2664eb',
+                                            color: 'info.main',
                                             cursor: 'pointer'
                                         }
                                     }}
@@ -77,7 +77,7 @@ const MobileNavView = () => {
                                                 sx={{
                                                     color: '#1f2a38',
                                                     '&:hover': {
-                                                        color: '#2664eb',
+                                                        color: 'info.main',
                                                         cursor: 'pointer'
                                                     }
                                                 }}
@@ -108,7 +108,7 @@ export default function NavBar() {
                     sx={{
                         "justifyContent": "space-between",
                         "alignItems": "center",
-                        "color": '#2664eb'
+                        "color": 'info.main'
                     }}
                     direction={"row"}
                     container
