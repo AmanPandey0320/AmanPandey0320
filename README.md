@@ -21,6 +21,7 @@
 <img alt="CSS" style="margin:10px" width="30px" height="30px" align="left" title="CSS" src="https://img.icons8.com/color/48/000000/css3.png"/>
 <img alt="JS" style="margin:10px" width="30px" height="30px" align="left" title="JS" src="https://img.icons8.com/fluency/48/javascript.png"/>
 
+<br/>
 
 ## Technologies
 <img alt="android" style="margin:10px" width="30px" height="30px" align="left" title="Android" src="https://img.icons8.com/fluent/48/000000/android-os.png"/>
