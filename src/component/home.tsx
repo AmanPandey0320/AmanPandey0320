@@ -1,8 +1,9 @@
-import { Box, Button, Grid2, Typography } from "@mui/material";
+import { Box, Button, Grid2, Icon, Typography } from "@mui/material";
 import Link from "next/link";
 import { home } from "./style";
 import Image from "next/image";
 import img from "@/assets/images/img.jpeg";
+import { GitHub, LinkedIn, X } from "@mui/icons-material";
 
 export default function Home() {
     return (
@@ -10,9 +11,9 @@ export default function Home() {
             id="home"
             sx={home.boxStyle}
         >
-            <Grid2 direction={"row"} sx={{ paddingTop: '8rem' }} spacing={{xs:6, lg:1}} container>
+            <Grid2 direction={"row"} sx={{ paddingTop: '8rem' }} spacing={{ xs: 6, lg: 1 }} container>
                 <Grid2 size={{ lg: 7, md: 6, xs: 12 }}>
-                    <Grid2 direction={"column"} container>
+                    <Grid2 spacing={{ lg: 1 }} direction={"column"} container>
                         <Grid2>
                             <Typography
                                 variant="h1"
@@ -41,7 +42,7 @@ export default function Home() {
                             <p
                                 style={home.introTextStyle}
                             >
-                                {`I'm a Software Developer with a passion for building scalable, high-performance applications.   I strive to optimize systems for efficiency, security, tackling complex problems and continuously learning new technologies. I take pride in building solutions that make an impact.`}
+                                {`I'm a Software Developer with a passion for building scalable, high-performance applications.   I strive to optimize systems for efficiency, security, tackling complex problems and continuously learning new technologies. I take pride in building solutions that makes an impact.`}
                             </p>
                             <p style={home.introTextStyle}>
                                 {`Let’s create something amazing together!`}
@@ -65,6 +66,38 @@ export default function Home() {
                                     </Link>
                                 </Grid2>
 
+                            </Grid2>
+                        </Grid2>
+                        <Grid2>
+                            <br/>
+                            <Grid2 direction={"row"} spacing={2} container>
+                                <Grid2>
+                                    <Link href={"https://www.linkedin.com/in/amanpandey09/"} legacyBehavior passHref>
+                                        <a style={{ textDecoration: 'none', color: '#9ca3af' }} target="_blank" rel="noopener noreferrer">
+                                            <Icon fontSize="medium">
+                                                <LinkedIn fontSize="medium" />
+                                            </Icon>
+                                        </a>
+                                    </Link>
+                                </Grid2>
+                                <Grid2>
+                                    <Link href={"https://github.com/AmanPandey0320/"} legacyBehavior passHref>
+                                        <a style={{ textDecoration: 'none', color: '#9ca3af' }} target="_blank" rel="noopener noreferrer">
+                                            <Icon fontSize="medium">
+                                                <GitHub fontSize="medium" />
+                                            </Icon>
+                                        </a>
+                                    </Link>
+                                </Grid2>
+                                <Grid2>
+                                    <Link href={"https://x.com/_a_m_a_n_pandey/"} legacyBehavior passHref>
+                                        <a style={{ textDecoration: 'none', color: '#9ca3af' }} target="_blank" rel="noopener noreferrer">
+                                            <Icon fontSize="medium">
+                                                <X fontSize="medium" />
+                                            </Icon>
+                                        </a>
+                                    </Link>
+                                </Grid2>
                             </Grid2>
                         </Grid2>
                     </Grid2>
