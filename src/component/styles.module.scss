@@ -1,0 +1,27 @@
+.sweImage{
+    width: 16rem;
+    height: 16rem;
+    @media (min-width: 768px) {
+        width: 24rem;
+        height: 24rem;
+    }
+}
+
+.sweText{
+    color: #4b5563;
+    padding-bottom: 1rem;
+    margin: 0;
+    line-height: 1.25rem;
+    word-spacing: 0.1rem;
+}
+
+.sweIcon{
+    color: #2664eb;
+    background-color: #dbeafe;
+    width: 3rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 3rem;
+}

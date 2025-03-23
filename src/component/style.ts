@@ -4,7 +4,8 @@ const color = {
     white: '#ffffff',
     grey: '#9ca3af',
     darkerGrey: '#262626',
-    darkBlue: '#0000ff'
+    darkBlue: '#0000ff',
+    lightBlue: '#dbeafe'
 }
 const filledBlueLink = {
     backgroundColor: color.blue,
@@ -34,6 +35,23 @@ const outlinedTransparentLink = {
     borderWidth: '1px',
     "&:hover": {
         color: color.white,
+        cursor: 'pointer'
+    }
+}
+
+const outlineBlueLink = {
+    color: color.blue,
+    fontWeight: 600,
+    paddingTop: '0.75rem',
+    paddingBottom: '0.75rem',
+    paddingRight: '1.5rem',
+    paddingLeft: '1.5rem',
+    borderRadius: '0.375rem',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    borderColor: color.blue,
+    "&:hover": {
+        color: color.darkBlue,
         cursor: 'pointer'
     }
 }
@@ -124,6 +142,8 @@ const home = {
 const about = {
     sectionHeaderText,
     sectionHeaderUnderline,
+    filledBlueLink,
+    outlineBlueLink,
     boxStyle: {
         paddingTop: '5rem',
         paddingBottom: '5rem',
@@ -132,14 +152,14 @@ const about = {
         backgroundColor: color.white,
 
     },
-    sweImageStyle: {
-        width: '16rem',
-        height: '16rem',
-        "@media (min-width: 768px)": {
-            width: '20rem',
-            height: '20rem'
-        }
+    sweText: {
+        color: "#1f2937",
+        fontSize: "1.5rem",
+        lineHeight: "2rem",
+        paddingBottom: "1rem",
+        paddingTop: "1rem",
+        fontWeight: 700
     }
 }
 
-export { home, about }
+export { home, about, color }
