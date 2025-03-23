@@ -8,12 +8,13 @@ import { GitHub, LinkedIn, X } from "@mui/icons-material";
 export default function Home() {
     return (
         <Box
+            component={"section"}
             id="home"
             sx={home.boxStyle}
         >
             <Grid2 direction={"row"} sx={{ paddingTop: '8rem' }} spacing={{ xs: 6, lg: 1 }} container>
                 <Grid2 size={{ lg: 7, md: 6, xs: 12 }}>
-                    <Grid2 spacing={{ lg: 1 }} direction={"column"} container>
+                    <Grid2 spacing={{ lg: 1, xs:2 }} direction={"column"} container>
                         <Grid2>
                             <Typography
                                 variant="h1"

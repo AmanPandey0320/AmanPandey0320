@@ -1,6 +1,14 @@
+
+const color = {
+    blue: '#2664eb',
+    white: '#ffffff',
+    grey: '#9ca3af',
+    darkerGrey: '#262626',
+    darkBlue: '#0000ff'
+}
 const filledBlueLink = {
-    backgroundColor: '#2664eb',
-    color: '#ffffff',
+    backgroundColor: color.blue,
+    color: color.white,
     fontWeight: 600,
     paddingTop: '0.75rem',
     paddingBottom: '0.75rem',
@@ -9,13 +17,13 @@ const filledBlueLink = {
     borderRadius: '0.375rem',
     borderStyle: 'none',
     "&:hover": {
-        backgroundColor: '#0000ff',
+        backgroundColor: color.darkBlue,
         cursor: 'pointer'
     }
 }
 
 const outlinedTransparentLink = {
-    color: '#9ca3af',
+    color: color.grey,
     fontWeight: 600,
     paddingTop: '0.75rem',
     paddingBottom: '0.75rem',
@@ -25,20 +33,45 @@ const outlinedTransparentLink = {
     borderStyle: 'solid',
     borderWidth: '1px',
     "&:hover": {
-        color: '#ffffff',
+        color: color.white,
         cursor: 'pointer'
     }
 }
+
+const sectionHeaderText = {
+    textAlign: 'center',
+    fontWeight: 700,
+    fontSize: '1.875rem',
+    lineHeight: '2.25rem',
+    '@media (min-width: 768px)': {
+        fontSize: '2.25rem',
+        lineHeight: '2.5rem'
+    }
+};
+
+const sectionHeaderUnderline = {
+    backgroundColor: color.blue,
+    width: '5rem',
+    height: '0.25rem',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: '1rem'
+
+}
+
+
+
+// page specific styles
 const home = {
     outlinedTransparentLink,
     filledBlueLink,
     introTextStyle: {
         maxWidth: '32rem',
-        color: '#9ca3af',
+        color: color.grey,
         lineHeight: '1.5'
     },
     positionStyle: {
-        color: '#ffffff',
+        color: color.white,
         fontSize: '1.5rem',
         lineHeight: '2',
         "@media (max-width: 600px)": {
@@ -47,7 +80,7 @@ const home = {
     },
     nameStyle: {
         fontWeight: 700,
-        color: '#ffffff',
+        color: color.white,
         fontSize: '3.75rem',
         lineHeight: '1',
         "@media (max-width: 600px)": {
@@ -56,7 +89,7 @@ const home = {
     },
     helloStyle: {
         fontWeight: 700,
-        color: '#2664eb',
+        color: color.blue,
         fontSize: '3.75rem',
         lineHeight: '1',
         "@media (max-width: 600px)": {
@@ -66,7 +99,7 @@ const home = {
     boxStyle: {
         minHeight: 'fit-content',
         height: '100vh',
-        backgroundColor: '#262626',
+        backgroundColor: color.darkerGrey,
         paddingLeft: '2rem',
         paddingRight: '2rem',
         "@media (max-width: 1100px)": {
@@ -81,10 +114,32 @@ const home = {
         marginRight: 'auto',
         borderRadius: '10rem',
         borderStyle: 'solid',
-        borderColor: '#2664eb',
+        borderColor: color.blue,
         borderWidth: '4px'
     }
 
 }
 
-export { home }
+
+const about = {
+    sectionHeaderText,
+    sectionHeaderUnderline,
+    boxStyle: {
+        paddingTop: '5rem',
+        paddingBottom: '5rem',
+        paddingLeft: '1rem',
+        paddingRight: '1rem',
+        backgroundColor: color.white,
+
+    },
+    sweImageStyle: {
+        width: '16rem',
+        height: '16rem',
+        "@media (min-width: 768px)": {
+            width: '20rem',
+            height: '20rem'
+        }
+    }
+}
+
+export { home, about }
