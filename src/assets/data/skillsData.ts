@@ -1,4 +1,4 @@
-import { CloudOutlined, DevicesOtherOutlined, DnsOutlined, GppGoodOutlined, TableRowsOutlined } from "@mui/icons-material";
+import { CloudOutlined, ConstructionOutlined, DevicesOtherOutlined, DnsOutlined, GppGoodOutlined, TableRowsOutlined } from "@mui/icons-material";
 
 export default {
     intro: "I leverage a diverse range of technologies to design, develop, and deliver high-quality software solutions tailored to meet complex requirements.",
@@ -66,7 +66,7 @@ export default {
         {
             "id":"tools_dev",
             "title":"Tools & Methodologies",
-            "icon": DevicesOtherOutlined,
+            "icon": ConstructionOutlined,
             "detail":[
                 "Agile & Scrum",
                 "JIRA & Confluence",
