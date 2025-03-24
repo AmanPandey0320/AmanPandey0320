@@ -162,4 +162,14 @@ const about = {
     }
 }
 
-export { home, about, color }
+const skills = {
+    sectionHeaderText,
+    sectionHeaderUnderline,
+    paperStyle:{
+        padding:'1rem',
+        paddingLeft:'2rem',
+        paddingRight:'2rem'
+    }
+}
+
+export { home, about, color, skills }

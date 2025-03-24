@@ -1,13 +1,16 @@
-.sweImage{
+// about page styles start
+
+.sweImage {
     width: 16rem;
     height: 16rem;
+
     @media (min-width: 768px) {
         width: 24rem;
         height: 24rem;
     }
 }
 
-.sweText{
+.sweText {
     color: #4b5563;
     padding-bottom: 1rem;
     margin: 0;
@@ -15,7 +18,7 @@
     word-spacing: 0.1rem;
 }
 
-.sweIcon{
+.sweIcon {
     color: #2664eb;
     background-color: #dbeafe;
     width: 3rem;
@@ -25,3 +28,17 @@
     display: flex;
     border-radius: 3rem;
 }
+
+//about page styles end
+
+//skills page styles start
+
+.boxStyle {
+    background-color: #f2f3f5;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+// skills page styles start
