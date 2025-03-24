@@ -55,8 +55,8 @@ export default function Skills() {
                                                                 <Grid2 key={`skill_${data.id}_${idx}_${dtIdx}`}>
                                                                     <Grid2 direction={"row"} spacing={1} container>
                                                                         <Grid2>
-                                                                            <Icon sx={{ color: '#21c45d' }} >
-                                                                                <CheckCircle />
+                                                                            <Icon fontSize="small" sx={{ color: '#21c45d' }} >
+                                                                                <CheckCircle fontSize="small" />
                                                                             </Icon>
                                                                         </Grid2>
                                                                         <Grid2><Typography>
