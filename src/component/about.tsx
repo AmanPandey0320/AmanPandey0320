@@ -4,7 +4,6 @@ import sweImg from "@/assets/images/about.png";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import aboutData from "@/assets/data/aboutData";
-import { WorkOutlineOutlined } from "@mui/icons-material";
 import Link from "next/link";
 
 export default function About() {

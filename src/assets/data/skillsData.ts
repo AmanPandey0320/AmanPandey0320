@@ -35,7 +35,7 @@ export default {
                 "NoSQL & Mongo",
                 "MySQL",
                 "PostgreSQL",
-                "Girestore",
+                "Firestore",
                 "Database Optimization"
             ]
         },

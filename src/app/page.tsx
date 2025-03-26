@@ -1,4 +1,5 @@
 import About from "@/component/about";
+import Experience from "@/component/experience";
 import Home from "@/component/home";
 import Skills from "@/component/skills";
 
@@ -8,6 +9,7 @@ export default function Portfolio() {
       <Home/>
       <About/>
       <Skills/>
+      <Experience/>
     </div>
   );
 }

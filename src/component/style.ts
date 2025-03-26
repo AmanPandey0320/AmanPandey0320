@@ -172,4 +172,9 @@ const skills = {
     }
 }
 
-export { home, about, color, skills }
+const experience = {
+    sectionHeaderText,
+    sectionHeaderUnderline,
+}
+
+export { home, about, color, skills, experience }
