@@ -19,3 +19,29 @@
     color: #4b5563;
     text-align: justify;
 }
+
+.timelineContentHeader{
+    color: #1f2937;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+.timelineContentCompanyName{
+    color: #2563eb;
+    font-weight: 600;
+    font-size: large;
+    margin: 0;
+}
+.timelineContentDuration{
+    color: #4b5563;
+    font-size: medium;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.timelineExperienceDetail{
+    color: #4b5563 ;
+    list-style-type: disc;
+    list-style-position: outside;
+    text-align: justify;
+}

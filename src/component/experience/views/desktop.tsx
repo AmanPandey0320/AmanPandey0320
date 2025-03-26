@@ -1,6 +1,14 @@
 import { color } from "@/component/style";
 import { BusinessCenterOutlined } from "@mui/icons-material";
-import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
+import { 
+    Timeline, 
+    TimelineConnector, 
+    TimelineContent, 
+    TimelineDot, 
+    TimelineItem, 
+    TimelineOppositeContent, 
+    TimelineSeparator
+ } from "@mui/lab";
 import { Box, Grid2, Typography } from "@mui/material";
 import styles from "./styles.module.scss";
 import oracle from "@/assets/images/oracle.png";
@@ -11,8 +19,30 @@ export default function DesktopView(){
         <Box>
             <Timeline position="alternate">
                 <TimelineItem >
-                    <TimelineOppositeContent sx={{m: 'auto 0'}} align="right" variant="body2" color="textSecondary" >
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate odit esse quidem in cumque nulla soluta natus reiciendis eos culpa laudantium amet sapiente beatae pariatur quos ducimus, laborum nostrum ab.
+                    <TimelineOppositeContent sx={{m: 'auto 0'}} align="left" variant="body2" color="textSecondary" >
+                        <p className={`${styles.timelineContentHeader}`}>
+                            {"Associate Software Developer"}
+                        </p>
+                        <p className={`${styles.timelineContentCompanyName}`}>
+                            {"Oracle India Pvt. Ltd."}
+                        </p>
+                        <p className={`${styles.timelineContentDuration}`}>
+                            {"Aug 2023 - present"}
+                        </p>
+                        <ul className={`${styles.timelineExperienceDetail}`} >
+                            <li>
+                            {"Spearheaded and executed comprehensive benchmarking strategies to evaluate the performance of the product, identifying key areas for optimization and ensuring alignment with industry standards and performance targets."}
+                            </li>
+                            <li>
+                                {"Enabled multiple admin access in IAM, enhancing role-based management and control over user permissions. Implemented comprehensive logging of critical user events, ensuring improved tracking and auditability of activities. Developed and configured key metrics pegging, enabling efficient monitoring and analysis of user interactions and system usage"}
+                            </li>
+                            <li>
+                                {"Implemented TLSv1.3 based communication between microservices, configuring a specific set of allowed ciphers while eliminating deprecated ones previously used by default"}
+                            </li>
+                            <li>
+                                {"Resolved issues with API gateway to enhance responsiveness and mitigate D-DOS vulnerabilities, achieving a 20x improvement in response time"}
+                            </li>
+                        </ul>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                         <TimelineConnector/>
