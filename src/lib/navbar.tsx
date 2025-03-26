@@ -2,7 +2,7 @@
 
 import { NavBarItems } from "@/assets/data/navData";
 import { Menu } from "@mui/icons-material";
-import { Box, Drawer, Grid2, IconButton, List, ListItem, ListItemButton, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Drawer, Grid2, IconButton, List, ListItem, Typography, useMediaQuery, useTheme } from "@mui/material";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";

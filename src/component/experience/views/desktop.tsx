@@ -9,7 +9,7 @@ import {
     TimelineOppositeContent, 
     TimelineSeparator
  } from "@mui/lab";
-import { Box, Grid2, Typography } from "@mui/material";
+import { Box, Grid2 } from "@mui/material";
 import styles from "./styles.module.scss";
 import oracle from "@/assets/images/oracle.png";
 import Image from "next/image";

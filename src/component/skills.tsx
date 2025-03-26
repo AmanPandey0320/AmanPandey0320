@@ -1,4 +1,4 @@
-import { Box, Container, Grid2, Icon, Paper, Typography } from "@mui/material";
+import { Box, Grid2, Icon, Paper, Typography } from "@mui/material";
 import styles from "./styles.module.scss"
 import { skills } from "./style";
 import skillsData from "@/assets/data/skillsData";

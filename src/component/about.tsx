@@ -1,5 +1,5 @@
 import { Box, Grid2, Icon, Typography } from "@mui/material";
-import { about, color } from "./style";
+import { about } from "./style";
 import sweImg from "@/assets/images/about.png";
 import Image from "next/image";
 import styles from "./styles.module.scss";
