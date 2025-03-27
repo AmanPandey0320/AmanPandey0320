@@ -32,7 +32,7 @@ export default function About() {
                             <Grid2 spacing={1} direction={"column"} container>
                                 <Grid2>
                                     <Typography style={about.sweText} variant="h3">
-                                        {"Software Engineer & Problem solver"}
+                                        {"Software Engineer & Problem Solver"}
                                     </Typography>
                                     <>
                                         {

@@ -11,8 +11,12 @@ function getTimeElapsedFromAugust2023(): string {
       years -= 1;
       months += 12;
     }
+
+    if(years == 0){
+        return `${months} month`;
+    }
   
-    return `${years} years ${months} months`;
+    return `${years}+ year`;
   }
 
 
