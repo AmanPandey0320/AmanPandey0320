@@ -1,6 +1,5 @@
 import { Box, Divider, Grid2 } from "@mui/material";
 import styles from "./styles.module.scss";
-import oracle from "@/assets/images/oracle.png";
 import Image from "next/image";
 import experienceData from "@/assets/data/experienceData";
 
