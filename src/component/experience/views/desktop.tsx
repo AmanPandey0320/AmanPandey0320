@@ -56,13 +56,16 @@ export default function DesktopView() {
                                             })
                                         }
                                     </Grid2>
+                                    <div style={{minHeight:'4rem'}} >
+                                        
+                                    </div>
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>
                                     <TimelineConnector />
                                     <TimelineDot sx={{ background: color.blue }} >
                                         <exp.dotIcon sx={{ color: color.white }} />
                                     </TimelineDot>
-                                    <TimelineConnector />
+                                    <TimelineConnector/>
                                 </TimelineSeparator>
                                 <TimelineContent>
                                     <div className={`${styles.timelineContentBox}`} >
