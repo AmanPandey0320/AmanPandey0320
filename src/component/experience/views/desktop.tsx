@@ -1,5 +1,4 @@
 import { color } from "@/component/style";
-import { BusinessCenterOutlined } from "@mui/icons-material";
 import {
     Timeline,
     TimelineConnector,
