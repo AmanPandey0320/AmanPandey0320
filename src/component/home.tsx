@@ -13,7 +13,7 @@ export default function Home() {
             sx={home.boxStyle}
         >
             <Grid2 direction={"row"} sx={{ paddingTop: '8rem' }} spacing={{ xs: 6, lg: 1 }} container>
-                <Grid2 size={{ lg: 7, md: 6, xs: 12 }}>
+                <Grid2 size={{ lg: 6, md: 6, xs: 12 }}>
                     <Grid2 spacing={{ lg: 1, xs:2 }} direction={"column"} container>
                         <Grid2>
                             <Typography
@@ -26,7 +26,7 @@ export default function Home() {
                         <Grid2>
                             <Typography
                                 variant="h1"
-                                sx={home.nameStyle}
+                                sx={home.helloStyle}
                             >
                                 {`Aman Kr Pandey`}
                             </Typography>
@@ -74,7 +74,7 @@ export default function Home() {
                             <Grid2 direction={"row"} spacing={2} container>
                                 <Grid2>
                                     <Link href={"https://www.linkedin.com/in/amanpandey09/"} legacyBehavior passHref>
-                                        <a style={{ textDecoration: 'none', color: '#9ca3af' }} target="_blank" rel="noopener noreferrer">
+                                        <a style={{ textDecoration: 'none', color: '#262626' }} target="_blank" rel="noopener noreferrer">
                                             <Icon fontSize="medium">
                                                 <LinkedIn fontSize="medium" />
                                             </Icon>
@@ -83,7 +83,7 @@ export default function Home() {
                                 </Grid2>
                                 <Grid2>
                                     <Link href={"https://github.com/AmanPandey0320/"} legacyBehavior passHref>
-                                        <a style={{ textDecoration: 'none', color: '#9ca3af' }} target="_blank" rel="noopener noreferrer">
+                                        <a style={{ textDecoration: 'none', color: '#262626' }} target="_blank" rel="noopener noreferrer">
                                             <Icon fontSize="medium">
                                                 <GitHub fontSize="medium" />
                                             </Icon>
@@ -92,7 +92,7 @@ export default function Home() {
                                 </Grid2>
                                 <Grid2>
                                     <Link href={"https://x.com/_a_m_a_n_pandey/"} legacyBehavior passHref>
-                                        <a style={{ textDecoration: 'none', color: '#9ca3af' }} target="_blank" rel="noopener noreferrer">
+                                        <a style={{ textDecoration: 'none', color: '#262626' }} target="_blank" rel="noopener noreferrer">
                                             <Icon fontSize="medium">
                                                 <X fontSize="medium" />
                                             </Icon>
@@ -103,7 +103,7 @@ export default function Home() {
                         </Grid2>
                     </Grid2>
                 </Grid2>
-                <Grid2 size={{ lg: 5, md: 6, xs: 12 }}>
+                <Grid2 size={{ lg: 6, md: 6, xs: 12 }}>
                     <Box sx={home.imageStyle} >
                         <Image style={{
                             width: '100%',

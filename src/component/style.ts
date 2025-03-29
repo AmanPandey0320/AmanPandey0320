@@ -24,7 +24,7 @@ const filledBlueLink = {
 }
 
 const outlinedTransparentLink = {
-    color: color.grey,
+    color: color.darkerGrey,
     fontWeight: 600,
     paddingTop: '0.75rem',
     paddingBottom: '0.75rem',
@@ -34,7 +34,7 @@ const outlinedTransparentLink = {
     borderStyle: 'solid',
     borderWidth: '1px',
     "&:hover": {
-        color: color.white,
+        color: color.darkBlue,
         cursor: 'pointer'
     }
 }
@@ -84,13 +84,15 @@ const home = {
     outlinedTransparentLink,
     filledBlueLink,
     introTextStyle: {
+        fontFamily:'var(--font-roboto)',
         maxWidth: '32rem',
-        color: color.grey,
+        color: color.darkerGrey,
         lineHeight: '1.5'
     },
     positionStyle: {
-        color: color.white,
+        color: color.blue,
         fontSize: '1.5rem',
+        fontWeight:600,
         lineHeight: '2',
         "@media (max-width: 600px)": {
             fontSize: '1.25rem'
@@ -117,7 +119,7 @@ const home = {
     boxStyle: {
         minHeight: 'fit-content',
         height: '100vh',
-        backgroundColor: color.darkerGrey,
+        background: `linear-gradient(0deg,${color.white} , #cfddfa)`,
         paddingLeft: '2rem',
         paddingRight: '2rem',
         "@media (max-width: 1100px)": {

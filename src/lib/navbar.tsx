@@ -108,7 +108,7 @@ export default function NavBar() {
                     sx={{
                         "justifyContent": "space-between",
                         "alignItems": "center",
-                        "color": '#2664eb'
+                        "color": '#000000'
                     }}
                     direction={"row"}
                     container
@@ -117,11 +117,12 @@ export default function NavBar() {
                         <Typography
                             sx={{
                                 fontWeight: 700,
-                                fontSize: '1.5rem',
-                                lineHeight: '2rem'
+                                fontSize: '1.75rem',
+                                lineHeight: '2rem',
+                                fontFamily:'var(--font-heading)'
                             }}
                         >
-                            {`BuildWithAman`}
+                            {`/aman's canvas`}
                         </Typography>
                     </Grid2>
                     <Grid2>

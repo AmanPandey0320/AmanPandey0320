@@ -6,7 +6,7 @@ import { CheckCircle } from "@mui/icons-material";
 
 export default function Skills() {
     return (
-        <Box id="skills" className={`${styles.boxStyle} ${styles.bgColorSkills}`} component={"section"}>
+        <Box id="skills" className={`${styles.boxStyle} ${styles.bgColorGrey}`} component={"section"}>
             <Grid2 container sx={{ alignItems: 'center' }} spacing={3} direction={"column"}>
                 <Grid2>
                     <Typography sx={skills.sectionHeaderText} variant="h2">
