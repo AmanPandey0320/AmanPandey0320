@@ -181,6 +181,12 @@ const experience = {
 
 const education = {
     ...experience,
+    subHeadingText:{
+        fontSize: "1.5rem",
+        lineHeight: "2rem",
+        fontWeight: 700,
+        color: color.darkerGrey
+    }
 }
 
 export { home, about, color, skills, experience, education }

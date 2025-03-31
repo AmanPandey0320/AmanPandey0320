@@ -22,7 +22,7 @@ const NavBarItems = [
     {
         "id":"education",
         "text":"Education",
-        "enabled":false
+        "enabled":true
     },
     {
         "id":"projects",
