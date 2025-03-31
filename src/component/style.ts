@@ -179,4 +179,8 @@ const experience = {
     sectionHeaderUnderline,
 }
 
-export { home, about, color, skills, experience }
+const education = {
+    ...experience,
+}
+
+export { home, about, color, skills, experience, education }
