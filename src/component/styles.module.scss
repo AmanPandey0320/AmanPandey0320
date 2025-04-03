@@ -109,3 +109,41 @@
     color: #bfdbfe;
     margin: 0;
 }
+
+.eduDetailWrapper{
+    padding: 1.5rem;
+}
+
+.eduDetailDegree{
+    font-weight: 700;
+    font-size: larger;
+}
+
+.eduDetailDegreeSmallBold{
+    font-size: small;
+    padding: 0.5rem;
+    padding-inline: 1rem;
+    font-weight: 600;
+}
+
+.greenBG{
+    background-color: #dcfce7;
+    color: #166534;
+    border-radius: 4rem;
+}
+
+.blueBG{
+    background-color: #dbeafe;
+    color: #2664eb;
+    border-radius: 4rem;
+}
+
+.eduInstituteCourse{
+    margin: 0px;
+    font-size: small;
+    color: #4b5563;
+}
+
+.eduKeyCourcesHead{
+    font-weight: 600;
+}
