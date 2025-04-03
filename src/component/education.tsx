@@ -2,11 +2,13 @@ import { Box, Grid2, Icon, Typography } from "@mui/material";
 import styles from "./styles.module.scss";
 import { SchoolOutlined, VerifiedOutlined } from "@mui/icons-material";
 import { education } from "./style";
+import Image from "next/image";
+import nitjsrImg from "@/assets/images/nitjsr.png";
 
 export default function Education() {
     return (
         <Box id="education" className={`${styles.boxStyle} ${styles.bgColorGrey}`} component={"section"}>
-            <Grid2 direction={"column"} sx={{alignItems:'center'}} container spacing={3}>
+            <Grid2 direction={"column"} sx={{alignItems:'center'}} container spacing={4}>
                 <Grid2 >
                     <Typography sx={education.sectionHeaderText} variant="h2">
                         {`Education`}
@@ -43,6 +45,28 @@ export default function Education() {
                                 </Grid2>
                             </Grid2>
                         </Grid2>
+                        <Grid2>
+                            <div className={`${styles.eduWrapperBox}`} >
+                                <Grid2 direction={"row"} container>
+                                    <Grid2 size={4} >
+                                        <div className={`${styles.eduInstitute}`}>
+                                            <div className={`${styles.eduInstituteIcon}`}>
+                                                <Image className={`${styles.eduInstituteImg}`} src={nitjsrImg} alt="nitjsr" />
+                                            </div>
+                                            <h4 className={`${styles.eduInstituteHeading}`} >
+                                                {`NIT Jamshedpur`}
+                                            </h4>
+                                            <p className={`${styles.eduInstituteDuration}`}>
+                                                {`2019-23`}
+                                            </p>
+                                        </div>
+                                    </Grid2>
+                                    <Grid2 size={8}>
+
+                                    </Grid2>
+                                </Grid2>
+                            </div>
+                        </Grid2>
                     </Grid2>
                 </Grid2>
                 <Grid2 size={{ sm: 12, md: 6 }} id="certificates">
@@ -59,7 +83,7 @@ export default function Education() {
                                 </Grid2>
                                 <Grid2>
                                     <Typography sx={education.subHeadingText} component={"h3"}>
-                                        {"Certificates & Courses"}
+                                        {"Achivements & Certificates"}
                                     </Typography>
                                 </Grid2>
                             </Grid2>
