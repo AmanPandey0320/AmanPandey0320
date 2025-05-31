@@ -52,7 +52,7 @@ export default function FormalEducationView({ edu }: {edu:EducationData}) {
                             </p>
                             <Grid2 direction={"row"} wrap="wrap" spacing={1} container>
                                 {
-                                    edu.subjects.map((sub: String) => {
+                                    edu.subjects.map((sub: string) => {
                                         return (<Grid2 key={`${edu.id}_sub_${sub}`} className={`${styles.eduDetailDegreeSmallBold} ${styles.blueBG}`} component={"span"} >
                                             {sub}
                                         </Grid2>)

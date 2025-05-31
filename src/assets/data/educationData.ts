@@ -1,4 +1,3 @@
-import { SchoolOutlined } from "@mui/icons-material";
 import nitjsrImg from "@/assets/images/nitjsr.png";
 
 
