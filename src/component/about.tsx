@@ -77,7 +77,7 @@ export default function About() {
                                 </Grid2>
                                 <Grid2>
                                     <br/>
-                                    <Grid2 direction={"row"} spacing={2} container>
+                                    <Grid2 direction={"row"} spacing={1} container>
                                         <Grid2>
                                             <Link style={{ textDecoration: 'none' }} href={"#project"} passHref>
                                                 <Typography sx={about.filledBlueLink}>

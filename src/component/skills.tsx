@@ -27,7 +27,7 @@ export default function Skills() {
                         {
                             skillsData.skills.map((data, idx) => {
                                 return (
-                                    <Grid2 size={{ lg: 4, sm: 6, xs: 12 }} key={`skill_${data.id}_${idx}`} >
+                                    <Grid2 size={{ lg: 4, sm: 12, xs: 12 }} key={`skill_${data.id}_${idx}`} >
                                         <Paper sx={skills.paperStyle}>
                                             <Grid2 direction={"column"} spacing={1} container>
                                                 <Grid2>
