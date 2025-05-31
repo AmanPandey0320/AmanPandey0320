@@ -1,6 +1,6 @@
 import { SchoolOutlined } from "@mui/icons-material";
 import nitjsrImg from "@/assets/images/nitjsr.png";
-import hsmsImg from "@/assets/images/hsms.jpg"
+
 
 export default {
     id: "education",

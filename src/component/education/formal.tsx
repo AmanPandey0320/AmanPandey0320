@@ -2,7 +2,7 @@ import { Grid2 } from "@mui/material";
 import styles from "./styles.module.scss";
 import Image from "next/image";
 
-export default function FormalEducationView({ edu }: any) {
+export default function FormalEducationView({ edu }: {edu:EducationData}) {
     return (
         <div className={`${styles.eduWrapperBox}`} >
             <Grid2 direction={"row"} container>
@@ -51,7 +51,7 @@ export default function FormalEducationView({ edu }: any) {
                             </p>
                             <Grid2 direction={"row"} wrap="wrap" spacing={1} container>
                                 {
-                                    edu.subjects.map((sub: any) => {
+                                    edu.subjects.map((sub: String) => {
                                         return (<Grid2 key={`${edu.id}_sub_${sub}`} className={`${styles.eduDetailDegreeSmallBold} ${styles.blueBG}`} component={"span"} >
                                             {sub}
                                         </Grid2>)
