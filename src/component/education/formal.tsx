@@ -1,6 +1,7 @@
 import { Grid2 } from "@mui/material";
 import styles from "./styles.module.scss";
 import Image from "next/image";
+import EducationData from "@/lib/types/EducationData"
 
 export default function FormalEducationView({ edu }: {edu:EducationData}) {
     return (
