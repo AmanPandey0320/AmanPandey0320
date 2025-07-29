@@ -21,7 +21,7 @@ function getTimeElapsedFromAugust2023(): string {
 
 
 export default  {
-    resume:"https://drive.google.com/file/d/1uirRJ5QezwiehiPljJcwHolEb_MVjE6K/view?usp=sharing",
+    resume:"https://bit.ly/4lJea6i",
     intro: [
         `Hello! I'm Aman Kr Pandey, a passionate Software Engineer with ${getTimeElapsedFromAugust2023()} of experience in building web applications and solving complex problems that drive real-world impact.`,
 
