@@ -9,7 +9,15 @@ export default function FormalEducationView({ edu }: {edu:EducationData}) {
             <Grid2 direction={"row"} container>
                 <Grid2 component={"div"} className={`${styles.eduInstitute}`} size={{ xs: 12, lg: 4 }} >
                     <div className={`${styles.eduInstituteIcon}`}>
-                        <Image className={`${styles.eduInstituteImg}`} src={edu.img} alt={edu.name} />
+                        {/* Ensure hydration safety by specifying width/height and validating src */}
+                        <Image
+                            className={`${styles.eduInstituteImg}`}
+                            src={typeof edu.img === 'string' ? edu.img : edu.img}
+                            alt={edu.name}
+                            width={100}
+                            height={100}
+                            priority={true}
+                        />
                     </div>
                     <h4 className={`${styles.eduInstituteHeading}`} >
                         {edu.name}
@@ -17,10 +25,11 @@ export default function FormalEducationView({ edu }: {edu:EducationData}) {
                     <p className={`${styles.eduInstituteDuration}`}>
                         {edu.duration}
                     </p>
-
                 </Grid2>
+                {/* ...existing code... */}
                 <Grid2 component={"div"} className={`${styles.eduDetailWrapper}`} size={{ xs: 12, lg: 8 }}>
                     <Grid2 direction={"column"} container>
+                        {/* ...existing code... */}
                         <Grid2>
                             <Grid2 direction={"row"} sx={{ justifyContent: "space-between", alignItems: 'center' }} container>
                                 <Grid2>
@@ -39,7 +48,6 @@ export default function FormalEducationView({ edu }: {edu:EducationData}) {
                                     {edu.marks}
                                 </Grid2>
                             </Grid2>
-
                         </Grid2>
                         <Grid2>
                             <p>
@@ -58,7 +66,6 @@ export default function FormalEducationView({ edu }: {edu:EducationData}) {
                                         </Grid2>)
                                     })
                                 }
-
                             </Grid2>
                         </Grid2>
                     </Grid2>

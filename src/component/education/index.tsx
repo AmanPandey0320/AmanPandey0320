@@ -4,6 +4,7 @@ import { SchoolOutlined, VerifiedOutlined } from "@mui/icons-material";
 import { education } from "../style";
 import educationData from "@/assets/data/educationData";
 import FormalEducationView from "./formal";
+import AchievementsView from "./achievements";
 
 export default function Education() {
     return (
@@ -49,7 +50,7 @@ export default function Education() {
                             educationData.formal.map(edu => {
                                 return (
                                     <Grid2 key={edu.id}>
-                                        <FormalEducationView edu={edu}/>
+                                        <FormalEducationView edu={edu} />
                                     </Grid2>
                                 )
                             })
@@ -57,7 +58,7 @@ export default function Education() {
                     </Grid2>
                 </Grid2>
                 <Grid2 size={{ sm: 12, md: 6 }} id="certificates">
-                    <Grid2 direction={"column"} container>
+                    <Grid2 spacing={3} direction={"column"} container>
                         <Grid2>
                             <Grid2 direction={"row"} spacing={1} sx={{ alignItems: 'center' }} container>
                                 <Grid2>
@@ -70,11 +71,20 @@ export default function Education() {
                                 </Grid2>
                                 <Grid2>
                                     <Typography sx={education.subHeadingText} component={"h3"}>
-                                        {"Achivements & Certificates"}
+                                        {"Achivements"}
                                     </Typography>
                                 </Grid2>
                             </Grid2>
                         </Grid2>
+                        {
+                            educationData.achievements.map(ach => {
+                                return (
+                                    <Grid2 key={ach.id}>
+                                        <AchievementsView acv={ach} />
+                                    </Grid2>
+                                )
+                            })
+                        }
                     </Grid2>
                 </Grid2>
             </Grid2>

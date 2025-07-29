@@ -11,3 +11,13 @@ export default interface EducationData {
   summary: string;
   subjects: string[];
 }
+
+export interface AchievementsData {
+  id: string;
+  img: string | StaticImageData;
+  title: string;
+  issued: string;
+  expires?: string;
+  issuesBy: string;
+  summary: string;
+}
