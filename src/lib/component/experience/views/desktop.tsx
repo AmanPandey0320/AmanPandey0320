@@ -1,4 +1,4 @@
-import { color } from "@/component/style";
+import { color } from "@/lib/component/style";
 import {
     Timeline,
     TimelineConnector,

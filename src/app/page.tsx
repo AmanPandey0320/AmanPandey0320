@@ -1,19 +1,19 @@
-import About from "@/component/about";
-import Education from "@/component/education";
-import Experience from "@/component/experience";
-import Home from "@/component/home";
-import Projects from "@/component/project";
-import Skills from "@/component/skills";
+import About from "@/lib/component/about";
+import Education from "@/lib/component/education";
+import Experience from "@/lib/component/experience";
+import Home from "@/lib/component/home";
+import Projects from "@/lib/component/project";
+import Skills from "@/lib/component/skills";
 
 export default function Portfolio() {
   return (
     <div>
-      <Home/>
+      {/* <Home/>
       <About/>
       <Skills/>
       <Experience/>
       <Education/>
-      <Projects/>
+      <Projects/> */}
     </div>
   );
 }

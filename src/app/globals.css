@@ -1,7 +1,6 @@
-h4,body{
-    margin: 0px;
-    font-family: var(--font-roboto);
-}
-p{
-    font-family: var(--font-roboto);
-}
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
