@@ -8,8 +8,8 @@ import Skills from "@/lib/component/skills";
 export default function Portfolio() {
   return (
     <div>
-      {/* <Home/>
-      <About/>
+      <Home/>
+      {/* <About/>
       <Skills/>
       <Experience/>
       <Education/>
