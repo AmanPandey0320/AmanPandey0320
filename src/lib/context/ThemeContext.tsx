@@ -1,8 +1,8 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
 import type React from "react";
 import { createContext, useState, useContext, useEffect } from "react";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 type Theme = "light" | "dark";
 
@@ -64,7 +64,7 @@ export const ThemeToggleButton = () => {
     return(
         <button className="relative rounded-full h-11 w-11 flex items-center justify-center border-gray-800 text-gray-800 border border-t-1 hover:cursor-pointer hover:bg-gray-600/[0.075] transition-all duration-200 dark:text-gray-400 dark:border-gray-400 dark:hover:bg-white/[0.075]" onClick={toggleTheme}>
             {
-                theme === "dark" ? <Sun /> : <Moon />
+                theme === "dark" ? <MdLightMode /> : <MdDarkMode />
             }
         </button>
     )

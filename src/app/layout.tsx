@@ -36,7 +36,7 @@ export default function RootLayout({
         </head>
         <body className={`bg-gray-100 dark:bg-gray-800 ${roboto.variable} ${monsterateUnderline.variable}`}>
           <NavBar />
-          <div>
+          <div className="font-(family-name:--font-roboto)">
             {children}
           </div>
         </body>
