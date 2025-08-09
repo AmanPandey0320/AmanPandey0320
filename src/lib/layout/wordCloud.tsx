@@ -16,7 +16,7 @@ const options: {
   initSpeed: "slow" | "normal" | "fast";
   keep: boolean;
 } = {
-  radius: 250,
+  radius: 216,
   maxSpeed: "fast",
   initSpeed: "normal",
   keep: true,
