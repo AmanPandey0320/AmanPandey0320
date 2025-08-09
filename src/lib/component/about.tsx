@@ -1,106 +1,24 @@
-import { Box, Grid2, Icon, Typography } from "@mui/material";
-import { about } from "./style";
-import sweImg from "@/assets/images/about.png";
-import Image from "next/image";
-import styles from "./styles.module.scss";
-import aboutData from "@/assets/data/aboutData";
 import Link from "next/link";
+import Image from "next/image";
+import img from "@/assets/images/img.jpeg";
+import { FaDev, FaGithub, FaLinkedin, FaSquareXTwitter } from "react-icons/fa6";
+import WordCloud from "../layout/wordCloud";
 
 export default function About() {
     return (
-        <Box
-            id="about"
-            component={"section"}
-            sx={about.boxStyle}
-        >
-            <Grid2 direction={"column"} spacing={{ xs: 4, lg: 6 }} container>
-                <Grid2>
-                    <Typography sx={about.sectionHeaderText} variant="h2">
-                        {`About Me`}
-                    </Typography>
-                    <div style={about.sectionHeaderUnderline} >
-                    </div>
-                </Grid2>
-                <Grid2>
-                    <Grid2 direction={"row"} spacing={1} container>
-                        <Grid2 size={{ xs: 12, md: 4, lg: 6 }} >
-                            <div style={{ textAlign: 'center' }}>
-                                <Image className={`${styles.sweImage}`} src={sweImg} alt="Software Engineer" />
-                            </div>
-                        </Grid2>
-                        <Grid2 size={{ xs: 12, md: 8, lg: 6 }} >
-                            <Grid2 spacing={1} direction={"column"} container>
-                                <Grid2>
-                                    <Typography style={about.sweText} variant="h3">
-                                        {"Software Engineer & Problem Solver"}
-                                    </Typography>
-                                    <>
-                                        {
-                                            aboutData.intro.map((text, idx) => {
-                                                return (
-                                                    <p key={`intro_txt_${idx}`} className={`${styles.sweText}`} >
-                                                        {`${text}`}
-                                                    </p>
-                                                )
-                                            })
-                                        }
-                                    </>
-                                </Grid2>
-                                <Grid2>
-                                    <Grid2 container direction={"row"} wrap="wrap">
-                                        {
-                                            aboutData.parameter.filter((data) => data.enabled).map((data, idx) => {
-                                                return (
-                                                    <Grid2 spacing={2} sx={{ paddingY: '0.5rem' }} key={`parameter_${data.id}_${idx}`} size={{ xs: 6 }}>
-                                                        <Grid2 direction={"row"} spacing={2} sx={{ alignItems: "center" }} container>
-                                                            <Grid2>
-                                                                <div className={`${styles.sweIcon}`}>
-                                                                    <Icon>
-                                                                        <data.icon />
-                                                                    </Icon>
-                                                                </div>
-                                                            </Grid2>
-                                                            <Grid2>
-                                                                <Typography sx={{ fontWeight: 700 }}>
-                                                                    {data.title}
-                                                                </Typography>
-                                                                <Typography sx={{ fontSize: '0.875rem', lineHeight: '1.25rem', color: '#4b5563' }}>
-                                                                    {data.detail}
-                                                                </Typography>
-                                                            </Grid2>
-                                                        </Grid2>
-                                                    </Grid2>
-                                                )
-                                            })
-                                        }
-                                    </Grid2>
-                                </Grid2>
-                                <Grid2>
-                                    <br/>
-                                    <Grid2 direction={"row"} spacing={1} container>
-                                        <Grid2>
-                                            <Link style={{ textDecoration: 'none' }} href={"#project"} passHref>
-                                                <Typography sx={about.filledBlueLink}>
-                                                    {`Browse Projects`}
-                                                </Typography>
-                                            </Link>
-                                        </Grid2>
-                                        <Grid2>
-                                            <Link style={{ textDecoration: 'none' }} href={aboutData.resume} legacyBehavior passHref>
-                                                <a target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
-                                                    <Typography sx={about.outlineBlueLink}>
-                                                        {`Download Resume`}
-                                                    </Typography>
-                                                </a>
-                                            </Link>
-                                        </Grid2>
-                                    </Grid2>
-                                </Grid2>
-                            </Grid2>
-                        </Grid2>
-                    </Grid2>
-                </Grid2>
-            </Grid2>
-        </Box>
+        <section id="about" className="min-h-screen p-16 pt-32 flex flex-col gap-2" >
+            <h1 className="text-center text-4xl font-bold text-gray-800">
+                {"About Me"}
+            </h1>
+            <span className="w-20 mx-auto border-b-4 border-blue-600 py-2"></span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div>
+                    <WordCloud/>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </section>
     )
 }

@@ -7,13 +7,13 @@ import Skills from "@/lib/component/skills";
 
 export default function Portfolio() {
   return (
-    <div>
+    <>
       <Home/>
-      {/* <About/>
-      <Skills/>
+      <About/>
+      {/*<Skills/>
       <Experience/>
       <Education/>
       <Projects/> */}
-    </div>
+    </>
   );
 }
