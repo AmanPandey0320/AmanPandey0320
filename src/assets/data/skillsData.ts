@@ -1,4 +1,6 @@
-import { CloudOutlined, ConstructionOutlined, DevicesOtherOutlined, DnsOutlined, GppGoodOutlined, TableRowsOutlined } from "@mui/icons-material";
+import { FaDatabase } from "react-icons/fa6";
+
+import { MdCloudQueue, MdDevicesOther,MdOutlineConstruction,MdOutlineDns, MdOutlineGppGood  } from "react-icons/md";
 
 export default {
     intro: "I leverage a diverse range of technologies to design, develop, and deliver high-quality software solutions tailored to meet complex requirements.",
@@ -6,7 +8,7 @@ export default {
         {
             "id":"frontend_dev",
             "title":"Front-End Development",
-            "icon": DevicesOtherOutlined,
+            "icon": MdDevicesOther,
             "detail":[
                 "React.js & Redux",
                 "Android & Flutter",
@@ -18,7 +20,7 @@ export default {
         {
             "id":"backend_dev",
             "title":"Back-End Development",
-            "icon": DnsOutlined,
+            "icon": MdOutlineDns,
             "detail":[
                 "Node.JS & Express",
                 "Java & Spring Boot",
@@ -30,7 +32,7 @@ export default {
         {
             "id":"dbms_dev",
             "title":"Database Management",
-            "icon": TableRowsOutlined,
+            "icon": FaDatabase ,
             "detail":[
                 "NoSQL & Mongo",
                 "MySQL",
@@ -42,7 +44,7 @@ export default {
         {
             "id":"automation_dev",
             "title":"DevOps & Cloud",
-            "icon": CloudOutlined,
+            "icon": MdCloudQueue,
             "detail":[
                 "CI/CD pipeline",
                 "AWS & Firebase",
@@ -54,7 +56,7 @@ export default {
         {
             "id":"test_dev",
             "title":"Testing & QA",
-            "icon": GppGoodOutlined,
+            "icon": MdOutlineGppGood,
             "detail":[
                 "JUnit & Mockito",
                 "Selenium",
@@ -66,7 +68,7 @@ export default {
         {
             "id":"tools_dev",
             "title":"Tools & Methodologies",
-            "icon": ConstructionOutlined,
+            "icon": MdOutlineConstruction ,
             "detail":[
                 "Agile & Scrum",
                 "JIRA & Confluence",

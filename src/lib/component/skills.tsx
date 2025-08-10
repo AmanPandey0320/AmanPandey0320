@@ -1,82 +1,41 @@
-import { Box, Grid2, Icon, Paper, Typography } from "@mui/material";
-import styles from "./styles.module.scss"
-import { skills } from "./style";
 import skillsData from "@/assets/data/skillsData";
-import { CheckCircle } from "@mui/icons-material";
+import { MdCheckCircle, MdDevicesOther } from "react-icons/md";
 
 export default function Skills() {
     return (
-        <Box id="skills" className={`${styles.boxStyle} ${styles.bgColorGrey}`} component={"section"}>
-            <Grid2 container sx={{ alignItems: 'center' }} spacing={3} direction={"column"}>
-                <Grid2>
-                    <Typography sx={skills.sectionHeaderText} variant="h2">
-                        {`Technical Skills`}
-                    </Typography>
-                    <div style={skills.sectionHeaderUnderline} >
-
-                    </div>
-                </Grid2>
-                <Grid2>
-                    <p className={`${styles.sweText}`}>
-                        {`${skillsData.intro}`}
-                    </p>
-                </Grid2>
-                <Grid2>
-
-                    <Grid2 direction={"row"} wrap="wrap" spacing={{ lg: 3, sm: 2, xs: 1 }} container>
-                        {
-                            skillsData.skills.map((data, idx) => {
-                                return (
-                                    <Grid2 size={{ lg: 4, sm: 12, xs: 12 }} key={`skill_${data.id}_${idx}`} >
-                                        <Paper sx={skills.paperStyle}>
-                                            <Grid2 direction={"column"} spacing={1} container>
-                                                <Grid2>
-                                                    <Grid2 direction={"row"} spacing={1} sx={{ alignItems: 'center' }} container>
-                                                        <Grid2>
-                                                            <div className={styles.sweIcon}>
-                                                                <Icon>
-                                                                    <data.icon />
-                                                                </Icon>
-                                                            </div>
-                                                        </Grid2>
-                                                        <Grid2>
-                                                            <Typography variant="h3" sx={{ fontWeight: 700, fontSize: '1.25rem', lineHeight: '1.75rem' }} >
-                                                                {`${data.title}`}
-                                                            </Typography>
-                                                        </Grid2>
-                                                    </Grid2>
-                                                </Grid2>
-                                                <Grid2>
-                                                    <br />
-                                                </Grid2>
-                                                {
-                                                    data.detail.map((skill, dtIdx) => {
-                                                        return (
-                                                            <Grid2 key={`skill_${data.id}_${idx}_${dtIdx}`}>
-                                                                <Grid2 direction={"row"} spacing={1} container>
-                                                                    <Grid2>
-                                                                        <Icon fontSize="small" sx={{ color: '#21c45d' }} >
-                                                                            <CheckCircle fontSize="small" />
-                                                                        </Icon>
-                                                                    </Grid2>
-                                                                    <Grid2><Typography>
-                                                                        {`${skill}`}
-                                                                    </Typography></Grid2>
-                                                                </Grid2>
-                                                            </Grid2>
-                                                        )
-                                                    })
-                                                }
-                                            </Grid2>
-                                        </Paper>
-                                    </Grid2>
-                                )
-                            })
-                        }
-                    </Grid2>
-
-                </Grid2>
-            </Grid2>
-        </Box>
+        <section id="skills" className="min-h-screen p-16 pt-24 flex flex-col gap-2 bg-gray-200" >
+            <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-gray-200">
+                {"Knowledge base"}
+            </h1>
+            <span className="w-20 mx-auto border-b-4 border-blue-600 py-2"></span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 pt-8">
+                {
+                    skillsData.skills.map((sk, i) => {
+                        return (<div key={`${sk.id}-${i}`} className="flex flex-col gap-4 bg-gray-50 p-4 rounded shadow">
+                            <div className="flex flex-row gap-2 items-center text-xl">
+                                <span className="text-blue-600 bg-blue-600/10 p-3 rounded-full">
+                                    <sk.icon/>
+                                </span>
+                                <span className="font-semibold">
+                                    {sk.title}
+                                </span>
+                            </div>
+                            <div className="flex flex-col gap-2 px-3">
+                                {
+                                    sk.detail.map((dt,j) => (<div key={`${sk.id}_${i}_${j}`} className="flex flex-row gap-2 items-center">
+                                        <span className="text-lg text-green-600">
+                                            <MdCheckCircle />
+                                        </span>
+                                        <span className="text-md">
+                                            {dt}
+                                        </span>
+                                    </div>))
+                                }
+                            </div>
+                        </div>)
+                    })
+                }
+            </div>
+        </section>
     )
 }

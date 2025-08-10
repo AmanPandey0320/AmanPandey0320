@@ -10,8 +10,8 @@ export default function Portfolio() {
     <>
       <Home/>
       <About/>
-      {/*<Skills/>
-      <Experience/>
+      <Skills/>
+      {/*<Experience/>
       <Education/>
       <Projects/> */}
     </>
