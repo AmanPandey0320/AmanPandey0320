@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function NavBar() {
 
     return (
-        <header className="fixed top-0 z-9999 bg-white h-16 w-screen flex flex-row font-(family-name:--font-roboto) justify-between items-center px-4 shadow-md/15 dark:bg-gray-900">
+        <header className="fixed top-0 z-9999 bg-white h-16 w-screen flex flex-row font-(family-name:--font-roboto) justify-between items-center px-6 shadow-md/15 dark:bg-gray-900">
             <div>
                 <h1 className="font-bold text-2xl font-(family-name:--font-heading) text-gray-700 dark:text-gray-200">{"/aman's canvas"}</h1>
             </div>

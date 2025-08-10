@@ -17,7 +17,7 @@ const options: {
   keep: boolean;
 } = {
   radius: 216,
-  maxSpeed: "fast",
+  maxSpeed: "normal",
   initSpeed: "normal",
   keep: true,
 };
@@ -32,7 +32,7 @@ const WordCloud: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center text-gray-900 dark:text-gray-200">
       <span className="sphereCloud block" />
     </div>
   );
