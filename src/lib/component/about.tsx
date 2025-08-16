@@ -3,7 +3,7 @@ import { PiBriefcaseDuotone, PiCodeDuotone, PiProjectorScreenChartDuotone, PiTim
 
 export default function About() {
     return (
-        <section id="about" className="min-h-screen p-16 pt-24 flex flex-col gap-2" >
+        <section id="about" className="min-h-screen p-8 md:px-16 pt-32 flex flex-col gap-2 dark:bg-gray-900" >
             <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-gray-200">
                 {"About Me"}
             </h1>

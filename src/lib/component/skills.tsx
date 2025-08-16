@@ -3,7 +3,7 @@ import { MdCheckCircle } from "react-icons/md";
 
 export default function Skills() {
     return (
-        <section id="skills" className="min-h-screen p-16 pt-24 flex flex-col gap-2 bg-gray-200 dark:bg-gray-900" >
+        <section id="skills" className="min-h-screen p-8 md:px-16 pt-32 flex flex-col gap-2 bg-gray-200 dark:bg-gray-900" >
             <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-gray-200">
                 {"Knowledge base"}
             </h1>

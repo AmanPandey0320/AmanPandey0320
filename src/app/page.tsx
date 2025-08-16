@@ -11,8 +11,8 @@ export default function Portfolio() {
       <Home/>
       <About/>
       <Skills/>
-      {/*<Experience/>
-      <Education/>
+      <Experience/>
+      {/*<Education/>
       <Projects/> */}
     </>
   );

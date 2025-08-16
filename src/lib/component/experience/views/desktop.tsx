@@ -9,7 +9,6 @@ import {
     TimelineSeparator
 } from "@mui/lab";
 import { Box, Grid2 } from "@mui/material";
-import styles from "./styles.module.scss";
 import Image from "next/image";
 import experienceData from "@/assets/data/experienceData";
 
@@ -22,16 +21,16 @@ export default function DesktopView() {
                         return (
                             <TimelineItem key={`${exp.id}_${idx}`}>
                                 <TimelineOppositeContent sx={{ m: 'auto 0' }} align="left" variant="body2" color="textSecondary" >
-                                    <p className={`${styles.timelineContentHeader}`}>
+                                    <p className="text-gray-900 text-xl font-semibold dark:text-gray-100">
                                         {exp.title}
                                     </p>
-                                    <p className={`${styles.timelineContentCompanyName}`}>
+                                    <p className="text-blue-600 text-lg font-semibold dark:text-gray-300">
                                         {exp.company}
                                     </p>
-                                    <p className={`${styles.timelineContentDuration}`}>
+                                    <p className="text-gray-600 text-sm dark:text-gray-500">
                                         {exp.duration}
                                     </p>
-                                    <ul className={`${styles.timelineExperienceDetail}`} >
+                                    <ul className={`list-disc list-outside text-gray-700 dark:text-gray-400 text-justify pt-4`} >
                                         {
                                             exp.details.map((detail, dtIdx) => {
                                                 return (
@@ -44,12 +43,12 @@ export default function DesktopView() {
 
                                     </ul>
                                     <br/>
-                                    <Grid2 direction={"row-reverse"} spacing={1} container>
+                                    <Grid2 direction={"row"} justifyContent={idx%2 == 0?"end":"start"} spacing={1} container>
                                         {
                                             exp.techStackUsed.reverse().map((tech, tsIdx) => {
                                                 return (
                                                     <Grid2 key={`${exp.id}_${idx}_ts_${tech.id}_${tsIdx}`} >
-                                                        <Image style={{height:'2rem',width:'2rem'}} alt={tech.text} src={tech.icon}/>
+                                                        <tech.icon className="text-gray-700 dark:text-gray-400" size={24}/>
                                                     </Grid2>
                                                 )
                                             })
@@ -61,19 +60,19 @@ export default function DesktopView() {
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>
                                     <TimelineConnector />
-                                    <TimelineDot sx={{ background: color.blue }} >
-                                        <exp.dotIcon sx={{ color: color.white }} />
+                                    <TimelineDot sx={{ background: color.blue, padding:"8px" }} >
+                                        <exp.dotIcon className="text-white" size={16} />
                                     </TimelineDot>
                                     <TimelineConnector/>
                                 </TimelineSeparator>
                                 <TimelineContent>
-                                    <div className={`${styles.timelineContentBox}`} >
+                                    <div className={`p-2 shadow-md rounded bg-white dark:bg-white/[0.05]`} >
                                         <Grid2 direction={"column"} container spacing={1}>
                                             <Grid2>
-                                                <Image className={`${styles.timelineContentImage}`} alt="oracle" src={exp.image} />
+                                                <Image className={`h-[12rem] rounded`} alt="oracle" src={exp.image} />
                                             </Grid2>
                                             <Grid2>
-                                                <p className={`${styles.timelineContentText}`}>
+                                                <p className={`text-gray-700 dark:text-gray-400 text-sm py-2`}>
                                                     {exp.summary}
                                                 </p>
                                             </Grid2>

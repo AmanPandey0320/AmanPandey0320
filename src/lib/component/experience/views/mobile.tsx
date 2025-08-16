@@ -5,7 +5,7 @@ import experienceData from "@/assets/data/experienceData";
 
 export default function MobileView() {
     return (
-        <Box sx={{ padding: '0.5rem' }}>
+        <Box sx={{}}>
             <Grid2 direction={"column"} container>
                 {
                     experienceData.experiences.map((exp, idx) => {
@@ -13,13 +13,13 @@ export default function MobileView() {
                             <Grid2 key={`${exp.id}_${idx}`}>
                                 <Grid2 direction={"column"} container>
                                     <Grid2>
-                                        <div className={`${styles.timelineContentBox}`} >
+                                        <div className={`p-2 shadow-md rounded bg-white dark:bg-white/[0.05]`} >
                                             <Grid2 direction={"column"} container spacing={1}>
                                                 <Grid2>
-                                                    <Image className={`${styles.timelineContentImage}`} alt="oracle" src={exp.image} />
+                                                    <Image className={`h-[12rem] rounded`} alt="oracle" src={exp.image} />
                                                 </Grid2>
                                                 <Grid2>
-                                                    <p className={`${styles.timelineContentText}`}>
+                                                    <p className={`text-gray-700 dark:text-gray-400 text-sm py-2`}>
                                                         {exp.summary}
                                                     </p>
                                                 </Grid2>
@@ -27,27 +27,22 @@ export default function MobileView() {
                                         </div>
                                     </Grid2>
                                     <Grid2>
-                                        <p className={`${styles.timelineContentHeader}`}>
+                                        <p className="text-gray-900 text-xl pt-2 font-semibold dark:text-gray-100">
                                             {exp.title}
                                         </p>
                                     </Grid2>
                                     <Grid2>
-                                        <Grid2 direction={"row"} sx={{ justifyContent: 'space-between' }} container>
-                                            <Grid2>
-                                                <span className={`${styles.timelineContentCompanyName}`}>
-                                                    {exp.company}
-                                                </span>
-
-                                            </Grid2>
-                                            <Grid2>
-                                                <span className={`${styles.timelineContentDuration}`}>
-                                                    {exp.duration}
-                                                </span>
-                                            </Grid2>
-                                        </Grid2>
+                                        <div className="flex flex-row justify-between items-center">
+                                            <span className="text-blue-600 text-lg font-semibold dark:text-gray-300">
+                                                {exp.company}
+                                            </span>
+                                            <span className="text-gray-600 text-sm dark:text-gray-500">
+                                                {exp.duration}
+                                            </span>
+                                        </div>
                                     </Grid2>
                                     <Grid2>
-                                        <ul className={`${styles.timelineExperienceDetail}`} >
+                                        <ul className={`list-disc list-outside text-gray-700 dark:text-gray-400 text-justify pt-4`} >
                                             {
                                                 exp.details.map((detail, dtIdx) => {
                                                     return (
@@ -65,7 +60,7 @@ export default function MobileView() {
                                                 exp.techStackUsed.reverse().map((tech, tsIdx) => {
                                                     return (
                                                         <Grid2 key={`${exp.id}_${idx}_ts_${tech.id}_${tsIdx}`} >
-                                                            <Image style={{ height: '2rem', width: '2rem' }} alt={tech.text} src={tech.icon} />
+                                                            <tech.icon className="text-gray-700 dark:text-gray-400" size={24} />
                                                         </Grid2>
                                                     )
                                                 })
@@ -73,7 +68,7 @@ export default function MobileView() {
                                         </Grid2>
                                     </Grid2>
                                     <Grid2>
-                                        <br/>
+                                        <br />
                                         <Divider />
                                         <div style={{ minHeight: '2rem' }} >
 
