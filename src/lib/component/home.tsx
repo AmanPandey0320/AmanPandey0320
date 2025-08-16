@@ -21,12 +21,12 @@ export default function Home() {
                         <br />
                     </div>
                     <div className="flex flex-row gap-2">
-                        <button className="bg-blue-600 p-3 px-5 rounded text-white font-semibold hover:cursor-pointer hover:bg-blue-700 transition-all duration-200">
+                        <a href="#connect" className="bg-blue-600 p-3 px-5 flex items-center rounded text-white font-semibold hover:cursor-pointer hover:bg-blue-700 transition-all duration-200">
                             {"Let's Connect"}
-                        </button>
-                        <button className="p-2 px-4 rounded border border-t-1 border-gray-900 text-gray-900 hover:border-blue-600 hover:text-blue-600 font-semibold hover:cursor-pointer transition-all duration-200 dark:border-gray-300 dark:text-gray-300 dark:hover:border-gray-100 dark:hover:text-gray-100">
+                        </a>
+                        <a href="https://bit.ly/47ukLgz" target="_blank" className="p-2 flex items-center px-4 rounded border border-t-1 border-gray-900 text-gray-900 hover:border-blue-600 hover:text-blue-600 font-semibold hover:cursor-pointer transition-all duration-200 dark:border-gray-300 dark:text-gray-300 dark:hover:border-gray-100 dark:hover:text-gray-100">
                             {"Get Resume"}
-                        </button>
+                        </a>
                     </div>
                     <div className="flex flex-row gap-2 pt-2">
                         <Link target="_blank" href={"https://www.linkedin.com/in/amanpandey09/"} className="hover:cursor-pointer text-gray-900 dark:text-gray-300">
