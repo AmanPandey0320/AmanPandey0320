@@ -1,93 +1,50 @@
-import { Box, Grid2, Icon, Typography } from "@mui/material";
-import styles from "./styles.module.scss";
-import { SchoolOutlined, VerifiedOutlined } from "@mui/icons-material";
-import { education } from "../style";
+import { FaUserGraduate } from "react-icons/fa6";
+import { GrAchievement } from "react-icons/gr";
 import educationData from "@/assets/data/educationData";
 import FormalEducationView from "./formal";
 import AchievementsView from "./achievements";
 
 export default function Education() {
     return (
-        <Box id="education" className={`${styles.boxStyle} ${styles.bgColorGrey}`} component={"section"}>
-            <Grid2 direction={"column"} sx={{ alignItems: 'center' }} container spacing={4}>
-                <Grid2 >
-                    <Typography sx={education.sectionHeaderText} variant="h2">
-                        {`${educationData.heading}`}
-                    </Typography>
-                    <div style={education.sectionHeaderUnderline} >
-
+        <section id="education" className="min-h-screen p-8 md:px-16 pt-32 flex flex-col gap-2 dark:bg-gray-900" >
+            <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-gray-200">
+                {"Education"}
+            </h1>
+            <span className="w-20 mx-auto border-b-4 border-blue-600 py-2"></span>
+            <div className="pt-8 sm:pt-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <div className="flex flex-col gap-2">
+                        <div className="flex flex-row items-center gap-2 text-xl">
+                            <span className="text-blue-600 dark:bg-white/[0.075] dark:text-gray-300 bg-blue-600/10 p-4 rounded-full" >
+                                <FaUserGraduate />
+                            </span>
+                            <span className="font-semibold text-gray-900 dark:text-gray-200">
+                                {"Formal Education"}
+                            </span>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            {
+                                educationData.formal.map((edu, idx) => <FormalEducationView key={idx} edu={edu} />)
+                            }
+                        </div>
                     </div>
-                </Grid2>
-                <Grid2>
-                    <p className={`${styles.sweText}`}>
-                        {`${educationData.title}`}
-                    </p>
-                    <br />
-                </Grid2>
-            </Grid2>
-            <Grid2 spacing={4} direction={"row"} container>
-
-                <Grid2 size={{ sm: 12, md: 6 }} id="cources">
-                    <Grid2 spacing={3} direction={"column"} container>
-                        <Grid2>
-                            <Grid2 direction={"row"} spacing={1} sx={{ alignItems: 'center' }} container>
-                                <Grid2>
-                                    <div className={styles.eduIcon}>
-                                        <Icon fontSize="large">
-                                            <SchoolOutlined fontSize="large" />
-                                        </Icon>
-                                    </div>
-
-                                </Grid2>
-                                <Grid2>
-                                    <Typography sx={education.subHeadingText} component={"h3"}>
-                                        {"Formal Education"}
-                                    </Typography>
-                                </Grid2>
-                            </Grid2>
-                        </Grid2>
-                        {
-                            educationData.formal.map(edu => {
-                                return (
-                                    <Grid2 key={edu.id}>
-                                        <FormalEducationView edu={edu} />
-                                    </Grid2>
-                                )
-                            })
-                        }
-                    </Grid2>
-                </Grid2>
-                <Grid2 size={{ sm: 12, md: 6 }} id="certificates">
-                    <Grid2 spacing={3} direction={"column"} container>
-                        <Grid2>
-                            <Grid2 direction={"row"} spacing={1} sx={{ alignItems: 'center' }} container>
-                                <Grid2>
-                                    <div className={styles.eduIcon}>
-                                        <Icon fontSize="large">
-                                            <VerifiedOutlined fontSize="large" />
-                                        </Icon>
-                                    </div>
-
-                                </Grid2>
-                                <Grid2>
-                                    <Typography sx={education.subHeadingText} component={"h3"}>
-                                        {"Achivements"}
-                                    </Typography>
-                                </Grid2>
-                            </Grid2>
-                        </Grid2>
-                        {
-                            educationData.achievements.map(ach => {
-                                return (
-                                    <Grid2 key={ach.id}>
-                                        <AchievementsView acv={ach} />
-                                    </Grid2>
-                                )
-                            })
-                        }
-                    </Grid2>
-                </Grid2>
-            </Grid2>
-        </Box>
+                    <div className="flex flex-col gap-2">
+                        <div className="flex flex-row items-center gap-2 text-xl">
+                            <span className="text-blue-600 bg-blue-600/10 p-4 rounded-full" >
+                                <GrAchievement />
+                            </span>
+                            <span className="font-semibold">
+                                {"Achievements"}
+                            </span>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            {
+                                educationData.achievements.map((a,i) => <AchievementsView key={i} acv={a}/>)
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }
