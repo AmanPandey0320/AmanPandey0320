@@ -30,10 +30,10 @@ export default function Education() {
                     </div>
                     <div className="flex flex-col gap-2">
                         <div className="flex flex-row items-center gap-2 text-xl">
-                            <span className="text-blue-600 bg-blue-600/10 p-4 rounded-full" >
+                            <span className="text-blue-600 dark:bg-white/[0.075] dark:text-gray-300 bg-blue-600/10 p-4 rounded-full" >
                                 <GrAchievement />
                             </span>
-                            <span className="font-semibold">
+                            <span className="font-semibold text-gray-900 dark:text-gray-200">
                                 {"Achievements"}
                             </span>
                         </div>
