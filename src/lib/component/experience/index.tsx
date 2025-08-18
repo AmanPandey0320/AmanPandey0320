@@ -1,5 +1,3 @@
-import skillsData from "@/assets/data/skillsData";
-import { MdCheckCircle } from "react-icons/md";
 import ExperienceView from "./experience";
 
 export default function Experience() {
