@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function FormalEducationView({ edu }: { edu: EducationData }) {
     return (
-        <div className="grid grid-cols-10 rounded shadow">
-            <div className="col-span-4 flex flex-col bg-blue-500 dark:bg-gray-800 items-center justify-center p-8 rounded-s">
+        <div className="grid grid-cols-1 md:grid-cols-10 rounded shadow">
+            <div className="col-span-1 md:col-span-4 flex flex-col bg-blue-500 dark:bg-gray-800 items-center justify-center p-8 rounded-s">
                 <div className="p-2 bg-gray-50 rounded-full">
                     <Image
                         className={`h-16 w-16 rounded-full `}
@@ -18,8 +18,8 @@ export default function FormalEducationView({ edu }: { edu: EducationData }) {
                 <span className="text-gray-50 font-semibold">{edu.name}</span>
                 <span className="text-gray-200 dark:text-gray-300 font-medium text-xs">{edu.duration}</span>
             </div>
-            <div className="col-span-6 flex flex-col bg-white dark:bg-white/[0.1] rounded-e py-2 px-3 justify-between">
-                <div className="flex flex-col gap-1">
+            <div className="col-span-1 md:col-span-6 flex flex-col bg-white dark:bg-white/[0.1] rounded-e py-2 px-3 justify-between">
+                <div className="flex flex-col gap-2">
                     <div className="flex flex-row justify-between items-center">
                         <div className="flex flex-col">
                             <span className="text-lg font-semibold text-gray-800 dark:text-gray-200">

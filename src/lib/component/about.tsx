@@ -1,13 +1,10 @@
+import Page from "../layout/page";
 import WordCloud from "../layout/wordCloud";
 import { PiBriefcaseDuotone, PiCodeDuotone, PiProjectorScreenChartDuotone, PiTimerDuotone } from "react-icons/pi";
 
 export default function About() {
     return (
-        <section id="about" className="min-h-screen p-8 md:px-16 pt-32 flex flex-col gap-2 dark:bg-gray-900" >
-            <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-gray-200">
-                {"About Me"}
-            </h1>
-            <span className="w-20 mx-auto border-b-4 border-blue-600 py-2"></span>
+        <Page title="About Me" id="about" className="dark:bg-gray-900">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 pt-8">
                 <div>
                     <WordCloud />
@@ -18,7 +15,7 @@ export default function About() {
                     <div className="grid grid-cols-2 gap-2 pt-4">
                         <div className="flex flex-row gap-2 items-center">
                             <span className="text-blue-600 text-2xl bg-blue-600/10 p-3 rounded-full">
-                                <PiBriefcaseDuotone/>
+                                <PiBriefcaseDuotone />
                             </span>
                             <div className="flex flex-col">
                                 <span className="text-gray-800 font-semibold dark:text-gray-400">{"Experience"}</span>
@@ -55,6 +52,6 @@ export default function About() {
                     </div>
                 </div>
             </div>
-        </section>
+        </Page>
     )
 }

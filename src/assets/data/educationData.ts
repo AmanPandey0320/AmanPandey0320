@@ -21,7 +21,7 @@ export default {
         },
         {
             id: "hsms_2016_18",
-            degree: "Secondary School Certificate",
+            degree: "Senior Secondary",
             course: "Class 12 (Science)",
             marks: "Percentage: 92%",
             img: hsmsImage,

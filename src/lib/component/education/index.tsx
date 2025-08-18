@@ -3,14 +3,11 @@ import { GrAchievement } from "react-icons/gr";
 import educationData from "@/assets/data/educationData";
 import FormalEducationView from "./formal";
 import AchievementsView from "./achievements";
+import Page from "@/lib/layout/page";
 
 export default function Education() {
     return (
-        <section id="education" className="min-h-screen p-8 md:px-16 pt-32 flex flex-col gap-2 dark:bg-gray-900" >
-            <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-gray-200">
-                {"Education"}
-            </h1>
-            <span className="w-20 mx-auto border-b-4 border-blue-600 py-2"></span>
+        <Page title="Education" id="education" className="dark:bg-gray-900">
             <div className="pt-8 sm:pt-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     <div className="flex flex-col gap-2">
@@ -45,6 +42,13 @@ export default function Education() {
                     </div>
                 </div>
             </div>
-        </section>
+        </Page>
+        // <section id="education" className="min-h-screen p-8 md:px-16 pt-32 flex flex-col gap-2 dark:bg-gray-900" >
+        //     <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-gray-200">
+        //         {"Education"}
+        //     </h1>
+        //     <span className="w-20 mx-auto border-b-4 border-blue-600 py-2"></span>
+            
+        // </section>
     )
 }

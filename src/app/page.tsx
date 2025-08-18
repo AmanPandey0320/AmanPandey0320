@@ -13,7 +13,7 @@ export default function Portfolio() {
       <Skills/>
       <Experience/>
       <Education/>
-      {/*<Projects/> */}
+      <Projects/>
     </>
   );
 }
