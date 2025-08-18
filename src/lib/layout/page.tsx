@@ -7,7 +7,7 @@ interface PageProps {
     id:string
 }
 
-export default function ({ children = null, title, className = "" ,id}: PageProps) {
+export default function Page ({ children = null, title, className = "" ,id}: PageProps) {
     return (<section id={id} className={`min-h-screen p-8 md:px-16 pt-24 flex flex-col gap-2 ${className}`} >
         <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-gray-200">
             {title}
