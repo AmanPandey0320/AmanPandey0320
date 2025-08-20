@@ -28,16 +28,6 @@ const NavBarItems = [
         "id":"projects",
         "text":"Projects",
         "enabled":true
-    },
-    {
-        "id":"testimonials",
-        "text":"Testimonials",
-        "enabled":false
-    },
-    {
-        "id":"contact",
-        "text":"Contact",
-        "enabled":true
     }
 ];
 
