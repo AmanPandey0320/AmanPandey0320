@@ -3,8 +3,8 @@ import { AchievementsData } from "@/lib/types/EducationData"
 
 export default function AchievementsView({ acv }: { acv: AchievementsData }) {
     return (
-        <div className="flex flex-row gap-2 rounded rounded-s-full shadow bg-gray-50 dark:bg-gray-800">
-            <div className="rounded-s-full p-2" >
+        <div className="flex flex-row gap-2 rounded sm:rounded-s-full shadow bg-gray-50 dark:bg-gray-800">
+            <div className="rounded-s-full p-2 hidden sm:block" >
                 <div className="h-16 w-16 rounded-full shadow-md bg-gray-50">
                     <Image src={acv.img} className="h-16 w-16 rounded-full" alt={acv.title} />
                 </div>

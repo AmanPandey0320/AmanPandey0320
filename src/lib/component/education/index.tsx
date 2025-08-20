@@ -9,7 +9,7 @@ export default function Education() {
     return (
         <Page title="Education" id="education" className="dark:bg-gray-900">
             <div className="pt-8 sm:pt-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4">
                     <div className="flex flex-col gap-2">
                         <div className="flex flex-row items-center gap-2 text-xl">
                             <span className="text-blue-600 dark:bg-white/[0.075] dark:text-gray-300 bg-blue-600/10 p-4 rounded-full" >
