@@ -35,6 +35,7 @@ export default function Footer() {
       }
     } catch (err) {
       setError("Failed to send message.");
+      console.log(err);
     } finally {
       setLoading(false);
     }
