@@ -1,9 +1,45 @@
+"use client";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaDev, FaSquareXTwitter } from "react-icons/fa6";
 import { MdEmail, MdLocationOn } from "react-icons/md";
+import { useState } from "react";
 
 export default function Footer() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess("");
+    setError("");
+    try {
+      const res = await fetch("/api/message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message })
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setSuccess("Message sent successfully!");
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setError(data.error || "Failed to send message.");
+      }
+    } catch (err) {
+      setError("Failed to send message.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <footer className="bg-zinc-900 text-gray-100">
   <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-8 lg:px-16 pt-24 lg:min-h-screen flex flex-col justify-between">
@@ -54,24 +90,35 @@ export default function Footer() {
           <div>
             {/* send me a message form */}
             <h3 className="text-lg font-bold mb-2">Send a Message</h3>
-            <form className="flex flex-col gap-2">
+            <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Your Name"
                 className="px-4 py-2 rounded bg-gray-800 text-gray-100 focus:outline-none"
+                value={name}
+                onChange={e => setName(e.target.value)}
+                required
               />
               <input
                 type="email"
                 placeholder="Your Email"
                 className="px-4 py-2 rounded bg-gray-800 text-gray-100 focus:outline-none"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                required
               />
               <textarea
                 placeholder="Your Message"
                 className="px-4 py-2 rounded bg-gray-800 text-gray-100 focus:outline-none h-32 resize-none"
+                value={message}
+                onChange={e => setMessage(e.target.value)}
+                required
               ></textarea>
-              <button type="submit" className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded text-white font-semibold">
-                Send Message
+              <button type="submit" className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded text-white font-semibold" disabled={loading}>
+                {loading ? "Sending..." : "Send Message"}
               </button>
+              {success && <span className="text-green-400 text-sm pt-1">{success}</span>}
+              {error && <span className="text-red-400 text-sm pt-1">{error}</span>}
             </form>
           </div>
         </div>
