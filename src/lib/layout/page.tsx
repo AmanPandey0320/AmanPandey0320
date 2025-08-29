@@ -8,7 +8,7 @@ interface PageProps {
 }
 
 export default function Page({ children = null, title, className = "", id }: PageProps) {
-    return (<section id={id} className={`xl:min-h-screen p-8 md:px-16 pt-24 flex flex-col gap-2 ${className}`} >
+    return (<section id={id} className={`xl:min-h-screen px-2 sm:px-4 md:px-8 lg:px-16 pt-24 flex flex-col gap-2 box-border ${className}`} >
         <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-gray-200">
             {title}
         </h1>

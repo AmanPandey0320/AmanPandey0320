@@ -4,3 +4,8 @@
 @tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
+
+html, body {
+	overflow-x: hidden;
+	width: 100vw;
+}

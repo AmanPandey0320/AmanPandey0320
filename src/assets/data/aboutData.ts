@@ -1,4 +1,4 @@
-import { ElectricBoltOutlined, ImportContactsOutlined, SentimentSatisfiedAltOutlined, WorkOutlineOutlined, WorkspacePremiumOutlined } from "@mui/icons-material";
+import { FaBolt, FaBookOpen, FaRegFaceSmile, FaBriefcase, FaCertificate } from "react-icons/fa6";
 
 function getTimeElapsedFromAugust2023(): string {
     const startDate = new Date(2023, 7);
@@ -22,6 +22,7 @@ function getTimeElapsedFromAugust2023(): string {
 
 export default  {
     resume:"https://bit.ly/47ukLgz",
+    devTo:"https://dev.to/search/feed_content?per_page=15&page=0&user_id=1034031&class_name=Article&sort_by=published_at&sort_direction=desc&approved=",
     intro: [
         `Hello! I'm Aman Kr Pandey, a passionate Software Engineer with ${getTimeElapsedFromAugust2023()} of experience in building web applications and solving complex problems that drive real-world impact.`,
 
@@ -31,39 +32,39 @@ export default  {
     ],
     parameter:[
         {
-            "id":"experience",
-            "title":"Experience",
-            "detail":"1+ year",
-            "icon": WorkOutlineOutlined,
-            "enabled": true
+            id: "experience",
+            title: "Experience",
+            detail: "1+ year",
+            icon: FaBriefcase,
+            enabled: true
         },
         {
-            "id": "projects",
-            "title":"Projects",
-            "detail":"5+ Projects",
-            "icon": ImportContactsOutlined,
-            "enabled": true
+            id: "projects",
+            title: "Projects",
+            detail: "5+ Projects",
+            icon: FaBookOpen,
+            enabled: true
         },
         {
-            "id":"clients",
-            "title":"Satisfied Clients",
-            "detail":"2+ Happy Clients",
-            "icon": SentimentSatisfiedAltOutlined,
-            "enabled": false
+            id: "clients",
+            title: "Satisfied Clients",
+            detail: "2+ Happy Clients",
+            icon: FaRegFaceSmile,
+            enabled: false
         },
         {
-            "id":"certificates",
-            "title":"Certificates",
-            "detail":"5+ Certifications",
-            "icon": WorkspacePremiumOutlined,
-            "enabled": true
+            id: "certificates",
+            title: "Certificates",
+            detail: "5+ Certifications",
+            icon: FaCertificate,
+            enabled: true
         },
         {
-            "id":"delivery",
-            "title":"Fast Delivery",
-            "detail":"On-Time",
-            "icon": ElectricBoltOutlined,
-            "enabled": true
+            id: "delivery",
+            title: "Fast Delivery",
+            detail: "On-Time",
+            icon: FaBolt,
+            enabled: true
         }
     ]
 }
