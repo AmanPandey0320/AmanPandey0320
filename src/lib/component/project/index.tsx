@@ -10,9 +10,9 @@ export default function Projects() {
                     PROJECTS.map((prj, i) => (
                         <div className="p-2 bg-white dark:bg-gray-800 rounded-md shadow-lg shadow-gray-300 dark:shadow-gray-900 flex flex-col gap-2 h-full" key={i}>
                             <div className="flex flex-col gap-2 flex-grow">
-                                <div className="h-32 rounded-md relative">
-                                    <span className="absolute top-2 right-2 py-1 px-3 rounded-full bg-gray-200 text-xs text-gray-800 font-semibold z-99">{prj.type}</span>
-                                    <div className="h-32 w-full z-49 bg-black/50 absolute top-0 left-0" ></div>
+                                <div className="h-32 rounded-md relative w-full overflow-hidden">
+                                    <span className="absolute top-2 right-2 py-1 px-3 rounded-full bg-gray-200 text-xs text-gray-800 font-semibold z-99 max-w-full overflow-hidden whitespace-nowrap text-ellipsis">{prj.type}</span>
+                                    <div className="h-32 w-full z-49 bg-black/50 absolute top-0 left-0 pointer-events-none" ></div>
                                     <Image className="h-32 rounded-md" src={prj.image} alt={prj.name} />
                                 </div>
                                 <div className="flex flex-row justify-between gap-1">

@@ -5,7 +5,7 @@ import { FaDev, FaGithub, FaLinkedin, FaSquareXTwitter } from "react-icons/fa6";
 
 export default function Home() {
     return (
-        <section id="home" className="min-h-screen bg-gradient-to-b from-blue-200 dark:from-transparent via-transparent to-transparent p-8 md:px-16 pt-32" >
+    <section id="home" className="min-h-screen bg-gradient-to-b from-blue-200 dark:from-transparent via-transparent to-transparent px-2 sm:px-4 md:px-8 lg:px-16 pt-32" >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-2">
                     <span className="text-6xl font-semibold text-blue-600 dark:text-gray-200">{"Hello, I'm"}</span>
