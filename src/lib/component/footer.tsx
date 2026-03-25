@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import Link from 'next/link'
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaDev, FaSquareXTwitter } from "react-icons/fa6";
 import { MdEmail, MdLocationOn } from "react-icons/md";
