@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaDev, FaSquareXTwitter } from "react-icons/fa6";
 import { MdEmail, MdLocationOn } from "react-icons/md";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export default function Footer() {
   const [name, setName] = useState("");
@@ -41,6 +41,10 @@ export default function Footer() {
     }
   }
 
+  const handleClick = useCallback(() => {
+    window.open("mailto:2000amanpandey2@gmail.com");
+  }, []);
+
   return (
     <footer className="bg-zinc-900 text-gray-100">
   <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-8 lg:px-16 pt-24 lg:min-h-screen flex flex-col justify-between">
@@ -52,16 +56,16 @@ export default function Footer() {
               Creating elegant solutions to complex problems through clean, efficient code and user-centered design
             </p>
             <div className="flex flex-row gap-2 pt-2">
-              <Link target="_blank" href={"https://www.linkedin.com/in/amanpandey09/"} className="hover:cursor-pointer text-gray-900 dark:text-gray-300">
+              <Link target="_blank" href={"https://www.linkedin.com/in/amanpandey09/"} className="hover:cursor-pointer text-gray-200 dark:text-gray-300">
                 <FaLinkedin size={24} />
               </Link>
-              <Link target="_blank" href={"https://github.com/AmanPandey0320"} className="hover:cursor-pointer text-gray-900 dark:text-gray-300">
+              <Link target="_blank" href={"https://github.com/AmanPandey0320"} className="hover:cursor-pointer text-gray-200 dark:text-gray-300">
                 <FaGithub size={24} />
               </Link>
-              <Link target="_blank" href={"https://x.com/_a_m_a_n_pandey/"} className="hover:cursor-pointer text-gray-900 dark:text-gray-300">
+              <Link target="_blank" href={"https://x.com/_a_m_a_n_pandey/"} className="hover:cursor-pointer text-gray-200 dark:text-gray-300">
                 <FaSquareXTwitter size={24} />
               </Link>
-              <Link target="_blank" href={"https://dev.to/_a_m_a_n_pandey/"} className="hover:cursor-pointer text-gray-900 dark:text-gray-300">
+              <Link target="_blank" href={"https://dev.to/_a_m_a_n_pandey/"} className="hover:cursor-pointer text-gray-200 dark:text-gray-300">
                 <FaDev size={24} />
               </Link>
 
@@ -86,7 +90,7 @@ export default function Footer() {
               <li className="flex items-center gap-2"><MdEmail />2000amanpandey2@gmail.com</li>
               <li className="flex items-center gap-2"><MdLocationOn /> Bengaluru, India</li>
             </ul>
-            <button className="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 hover:cursor-pointer rounded text-white font-semibold">Get In Touch</button>
+            <button onClick={handleClick} className="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 hover:cursor-pointer rounded text-white font-semibold">Get In Touch</button>
           </div>
           <div>
             {/* send me a message form */}
