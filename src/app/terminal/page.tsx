@@ -2,29 +2,56 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import aboutData, { getTimeElapsedFromAugust2023 } from '@/assets/data/aboutData';
+import skillsData from '@/assets/data/skillsData';
+import experienceData from '@/assets/data/experienceData';
+import educationData from '@/assets/data/educationData';
+import { PROJECTS } from '@/assets/data/project';
 
 const COMMANDS = ['help', 'whoami', 'about', 'skills', 'experience', 'education', 'projects', 'achievements', 'contact', 'stats', 'banner', 'clear', 'exit', 'quit'];
 
-const BANNER = `<span class="green">
- ______  __  __   ______   __   __
-/\\  __ \\/\\ \\/\\ \\ /\\  __ \\ /\\ "-.\\  \\
-\\ \\  __ \\ \\ \\_\\ \\\\ \\  __ \\\\ \\ \\-.  \\
- \\ \\_\\ \\_\\ \\_____\\\\ \\_\\ \\_\\\\ \\_\\\\"\\_\\
-  \\/_/\\/_/\\/_____/ \\/_/\\/_/ \\/_/ \\/_/
-</span>
-<span class="cyan">Full Stack Software Engineer @ Oracle</span>
-<span class="dim">NIT Jamshedpur '23  |  amans-canvas.vercel.app</span>`;
+// ── skill tree from skillsData ──────────────────────────────────────────────
+const SKILL_TREE = skillsData.skills.map((s, i, arr) => {
+  const prefix = i === arr.length - 1 ? '└──' : '├──';
+  return `<span class="green">${prefix}</span> <span class="cyan">${s.title.padEnd(26)}</span>${s.detail.join(', ')}`;
+}).join('\n');
 
-const PROJECTS_DATA = [
-  { name: 'keyfort',          summary: 'OAuth 2.0 server with RBAC, PKCE, brute force protection',           stack: ['NextJS', 'Spring Boot', 'PostgreSQL'],                      repo: 'https://github.com/AmanPandey0320/keyfort-ui' },
-  { name: 'typebox',          summary: 'SaaS file management MVP (24-hr hackathon)',                          stack: ['NextJS', 'Spring Boot', 'MySQL', 'Tailwind'],               repo: 'https://github.com/AmanPandey0320/typebox' },
-  { name: 'balancify',        summary: 'Custom load balancer from scratch (no 3rd-party libs)',               stack: ['Java'],                                                     repo: 'https://github.com/AmanPandey0320/balancify' },
-  { name: 'json-parsor',      summary: 'JSON parser built without external libraries',                        stack: ['Java'],                                                     repo: 'https://github.com/AmanPandey0320/JSON-Parser' },
-  { name: 'santhali-nlp',     summary: 'NLP translation model for Santhali tribal language',                  stack: ['Python', 'PyTorch', 'NLP'],                                 repo: 'https://github.com/AmanPandey0320/santhali-model' },
-  { name: 'nit-jsr',          summary: 'NIT Jamshedpur official website (10k+ daily visits)',                 stack: ['ReactJS', 'Node.js', 'MySQL', 'Docker', 'NGINX'],           repo: null, demo: 'https://nitjsr.ac.in/' },
-  { name: 'elite-classroom',  summary: 'Remote learning platform (COVID era)',                                stack: ['Node.js', 'MySQL', 'Docker', 'AWS'],                        repo: 'https://github.com/pcon-code-tribe/Elite-Classroom-Backend' },
-  { name: 'forms',            summary: 'Google Forms-like survey app',                                        stack: ['Node.js', 'MySQL', 'ReactJS', 'Material-UI'],               repo: null },
-];
+// ── experience from experienceData ─────────────────────────────────────────
+const EXPERIENCE_OUTPUT = experienceData.experiences.map(e => {
+  const bullets = e.details.map(d => `  <span class="dim">-</span>  ${d}`).join('\n');
+  return `<span class="cyan">[${e.company}]</span> <span class="green">${e.title}</span>  <span class="dim">(${e.duration})</span>${bullets ? '\n' + bullets : ''}`;
+}).join('\n\n');
+
+// ── education from educationData ────────────────────────────────────────────
+const EDUCATION_OUTPUT = educationData.formal.map(f =>
+  `<span class="cyan">[${f.name}]</span>  ${f.degree} – ${f.course}  <span class="dim">|</span>  ${f.duration}  <span class="dim">|</span>  <span class="green">${f.marks}</span>`
+).join('\n');
+
+// ── achievements from educationData ─────────────────────────────────────────
+const ACHIEVEMENTS_OUTPUT = educationData.achievements.map(a =>
+  `<span class="green">★</span>  <span class="cyan">${a.title}</span>  — ${a.issuesBy}  <span class="dim">(${a.issued})</span>`
+).join('\n');
+
+// ── projects from PROJECTS ───────────────────────────────────────────────────
+const PROJECTS_DATA = PROJECTS.map(p => ({
+  name: p.name,
+  summary: p.summary,
+  stack: p.techStack,
+  repo: p.repo ?? null,
+  demo: p.demo ?? null,
+}));
+
+const BANNER = `<span class="green">
+ █████╗ ███╗   ███╗ █████╗ ███╗   ██╗
+██╔══██╗████╗ ████║██╔══██╗████╗  ██║
+███████║██╔████╔██║███████║██╔██╗ ██║
+██╔══██║██║╚██╔╝██║██╔══██║██║╚██╗██║
+██║  ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║
+╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
+</span>
+<span class="cyan">${experienceData.experiences[0].title} @ ${experienceData.experiences[0].company}</span>
+<span class="dim">NIT Jamshedpur '23  |  amans-canvas.vercel.app</span>`;
 
 function getCommandOutput(cmd: string): string {
   const parts = cmd.trim().toLowerCase().split(/\s+/);
@@ -49,59 +76,29 @@ function getCommandOutput(cmd: string): string {
 
     case 'whoami':
       return `<span class="green">Name   </span>  : Aman Kr Pandey
-<span class="green">Role   </span>  : Full Stack Software Engineer
-<span class="green">Company</span>  : Oracle India Pvt. Ltd.
-<span class="dim">NIT Jamshedpur | CSE | 2019–2023</span>`;
+<span class="green">Role   </span>  : ${experienceData.experiences[0].title}
+<span class="green">Company</span>  : ${experienceData.experiences[0].company}
+<span class="dim">${educationData.formal[0].name} | ${educationData.formal[0].course} | ${educationData.formal[0].duration}</span>`;
 
     case 'about':
       return `<span class="cyan">About Me</span>
 <span class="dim">────────────────────────────────────────────────────────────────────────────────</span>
-I'm a Full Stack Software Engineer at Oracle India, passionate about building
-high-performance, scalable systems. With a B.Tech in Computer Science from NIT
-Jamshedpur (Class of 2023), I specialize in cloud-native applications, 5G-Core
-network infrastructure, and full-stack development.
-
-I enjoy working across the stack — from crafting intuitive UIs with React to
-engineering robust backend microservices in Java/Spring Boot, and deploying
-containerized workloads with Docker &amp; Kubernetes. I care deeply about clean
-architecture, security (TLS, IAM, OAuth), and measurable performance wins.
-
-Outside the terminal: hackathons, open-source contributions, and exploring the
-intersection of systems design with real-world impact.`;
+${aboutData.intro.join('\n\n')}`;
 
     case 'skills':
       return `<span class="yellow">Technical Skills</span>
 <span class="dim">────────────────────────────────────────────────────────────────────────────────</span>
-<span class="green">├──</span> <span class="cyan">Frontend        </span>  React.js, Redux, Android, Flutter, TypeScript, Material UI
-<span class="green">├──</span> <span class="cyan">Backend         </span>  Node.js, Java/Spring Boot, Python/Django, GraphQL, WebSocket
-<span class="green">├──</span> <span class="cyan">Databases       </span>  PostgreSQL, MySQL, MongoDB, Firestore
-<span class="green">├──</span> <span class="cyan">DevOps &amp; Cloud  </span>  Docker, Kubernetes, Helm, AWS, CI/CD, Git
-<span class="green">├──</span> <span class="cyan">Testing         </span>  JUnit, Mockito, Selenium, JMeter, Mocha
-<span class="green">└──</span> <span class="cyan">Tools           </span>  Agile, JIRA, Figma, IntelliJ, System Design`;
+${SKILL_TREE}`;
 
     case 'experience':
       return `<span class="yellow">Work Experience</span>
 <span class="dim">────────────────────────────────────────────────────────────────────────────────</span>
-<span class="cyan">[Oracle India Pvt. Ltd.]</span> <span class="green">Associate Software Developer</span>  <span class="dim">(Aug 2023 – Present)</span>
-  <span class="dim">-</span>  Benchmarking strategies for product performance evaluation
-  <span class="dim">-</span>  Enabled multi-admin IAM, logging, and key metrics pegging
-  <span class="dim">-</span>  TLSv1.3 microservice communication with cipher enforcement
-  <span class="dim">-</span>  20x API gateway response improvement + DDoS mitigation
-
-<span class="cyan">[Oracle India Pvt. Ltd.]</span> <span class="green">Product Intern</span>  <span class="dim">(Jan 2023 – Jun 2023)</span>
-  <span class="dim">-</span>  Reduced Docker image size 30% via custom JRE
-  <span class="dim">-</span>  Spring Boot 3.1 migration across project
-  <span class="dim">-</span>  LDAP/SAML integration testing
-
-<span class="cyan">[GE Healthcare]</span> <span class="green">EID Intern</span>  <span class="dim">(May 2022 – Jul 2022)</span>
-  <span class="dim">-</span>  Automated real-time network proxy detection (25% time saved)
-  <span class="dim">-</span>  TCP/IP fingerprint tests + ASN-based IP retrieval (20x speed)`;
+${EXPERIENCE_OUTPUT}`;
 
     case 'education':
       return `<span class="yellow">Education</span>
 <span class="dim">────────────────────────────────────────────────────────────────────────────────</span>
-<span class="cyan">[NIT Jamshedpur]</span>       B.Tech – CSE  <span class="dim">|</span>  2019–2023  <span class="dim">|</span>  <span class="green">CGPA: 8.29/10</span>
-<span class="cyan">[HemSheela Model School]</span>  Class 12 (Science)  <span class="dim">|</span>  2016–2018  <span class="dim">|</span>  <span class="green">92%</span>`;
+${EDUCATION_OUTPUT}`;
 
     case 'projects': {
       const rows = PROJECTS_DATA.map((p, i) =>
@@ -134,21 +131,19 @@ ${repoLine}`;
     case 'achievements':
       return `<span class="yellow">Achievements</span>
 <span class="dim">────────────────────────────────────────────────────────────────────────────────</span>
-<span class="green">★</span>  <span class="cyan">CNCC SPOT Award CY-2025</span>  — Oracle, Communication GIU  <span class="dim">(Jul 2025)</span>
-<span class="green">★</span>  <span class="cyan">CNCC SPOT Award CY-2024</span>  — Oracle, Communication GIU  <span class="dim">(Jul 2024)</span>
-<span class="green">★</span>  <span class="cyan">1st Runner Up – Hack-de-Science</span>  — NIT Jamshedpur  <span class="dim">(Mar 2022)</span>`;
+${ACHIEVEMENTS_OUTPUT}`;
 
     case 'contact':
       return `<span class="yellow">Contact</span>
 <span class="dim">────────────────────────────────────────────────────────────────────────────────</span>
 <span class="green">GitHub  </span>  →  <a href="https://github.com/AmanPandey0320" target="_blank" rel="noopener" class="link">github.com/AmanPandey0320</a>
-<span class="green">LinkedIn</span>  →  <a href="https://linkedin.com/in/aman-pandey-5b2437199" target="_blank" rel="noopener" class="link">linkedin.com/in/aman-pandey</a>
-<span class="green">Resume  </span>  →  <a href="https://drive.google.com/file/d/1yQ5kl61y0AQhyD8rg9uNwp1gUFxM-OKT/view" target="_blank" rel="noopener" class="link">[Download PDF]</a>`;
+<span class="green">LinkedIn</span>  →  <a href="https://www.linkedin.com/in/amanpandey09/" target="_blank" rel="noopener" class="link">linkedin.com/in/amanpandey09</a>
+<span class="green">Resume  </span>  →  <a href="${aboutData.resume}" target="_blank" rel="noopener" class="link">[Download PDF]</a>`;
 
     case 'stats':
       return `<span class="yellow">Stats</span>
 <span class="dim">────────────────────────────────────────────────────────────────────────────────</span>
-<span class="cyan">Experience  </span>  <span class="green">██████████████████░░</span>  2+ YOE
+<span class="cyan">Experience  </span>  <span class="green">██████████████████░░</span>  ${getTimeElapsedFromAugust2023()} YOE
 <span class="cyan">Projects    </span>  <span class="green">█████████████░░░░░░░</span>  8 built
 <span class="cyan">Code time   </span>  <span class="green">██████████████████░░</span>  75–90%
 <span class="cyan">Delivery    </span>  <span class="green">████████████████████</span>  On-time ✓`;
@@ -503,7 +498,7 @@ export default function TerminalPage() {
           This experience is designed for a desktop browser.<br />
           Please visit on a larger screen to access the interactive terminal.
         </p>
-        <a href="/" className="mb-link">← Back to Portfolio</a>
+        <Link href="/" className="mb-link">← Back to Portfolio</Link>
       </div>
 
       <div

@@ -5,8 +5,8 @@ import { color } from "@/lib/component/style";
 export default function DesktopView() {
     return (
         <div className="w-full">
-            <div className="flex flex-col gap-12">
-                {experienceData.experiences.map((exp, idx) => (
+            <div className="flex flex-col">
+                {experienceData.experiences.slice(0,3).map((exp, idx) => (
                     <div key={`${exp.id}_${idx}`} className="flex flex-row items-stretch gap-6">
                         {/* Timeline Left (Details) */}
                         <div className="flex-1 flex flex-col justify-between">
@@ -19,7 +19,7 @@ export default function DesktopView() {
                                         <li key={`${exp.id}_${idx}_detail_${dtIdx}`}>{detail}</li>
                                     ))}
                                 </ul>
-                                <div className={`flex flex-row gap-2 mt-4 ${idx%2 === 0 ? 'justify-end' : 'justify-start'}`}> 
+                                <div className={`flex flex-row gap-2 mt-4 justify-start`}> 
                                     {exp.techStackUsed.slice().reverse().map((tech, tsIdx) => (
                                         <span key={`${exp.id}_${idx}_ts_${tech.id}_${tsIdx}`}>
                                             <tech.icon className="text-gray-700 dark:text-gray-400" size={24} />
@@ -45,7 +45,7 @@ export default function DesktopView() {
                             <div className="w-1 bg-gray-300 dark:bg-gray-700 flex-1"></div>
                         </div>
                         {/* Timeline Right (Image & Summary) */}
-                        <div className="flex-1">
+                        <div className="flex-1 py-6">
                             <div className="p-2 shadow-md rounded bg-white dark:bg-white/[0.05]">
                                 <div className="flex flex-col gap-2">
                                     <div>

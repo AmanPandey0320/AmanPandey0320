@@ -1,6 +1,6 @@
 import { FaBolt, FaBookOpen, FaRegFaceSmile, FaBriefcase, FaCertificate } from "react-icons/fa6";
 
-function getTimeElapsedFromAugust2023(): string {
+export function getTimeElapsedFromAugust2023(): string {
     const startDate = new Date(2023, 7);
     const currentDate = new Date();
   

@@ -1,6 +1,7 @@
 import oracleImg from "@/assets/images/oracle.png";
 import oracleRedImg from "@/assets/images/oracle_red.png";
 import geHealthcare from "@/assets/images/ge_healthcare.png";
+import eBayImg from "@/assets/images/eBay.png";
 import { FaBriefcase, FaBug, FaTv } from "react-icons/fa6";
 import { SiHelm, SiTypescript } from "react-icons/si";
 import { FaJava } from "react-icons/fa6";
@@ -21,10 +22,59 @@ export default {
     intro: "My professional path blends collaboration with top industry experts and pioneering startups.",
     experiences: [
         {
+            id:"ebay_swe3_2026",
+            title:"Software Engineer 3",
+            company:"eBay Inc.",
+            duration:"April 2026 - Present",
+            image: eBayImg,
+            summary:"As a Software Engineer 3 at eBay, I am responsible for designing and implementing scalable software solutions that enhance the user experience and drive business growth.",
+            dotIcon: FaBriefcase,
+            details:[
+                
+            ],
+            techStackUsed:[
+                {
+                    id:"java",
+                    text:"Java",
+                    icon: FaJava
+                },
+                {
+                    id:"spring_boot",
+                    text:"Spring Boot",
+                    icon: SiSpringboot
+                },
+                {
+                    id:"sql",
+                    text:"MySQL",
+                    icon:SiMysql
+                },
+                {
+                    id:"javascript",
+                    text:"JavaScript",
+                    icon:SiJavascript
+                },
+                {
+                    id:"git",
+                    text:"Git",
+                    icon:SiGit,
+                },
+                {
+                    id:"docker",
+                    text:"Docker",
+                    icon: SiDocker
+                },
+                {
+                    id:"kubernetes",
+                    text:"Kubernetes",
+                    icon: SiKubernetes
+                }
+            ]
+        },
+        {
             id:"oracle_2023",
             title:"Associate Software Developer",
             company:"Oracle India Pvt. Ltd.",
-            duration:"Aug 2023 - Present",
+            duration:"Aug 2023 - April 2026",
             image: oracleImg,
             summary:"Working on cutting-edge cloud native applications and leading a team of talented engineers to deliver high-quality software solutions for 5G-Core network.",
             dotIcon: FaBriefcase,
