@@ -178,6 +178,9 @@ export default function TerminalPage() {
   const [booting, setBooting] = useState(true);
   const [exited, setExited] = useState(false);
   const [glitch, setGlitch] = useState('');
+  const [rSearch, setRSearch] = useState(false);
+  const [rQuery, setRQuery] = useState('');
+  const rSearchRef = useRef<HTMLInputElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const counterRef = useRef(0);
@@ -258,7 +261,29 @@ export default function TerminalPage() {
     addLine(out);
   }, [addLine]);
 
+  // Reverse search: find best match in history for rQuery
+  const rMatch = rQuery ? history.find(h => h.includes(rQuery)) ?? '' : '';
+
+  const exitRSearch = useCallback((confirm: boolean) => {
+    setRSearch(false);
+    setRQuery('');
+    if (confirm && rMatch) setInputVal(rMatch);
+    setTimeout(() => inputRef.current?.focus(), 30);
+  }, [rMatch]);
+
+  const handleRSearchKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Escape' || (e.ctrlKey && e.key === 'c')) { e.preventDefault(); exitRSearch(false); }
+    else if (e.key === 'Enter') { e.preventDefault(); exitRSearch(true); }
+  }, [exitRSearch]);
+
   const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.ctrlKey && e.key === 'r') {
+      e.preventDefault();
+      setRQuery('');
+      setRSearch(true);
+      setTimeout(() => rSearchRef.current?.focus(), 30);
+      return;
+    }
     if (e.key === 'Enter') {
       handleCommand(inputVal);
       setInputVal('');
@@ -427,6 +452,24 @@ export default function TerminalPage() {
           animation: fadeOut 1.5s forwards;
         }
 
+        .rsearch-row {
+          display: flex;
+          align-items: center;
+          padding: 8px 24px 20px;
+          gap: 6px;
+          position: sticky;
+          bottom: 0;
+          background: #0d0d0d;
+          z-index: 5;
+          border-top: 1px solid #00d4aa55;
+        }
+        .rsearch-label { color: #00d4aa; white-space: nowrap; flex-shrink: 0; font-style: italic; }
+        .rsearch-query { color: #ffd700; flex-shrink: 0; }
+        .rsearch-match { flex: 1; color: #00ff41; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .rsearch-match mark { background: transparent; color: #ffd700; text-decoration: underline; }
+        .rsearch-hint { color: #444; font-size: 11px; flex-shrink: 0; }
+        .rsearch-hidden { position: absolute; opacity: 0; pointer-events: none; width: 0; }
+
         @keyframes fadeOut {
           0%   { opacity: 1; }
           100% { opacity: 0; background: #000; }
@@ -518,7 +561,7 @@ export default function TerminalPage() {
         </div>
 
         {/* Prompt input row */}
-        {!booting && !exited && (
+        {!booting && !exited && !rSearch && (
           <div className="prompt-row" onClick={e => { e.stopPropagation(); inputRef.current?.focus(); }}>
             <span className="prompt-label">
               <span className="cyan">aman</span>
@@ -540,6 +583,38 @@ export default function TerminalPage() {
               aria-label="terminal input"
             />
             <span className="cursor-blink" />
+          </div>
+        )}
+
+        {/* Reverse search bar (Ctrl+R) */}
+        {!booting && !exited && rSearch && (
+          <div className="rsearch-row" onClick={e => { e.stopPropagation(); rSearchRef.current?.focus(); }}>
+            <span className="rsearch-label">(reverse-i-search)`</span>
+            <span className="rsearch-query">{rQuery}</span>
+            <span className="rsearch-label">&apos;:</span>
+            <span className="rsearch-match">
+              {rMatch
+                ? rMatch.split(rQuery).map((part, i, arr) =>
+                    i < arr.length - 1
+                      ? <span key={i}>{part}<mark>{rQuery}</mark></span>
+                      : <span key={i}>{part}</span>
+                  )
+                : <span style={{ color: '#555' }}>no match</span>}
+            </span>
+            <input
+              ref={rSearchRef}
+              className="rsearch-hidden"
+              value={rQuery}
+              onChange={e => setRQuery(e.target.value)}
+              onKeyDown={handleRSearchKeyDown}
+              autoFocus
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck={false}
+              aria-label="reverse search"
+            />
+            <span className="rsearch-hint">ESC/^C cancel · ENTER confirm</span>
           </div>
         )}
 
